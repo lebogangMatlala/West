@@ -27,20 +27,20 @@
           <div class="example-button-row">
             <div class="example-flex-container">
               <div class="example-button-container">
-                <button class="btn1" aria-label="Example icon button with a delete icon">
+                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a delete icon" routerLink="/history">
                   <!-- <mat-icon>delete</mat-icon> -->
                   <img src="../../assets/Vector-6.png" class="icons01" alt="...">
                   <h5>History</h5>
                 </button>
               </div>
               <div class="example-button-container">
-                <button class="btn1" aria-label="Example icon button with a bookmark icon">
+                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a bookmark icon" routerLink="/menu">
                   <img src="../../assets/Vector-1.png" class="icons01" alt="...">
                   <h5>Tenders</h5>
                 </button>
               </div>
               <div class="example-button-container">
-                <button class="btn1" aria-label="Example icon button with a home icon">
+                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a home icon" routerLink="/councilors">
                   <img src="../../assets/Group-1.png" class="icons01" alt="...">
                   <h5>Councilors</h5>
                 </button>
@@ -48,53 +48,27 @@
 
             </div>
           </div>
-          <div class="section03">
+          <div class="section02">
+            <button type="button" routerLinkActive="active" class="btn02" routerLink="">What's New</button>
+            <button type="button" routerLinkActive="active" class="btn02" routerLink="">Service Delivary</button>
+            <button type="button" routerLinkActive="active" class="btn02" routerLink="/contact">Contact Us</button>
+          </div>
 
+          <div class="section03">
+            <hr class="line01">
+            <p class="text03">Profile</p>
             <p class="text03">T&C</p>
             <p class="text03">FAQs</p>
-            <hr class="line01">
-            <p class="text03" style="color:#bc9a2f ;">Contact Us</p>
+
           </div>
           <div class="section05">
             <img src="../../assets/Group001.png" class="logo" alt="...">
           </div>
 
-
-          <!-- <mat-toolbar color="" style="margin-top:30px;"></mat-toolbar> -->
-
-          <!-- <mat-nav-list >
-            <mat-list-item  (click)="closeSideNav()">
-              <mat-icon matListIcon>home</mat-icon>
-              <a matLine href="home">Home</a>
-            </mat-list-item>
-
-            <mat-list-item (click)="closeSideNav()">
-              <mat-icon matListIcon>person</mat-icon>
-              <a matLine>Customers</a>
-            </mat-list-item>
-
-            <mat-list-item (click)="closeSideNav()">
-              <mat-icon matListIcon>group_work</mat-icon>
-              <a matLine>employees</a>
-            </mat-list-item>
-
-            <mat-list-item (click)="closeSideNav()">
-              <mat-icon matListIcon>business</mat-icon>
-              <a matLine>business</a>
-            </mat-list-item>
-
-          </mat-nav-list>-->
-
         </mat-sidenav>
 
 
         <mat-sidenav-content>
-          <!-- <mat-toolbar color="primary">
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-
-          </mat-toolbar> -->
 
           <div class="container">
             <nav class="navbar navbar-expand-lg" style="margin-top: 4%;">
@@ -103,7 +77,7 @@
                   *ngIf="isHandset$ | async">
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-                <a class="navbar-brand" href="#">Beaufort West</a>
+                <a class="navbar-brand" href="#" style="font-size: 2.5em;">Beaufort West</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
@@ -126,21 +100,16 @@
           </div>
           <div class="container">
             <div class="section04">
-              <h2 class="text01">Roads</h2>
-              <hr class="line02">
-              <h2 class="text01">Fire & Rescue</h2>
-              <hr class="line02">
-              <h2 class="text01">Protection services</h2>
-              <hr class="line02">
-              <h2 class="text01">Waste Management</h2>
-              <hr class="line02">
-              <h2 class="text01">electricity </h2>
-              <hr class="line02">
-              <h2 class="text01">Water & Sanitation</h2>
-              <hr class="line02">
-              <h2 class="text01">Community services</h2>
-              <hr class="line02">
-            </div>
+              <div *ngFor="let tender of tenderdata; let i = index" (click)="senderService. setTenderName(tender.name)" routerLink="/tender-vaccancies">
+                <h2 #name class="tender-name">
+                  {{ tender.name }}
+                 </h2>
+                 <hr class="line02">
+              </div>
+            </div> <ul>
+
+            </ul>
+
           </div>
 
           <div class="ylb-app-content">

@@ -30,28 +30,6 @@ mat-sidenav{
     #ffffff 20%
   );
 }
-@media screen and (max-device-width:320px) {
-  mat-sidenav{
-    width: 60%;
-    height: 100%;
-  }
-  .section05{
-    margin-top: 20%;
-  }
-  .logo{
-    padding-top: 60%;
-    width: 60px;
-  }
-  mat-sidenav{
-    background-image: radial-gradient(
-    farthest-corner at 5px -20%,
-    #0206f3 75%,
-    #ffffff 20%
-  );
-  }
-}
-
-
 
 @media screen and (max-width:600px) {
   mat-sidenav{
@@ -59,23 +37,20 @@ mat-sidenav{
     height: 100%;
   }
   .section05{
-    margin-top: 20%;
+    margin-top: 10%;
   }
   .logo{
     padding-top: 60%;
     width: 60px;
-    margin-bottom: 10px;
   }
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
-    #bff302 75%,
+    #333333 75%,
     #ffffff 20%
   );
   }
 }
-
-
 @media screen and (min-device-width: 375px)
 and (max-device-width: 812px)
 and (-webkit-min-device-pixel-ratio: 3){
@@ -93,7 +68,7 @@ and (-webkit-min-device-pixel-ratio: 3){
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
-    #fd0808 75%,
+    #333333 75%,
     #ffffff 20%
   );
   }
@@ -116,7 +91,7 @@ and (-webkit-min-device-pixel-ratio: 1){
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
-    #01fc2b 75%,
+    #333333 75%,
     #ffffff 20%
   );
   }
@@ -155,9 +130,31 @@ mat-drawer-content{
   cursor: pointer;
   border-radius:10px
 }
+.btn02{
+  border-radius: 25px;
+  width: 160px;
+  height: 30px;
+  margin-left: 3%;
+ background-color:#333333;
+  color: #bc9a2f;
+  border: 2px solid #bc9a2f;
+  margin-bottom: 10px;
+}
+
+.btn02:hover{
+  background-color:#bc9a2f;
+  color: #f1f1f1;
+}
+.btn02:active{
+  background-color:#bc9a2f;
+  color: #f1f1f1;
+}
 .section02{
   display: block;
-  justify-content: center;
+  justify-content: left;
+  margin-top: 2.3em;
+  margin-right: 4em;
+
 }
 
 .btn1{
@@ -170,8 +167,8 @@ mat-drawer-content{
 }
 
 .section03{
-  margin-top: 60%;
-  margin-right: 55%;
+  margin-top: 20%;
+  margin-right: 80%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
@@ -186,8 +183,12 @@ mat-drawer-content{
   background-color: rgb(255, 255, 255);
   border: none;
   margin-left: 30%;
-  margin-right: 30%;
-  width: 80%;
+  margin-right: 40%;
+  width: 5em;
+}
+svg{
+  color: white;
+  margin-top: -20px;
 }
 .text01{
   margin-top: 25px;
@@ -205,7 +206,7 @@ mat-drawer-content{
   color: black;
 }
 .btn{
-  width: 5%;
+  width: 7%;
   height: 3rem;
   background-color: black;
 }
@@ -217,11 +218,18 @@ mat-drawer-content{
   border-radius: 10px;
 }
 .section04{
-  margin-top: 15%;
+  margin-top: 0.5%;
 
 }
+.section03{
+  margin-top: 20%;
+  margin-right: 80%;
+  margin-bottom: 0px;
+  color: #f1f1f1;
+}
+
 .section05{
-  margin-top: 30%;
+  margin-top: 18%;
 }
 svg{
   color: white;
@@ -231,5 +239,140 @@ svg{
 .text03{
   text-align: justify;
   margin-left: 30px;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.example-margin {
+  margin: 0 40px;
+}
+mat-card{
+  height: 180px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+}
+.section{
+  margin-top: -1.5%;
+  margin-left: -20px;
+}
+.button01{
+  width: 130px;
+  height: 80px;
+  color: #f1f1f1;
+  background-color: #bc9a2f;
+  border: 1px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+.mat-card-title{
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+  margin-right: 40em;
+}
+.tender-section{
+  margin: 6% 4%;
+  border:none ; border-radius: 15px;
+  box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
+  background-color: #ffffff;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+.vacancy-section{
+  margin: 6% 4%;
+  border:none ; border-radius: 15px;
+  box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
+  background-color: #ffffff;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+.example-section01{
+  margin-bottom: 1.5em;
+}
+
+.section-text{
+  align-items: flex-end;
+  margin-left: 75%;
+  margin-top: -2.3em;
+  padding-bottom: 4em;
+
+}
+.vertical {
+  border-left: 2px solid rgb(175, 174, 174);
+  height: 65px;
+  margin-left:15em;
+  margin-top: -2.2em;
+  margin-bottom: -30px;
+}
+
+.form-select-lg
+{
+  border-radius: 1rem;
+  width: 400px;
+  text-align: center;
+}
+.mat-card {
+  padding: 0px;
+}
+.mat-card-header{
+  border-radius: 10px;
+}
+
+
+.form-select-lg:active
+{
+  color: #bc9a2f;
+}
+/* to activate buttons on the side navbar */
+.active{
+  background-color: #bc9a2f;
+  color: #f1f1f1;
+
+}
+.icons01{
+  filter:  brightness(0) invert(1);
+}
+.icon02{
+  width: 60px;
+
+}
+.mat-tab-label {
+  min-width: 25px !important;
+  padding: 5px;
+  font-size: 20px;
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  min-width: 25px !important;
+  padding: 5px;
+  background-color: transparent;
+  color: #bc9a2f;
+  font-weight: 700;
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #bc9a2f;
+}
+.form-check-input:checked {
+  background-color: #bc9a2f !important;
+  border-color: #bc9a2f !important;
 }
 

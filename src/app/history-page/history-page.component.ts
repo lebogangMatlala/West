@@ -1,3 +1,4 @@
+import { SenderService } from './../shared/sender-services/sender.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -19,8 +20,9 @@ import { map } from 'rxjs/operators';
 export class HistoryPageComponent implements OnInit {
 
   // constructor() { }
-
+  nameOfTender?:String
   ngOnInit(): void {
+    this.nameOfTender=this.senderService.getTenderName();
   }
 
   @ViewChild('drawer') drawer: any;
@@ -30,7 +32,7 @@ export class HistoryPageComponent implements OnInit {
      .pipe(map((result: BreakpointState) => result.matches));
 
 
-   constructor(private breakpointObserver: BreakpointObserver) {}
+   constructor(private breakpointObserver: BreakpointObserver,private senderService:SenderService) {}
 
  closeSideNav() {
    if (this.drawer._mode=='over') {

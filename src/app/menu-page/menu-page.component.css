@@ -13,6 +13,7 @@
   height: 50px;
   font-size:16px;
 }
+
 mat-sidenav{
   width: 15%;
   height: 100%;
@@ -26,7 +27,7 @@ mat-sidenav{
   /* border-bottom-right-radius: 180px 750px; */
   background-image: radial-gradient(
     farthest-corner at 5px -20%,
-    #333333 75%,
+    #333333 78%,
     #ffffff 20%
   );
 }
@@ -117,7 +118,7 @@ mat-drawer-content{
   width: 120px;
 }
 .logo{
-  width: 100px;
+  width: 80px;
   margin-top: -30px;
   margin-left: 50%;
 }
@@ -130,9 +131,36 @@ mat-drawer-content{
   cursor: pointer;
   border-radius:10px
 }
+.btn02{
+  border-radius: 25px;
+  width: 160px;
+  height: 30px;
+  margin-left: 3%;
+ background-color:#333333;
+  color: #bc9a2f;
+  border: 2px solid #bc9a2f;
+  margin-bottom: 10px;
+}
+
+.btn02:hover{
+  background-color:#bc9a2f;
+  color: #f1f1f1;
+}
+
+.tender-name:hover{
+  font-size: 25px;
+  font-weight: 600;
+}
+.btn02:active{
+  background-color:#bc9a2f;
+  color: #f1f1f1;
+}
 .section02{
   display: block;
-  justify-content: center;
+  justify-content: left;
+  margin-top: 2.3em;
+  margin-right: 4em;
+
 }
 
 .btn1{
@@ -145,8 +173,8 @@ mat-drawer-content{
 }
 
 .section03{
-  margin-top: 60%;
-  margin-right: 55%;
+  margin-top: 20%;
+  margin-right: 80%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
@@ -161,8 +189,8 @@ mat-drawer-content{
   background-color: rgb(255, 255, 255);
   border: none;
   margin-left: 30%;
-  margin-right: 30%;
-  width: 80%;
+  margin-right: 40%;
+  width: 5em;
 }
 .text01{
   margin-top: 25px;
@@ -175,12 +203,21 @@ mat-drawer-content{
   height: 1px;
   border: none;
 }
+/* to activate buttons on the side navbar */
+.active{
+  background-color: #bc9a2f;
+  color: #f1f1f1;
+
+}
+.icons01{
+  filter:  brightness(0) invert(1);
+}
 
 .navbar-brand{
   color: black;
 }
 .btn{
-  width: 5%;
+  width: 8%;
   height: 3rem;
   background-color: black;
 }
@@ -196,7 +233,7 @@ mat-drawer-content{
 
 }
 .section05{
-  margin-top: 30%;
+  margin-top: 15%;
 }
 svg{
   color: white;
@@ -205,6 +242,6 @@ svg{
 
 .text03{
   text-align: justify;
-  margin-left: 30px;
+  margin-left: 15px;
 }
 
