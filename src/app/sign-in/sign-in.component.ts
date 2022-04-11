@@ -28,6 +28,7 @@ export class SignInComponent implements OnInit {
 
   navigateTohome() {
     this._router.navigate(['home'])
+    window.location.reload();
   }
 
 

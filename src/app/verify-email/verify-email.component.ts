@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
 
@@ -8,9 +9,14 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class VerifyEmailComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
+  constructor(public authService:AuthService,
+    public _router:Router) { }
 
   ngOnInit(): void {
   }
 
+  navigateTosignin() {
+    this._router.navigate(['signin']);
+    window.location.reload();
+  }
 }

@@ -62,7 +62,6 @@ import { HistoryDetailsComponent } from './history-details/history-details.compo
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireModule.initializeApp(environment.firebaseTenders),
     AngularFireAuthModule,
     AngularFirestoreModule,

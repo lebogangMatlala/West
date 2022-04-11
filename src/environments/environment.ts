@@ -14,15 +14,6 @@ export const environment = {
     appId: "1:201403610110:web:2fb3554ccee46fe24886af",
     measurementId: "G-L26QN2EGV6"
   },
-  firebaseConfig: {
-    apiKey: "AIzaSyDLspa_L-YTfDAZpwpJfdw-Xst5Ctm_CJ0",
-    authDomain: "crud-angular-9dddf.firebaseapp.com",
-    projectId: "crud-angular-9dddf",
-    storageBucket: "crud-angular-9dddf.appspot.com",
-    messagingSenderId: "58704545607",
-    appId: "1:58704545607:web:d132f02cb2c1b6da5e2e62",
-    measurementId: "G-FQJ1KBB46W"
-  },
   firebaseTenders : {
     apiKey: "AIzaSyBpuuhZ6wIn7osH2mw0VkrB-jgrexcFQao",
     authDomain: "beaufort-west.firebaseapp.com",

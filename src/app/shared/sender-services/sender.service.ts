@@ -24,7 +24,7 @@ export class SenderService {
   message?: string;
   tenderName?:String;
 
-  constructor(){}
+  constructor(private _router: Router){}
 
   setMessage(data?: string){
     this.message=data;
@@ -43,5 +43,14 @@ export class SenderService {
   getTenderName()
   {
     return this.tenderName
+  }
+
+  //Navication to other pages
+
+  navigateToSignIn()
+  {
+    this._router.navigate(['signin']);
+
+    window.location.reload();
   }
 }

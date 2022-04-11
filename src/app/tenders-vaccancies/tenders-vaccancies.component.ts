@@ -9,7 +9,6 @@ import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable} from 'rxjs';
-import { Tutorial } from '../shared/Model/tutorial.model';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -73,7 +72,7 @@ export class TendersVaccanciesComponent implements OnInit {
       });
     }
 
-    
+
   ngOnInit(): void {
     this.message=this.senderService.getMessage();
     this.nameOfTender=this.senderService.getTenderName();
