@@ -1,0 +1,156 @@
+
+       <!DOCTYPE html>
+       <html>
+       
+       <head>
+         <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+         <!-- Bootstrap CSS -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+       
+       </head>
+       
+       <body>
+         <section class="">
+           <div>
+             <mat-sidenav-container class="sidenav-container">
+       
+               <mat-sidenav #drawer fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+                 <div class="section01">
+                   <img src="../../assets/Beaufort_West_CoA.png" class="rounded" alt="...">
+                 </div>
+               
+               
+                  
+                 
+                 <div class="section03">
+       
+                   <!-- <p class="text03">T&C</p>
+                   <p class="text03">FAQs</p> -->
+                   <hr class="line01">
+                   <a class="text03" routerLink="/login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
+                   
+                 </div>
+                 <div class="section05">
+                   <img src="../../assets/Group.svg" class="logo" alt="...">
+                 </div>
+               </mat-sidenav>
+       
+       
+               <mat-sidenav-content>
+               
+       
+                 <div class="container">
+                   <nav class="navbar navbar-expand-lg" style="margin-top: 4%;">
+                     <div class="container-fluid">
+                       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                         *ngIf="isHandset$ | async">
+                         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                       </button>
+                       <a class="navbar-brand" href="#">Beaufort West</a>
+                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                         aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                       </button>
+                      
+                       
+                     </div>
+                   </nav>
+                 </div>
+
+
+                 <div class="container">
+                  <div class="section11">
+                   <mat-card class="new">
+                     <mat-card-subtitle></mat-card-subtitle>
+                     <mat-card-title></mat-card-title>
+                     <mat-card-content routerLink="/article-list">
+                       <img mat-card-sm-image src="../../assets/whatsNew.svg" >
+                     </mat-card-content>
+                     <mat-card-actions>
+                     </mat-card-actions>
+                     <mat-card-footer>
+                       <h4>What's New</h4>
+                     </mat-card-footer>
+                   </mat-card>
+                   
+                 
+                   
+                   </div>
+                 <div class="container">
+                   <div class="section04">
+                    <mat-card class="example-card">
+                      <mat-card-subtitle></mat-card-subtitle>
+                      <mat-card-title></mat-card-title>
+                      <mat-card-content routerLink="/tender-edit">
+                        <img mat-card-sm-image src="../../assets/add-tender.svg" >
+                      </mat-card-content>
+                      <mat-card-actions>
+                      </mat-card-actions>
+                      <mat-card-footer>
+                        <h4>Add Tender</h4>
+                      </mat-card-footer>
+                    </mat-card>
+                    
+                    <mat-card class="example-card">
+                      <mat-card-subtitle></mat-card-subtitle>
+                      <mat-card-title></mat-card-title>
+                      <mat-card-content routerLink="/tender-list">
+                        <img mat-card-sm-image src="../../assets/tender-list.svg" >
+                      </mat-card-content>
+                      <mat-card-actions>
+                      </mat-card-actions>
+                      <mat-card-footer>
+                        <h4>View Tenders</h4>
+                      </mat-card-footer>
+                    </mat-card>
+                    
+                    </div>
+
+                    <div class="container">
+                      <div class="section09">
+                       <mat-card class="example-card">
+                         <mat-card-subtitle></mat-card-subtitle>
+                         <mat-card-title></mat-card-title>
+                         <mat-card-content routerLink="/vacancy-list">
+                           <img mat-card-sm-image src="../../assets/vacancy.svg" >
+                         </mat-card-content>
+                         <mat-card-actions>
+                         </mat-card-actions>
+                         <mat-card-footer>
+                           <h4>Vacancy</h4>
+                         </mat-card-footer>
+                       </mat-card>
+                       <mat-card class="example-card">
+                         <mat-card-subtitle></mat-card-subtitle>
+                         <mat-card-title></mat-card-title>
+                         <mat-card-content routerLink="/">
+                           <img mat-card-sm-image src="../../assets/feedback.svg" >
+                         </mat-card-content>
+                         <mat-card-actions>
+                         </mat-card-actions>
+                         <mat-card-footer>
+                           <h4>FeedBack</h4>
+                         </mat-card-footer>
+                       </mat-card>
+                       
+                       </div>
+   
+                    
+                    
+                   </div>
+                 
+       
+                 <div class="ylb-app-content">
+                   <ng-content></ng-content>
+                 </div>
+           </div>
+         
+           <router-outlet></router-outlet>
+       
