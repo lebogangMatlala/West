@@ -30,9 +30,8 @@
           
 
           <div class="section03">
-              
             <hr class="line01" />
-            <a class="text03" routerLink="/login" style="color: #bc9a2f"
+            <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
               ><b>LOG OUT</b></a
             >
           </div>
@@ -50,13 +49,6 @@
           </div>
           
 
-          <div class="section03">
-            <!-- <hr class="line01"> -->
-            <p class="text03"></p>
-            <p class="text03"></p>
-            <p class="text03"></p>
-
-          </div>
           <div class="section05">
             <img src="../../assets/Group001.png" class="logo" alt="...">
           </div>
@@ -100,16 +92,12 @@
           <div class="container">
               
                 <button class="btn-3" routerLink="/article-add">ADD</button>
-
-
-                <br>
-                  <app-article
-                    *ngFor="let article of listOfArticles; let i = index"
-                    [article]="article"
-                    [index]="i"
-                  >
-                  </app-article>
                 </div>
+
+
+                
+               
+              
             
              
 
@@ -120,9 +108,21 @@
             
                 
                   
-              
+
             </div>
-          
+
+            <div class="container">
+              <br>
+            <section class="vacancy-section">
+              
+              <app-article
+                *ngFor="let article of listOfArticles; let i = index"
+                [article]="article"
+                [index]="i"
+              >
+              </app-article>
+              </section>
+              </div>
 
           <div class="ylb-app-content">
             <ng-content></ng-content>

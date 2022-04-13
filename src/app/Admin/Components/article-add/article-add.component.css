@@ -36,7 +36,7 @@ mat-sidenav{
   /* border-bottom-right-radius: 180px 750px; */
   background-image: radial-gradient(
     farthest-corner at 5px -20%,
-    #333333 75%,
+    #333333 78%,
     #ffffff 20%
   );
 }
@@ -155,11 +155,12 @@ mat-drawer-content{
 }
 
 .section03{
-  margin-top: 170%;
-  margin-right: 55%;
+  margin-top: 35em;
+  margin-right: 70%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
+
 .section04{
   margin-top: -25em;
 }
@@ -206,8 +207,10 @@ mat-drawer-content{
 
 }
 .section05{
-  margin-top: 30%;
+  margin-top: 7em;
+  margin-left: 2.5em;
 }
+
 svg{
   color: white;
   margin-top: -20px;
@@ -215,8 +218,7 @@ svg{
 
 .text03{
   text-align: justify;
-  margin-left: 10px;
-  padding-left: 5px;
+  margin-right: -20px;
 }
 mat-grid-tile {
   background: lightblue;

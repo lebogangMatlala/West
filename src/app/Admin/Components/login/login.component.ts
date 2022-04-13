@@ -19,10 +19,37 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
     private toast: HotToastService,
-    private login: LoginService
+    private login: LoginService,
+    
    ) { }
 
-  ngOnInit(): void {
+   ngOnInit(): void {}
+
+  get email(){
+    return this.loginForm.get('email');
   }
+  get password(){
+    return this.loginForm.get('password');
+  }
+
+  submit(){
+    if (!this.loginForm.valid){
+      return;
+    }
+const { email, password} = this.loginForm.value;
+this.login.login(email, password).pipe(
+  this.toast.observe({
+    success: 'Logged in successfully',
+    loading: 'Loggin in...',
+    error: 'There was an error'
+
+  })
+).subscribe(()=>{
+  this.router.navigate(['/dashboard']);
+}
+)
+
+  }
+
 
 }

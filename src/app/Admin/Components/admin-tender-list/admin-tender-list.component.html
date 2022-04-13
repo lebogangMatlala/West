@@ -30,38 +30,27 @@
           <div class="example-button-row">
             <div class="example-flex-container">
               <div class="example-button-container">
-                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a delete icon" routerLink="/history">
-                  <!-- <mat-icon>delete</mat-icon> -->
-                  <img src="../../assets/Vector-6.png" class="icons01" alt="...">
-                  <h5>History</h5>
-                </button>
+              
+              
+            
               </div>
-              <div class="example-button-container">
-                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a bookmark icon" routerLink="/tender-vaccancies">
-                  <img src="../../assets/Vector-1.png" class="icons01" alt="...">
-                  <h5>Tenders</h5>
-                </button>
-              </div>
-              <div class="example-button-container">
-                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a home icon" routerLink="/councilors">
-                  <img src="../../assets/Group-1.png" class="icons01" alt="...">
-                  <h5>Councilors</h5>
-                </button>
+             
               </div>
 
             </div>
-          </div>
-          <div class="section02">
-            <button type="button" routerLinkActive="active" class="btn02" routerLink="/">What's New</button>
-            <button type="button" routerLinkActive="active" class="btn02" routerLink="/">Service Delivary</button>
-            <button type="button" routerLinkActive="active" class="btn02" routerLink="/contact">Contact Us</button>
-          </div>
+          
+        
 
-          <div class="section03">
-            <hr class="line01">
+            <div class="section03">
+              
+              <hr class="line01" />
+              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
+                ><b>LOG OUT</b></a
+              >
+            <!-- <hr class="line01">
             <p class="text03"></p>
             <p class="text03"></p>
-            <p class="text03"></p>
+            <p class="text03"></p> -->
 
           </div>
           <div class="section05">
@@ -146,13 +135,15 @@
                   </section>
 
                   
-            
+                  <section class="vacancy-section">
 
                 <app-admin-tender
                 *ngFor="let tender of listOfTenders; let i = index"
                 [tender]="tender"
                 [index]="i"
               ></app-admin-tender>
+
+              </section>
                 <!-- <mat-tab label="Vacancies">
                  
                     <select id="txtTitle" class="form-control selectpicker">

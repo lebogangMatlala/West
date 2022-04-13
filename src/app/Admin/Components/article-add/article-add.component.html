@@ -36,7 +36,7 @@
             <div class="section03">
               
               <hr class="line01" />
-              <a class="text03" routerLink="/login" style="color: #bc9a2f"
+              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
                 ><b>LOG OUT</b></a
               >
             </div>
@@ -72,13 +72,16 @@
                   </button>
 
                   <div class="container">
-                    <div class="form-group">
+                    <div class="row">
+                    <div class="col-md-8">
+                   
+                      <div class="form-group" >
                     <h1><b>What's New</b></h1>
                           <h3 *ngIf="editMode === false"><b>Add Article</b></h3>
                           <h3 *ngIf="editMode === true"><b>Edit Article</b></h3>
                               <form [formGroup]="form" (ngSubmit)="onSubmit()">
                                 
-                        
+                                <div class="form-group col-lg-12">
                         <div class="form-group">
                         <label>Title</label>
                          <input class="form-control" type="text" formControlName="title"/>
@@ -130,7 +133,7 @@
                     <button id="btnsubscribe"class="btn form-control"  (click)="addPicture()"  type="submit" >PUBLISH</button>
                     <div>
                       <br>
-                        
+                       </div> 
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <form class="d-flex">

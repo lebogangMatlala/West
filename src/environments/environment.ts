@@ -6,13 +6,14 @@ export const environment = {
 
   production: false,
   firebase: {
-    apiKey: "AIzaSyCAAq3joJ1Ltc9qsuXe6Zsn02XMDUmFO9I",
-    authDomain: "angularfiebase-authentic-51645.firebaseapp.com",
-    projectId: "angularfiebase-authentic-51645",
-    storageBucket: "angularfiebase-authentic-51645.appspot.com",
-    messagingSenderId: "201403610110",
-    appId: "1:201403610110:web:2fb3554ccee46fe24886af",
-    measurementId: "G-L26QN2EGV6"
+    projectId: 'beaufort-west',
+    appId: '1:156712925641:web:bfd6ec860ed75b59e95018',
+    databaseURL: 'https://beaufort-west-default-rtdb.firebaseio.com',
+    storageBucket: 'beaufort-west.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyBpuuhZ6wIn7osH2mw0VkrB-jgrexcFQao',
+    authDomain: 'beaufort-west.firebaseapp.com',
+    messagingSenderId: '156712925641',
   },
   firebaseTenders : {
     apiKey: "AIzaSyBpuuhZ6wIn7osH2mw0VkrB-jgrexcFQao",

@@ -10,7 +10,10 @@ import { from } from 'rxjs';
 })
 export class LoginService {
 
+  currentUser$ = authState(this.auth);
+
   constructor(private auth:Auth) {}
+  
   login(username: string, password: string){
     return from (signInWithEmailAndPassword(this.auth, username, password))
    }

@@ -23,7 +23,7 @@
             <mat-sidenav #drawer fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
               [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
               <div class="section01">
-                <img src="../../assets/Group-1.svg" class="rounded" alt="...">
+                <img src="../../assets/Beaufort_West_CoA.png" class="rounded" alt="...">
               </div>
               <div class="example-button-row">
                 <div class="example-flex-container">
@@ -39,10 +39,10 @@
 
                
                 <hr class="line01">
-                <a class="text03" routerLink="/login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
+                <a class="text03" routerLink="/admin-login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
               </div>
               <div class="section05">
-                <img src="../../assets/Group.svg" class="logo" alt="...">
+                <img src="../../assets/Group001.png" class="logo" alt="...">
               </div>
             </mat-sidenav>
     
@@ -66,7 +66,7 @@
                          <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
                        
                               <br>
-                              <div class="form-group col-lg-12">
+                        <div class="form-group col-lg-12">
                         <div class="form-group" >
                         <label>Title</label>
                          <input class="form-control" type="text" formControlName="title"/>
