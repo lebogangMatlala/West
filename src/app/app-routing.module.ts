@@ -1,3 +1,4 @@
+import { VaccanciesComponent } from './vaccancies/vaccancies.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -43,6 +44,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'verify-email-address', component: VerifyEmailComponent },
 { path: 'contact', component: ContactComponent},
 { path: 'tender-vaccancies', component: TendersVaccanciesComponent },
+{ path: 'vaccancy-description', component: VaccanciesComponent },
 
  {path:'admin-login',component: LoginComponent},
 {path: 'home',component: HomeComponent},
@@ -60,7 +62,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 },
 {
   path: 'tender-list',
-  component: AdminTenderListComponent 
+  component: AdminTenderListComponent
 },
 
 {
@@ -99,10 +101,10 @@ component: AdminTenderComponent
 {
   path: 'article-list',
   component: ArticleListComponent
-}, 
+},
 {
   path: 'vacancy-list',
-  component: AdminVacancyListComponent 
+  component: AdminVacancyListComponent
 },
 
 {

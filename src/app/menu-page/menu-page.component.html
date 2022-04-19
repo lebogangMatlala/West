@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="section02">
-            <button type="button" routerLinkActive="active" class="btn02" routerLink="">What's New</button>
+            <button type="button" routerLinkActive="active" class="btn02" routerLink="/article-list">What's New</button>
             <button type="button" routerLinkActive="active" class="btn02" routerLink="">Service Delivary</button>
             <button type="button" routerLinkActive="active" class="btn02" routerLink="/contact">Contact Us</button>
           </div>
@@ -100,7 +100,7 @@
           </div>
           <div class="container">
             <div class="section04">
-              <div *ngFor="let tender of tenderdata; let i = index" (click)="senderService. setTenderName(tender.name)" routerLink="/tender-vaccancies">
+              <div *ngFor="let tender of tenderdata; let i = index" (click)="senderService.setTenderName(tender.name)" routerLink="/tender-vaccancies">
                 <h2 #name class="tender-name">
                   {{ tender.name }}
                  </h2>

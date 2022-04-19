@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Vacancy } from './../shared/Model/vacancy.model';
 import { Tenders } from './../shared/Model/tenders.model';
 
@@ -37,7 +38,8 @@ export class TendersVaccanciesComponent implements OnInit {
 
   constructor(private senderService:SenderService,
     private breakpointObserver: BreakpointObserver,
-    private tenderService:TenderService) {
+    private tenderService:TenderService,
+    private _router:Router) {
 
       this.retrieveTenders();
       this.retrieveVacancies();
@@ -57,6 +59,14 @@ export class TendersVaccanciesComponent implements OnInit {
         console.log("This is the tenders data"+this.tenders)
       });
     }
+
+    getIndex(_index:any)
+  {
+    this._router.navigate(['vaccancy-description'])
+
+    console.log(_index)
+    this.senderService.setIndex(_index)
+  }
 
     //retrieve vacancies
     retrieveVacancies():void{

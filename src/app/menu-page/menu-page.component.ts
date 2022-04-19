@@ -50,4 +50,12 @@ export class MenuPageComponent implements OnInit {
     this.senderService.setTenderName(_name)
   }
 
+  getIndex(_index:any)
+  {
+    this._router.navigate(['tender-vaccancies'])
+
+    console.log(_index)
+    this.senderService.setIndex(_index)
+  }
+
 }
