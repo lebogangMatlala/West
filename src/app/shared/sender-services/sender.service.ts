@@ -21,8 +21,9 @@ export class SenderService {
 
   ];
 
-  message?: string;
+  message?: String;
   tenderName?:String;
+  indexNum?: String;
 
   constructor(private _router: Router){}
 
@@ -40,6 +41,17 @@ export class SenderService {
     this.tenderName=data;
     console.log(this.tenderName);
   }
+
+  setIndex(index?:String)
+  {
+    this.indexNum=index;
+    console.log(this.indexNum);
+  }
+
+  getIndex(){
+    return this.indexNum
+  }
+
   getTenderName()
   {
     return this.tenderName

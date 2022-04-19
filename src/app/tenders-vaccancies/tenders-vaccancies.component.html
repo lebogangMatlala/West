@@ -199,12 +199,12 @@
                   </div> -->
                   <section class="vacancy-section">
 
-                    <mat-card *ngFor="let vacancy of vacancies;">
+                    <mat-card *ngFor="let vacancy of vacancies;let i = index">
                       <div class="col-sm-10">
 
                         <div class="row">
                           <div class="col-1 col-sm-10">
-                            <mat-card-title class="text-break">Vacancy one</mat-card-title>
+                            <mat-card-title class="text-break">{{vacancy.title}}</mat-card-title>
                             <mat-card-subtitle>Ref No. : BID NO:SM02</mat-card-subtitle>
                             <mat-card-content>
                               <div class="row">
@@ -217,7 +217,7 @@
                                     </div>
 
                                     <div class="col-5 col-sm-3">
-                                      10-jan-2022 
+                                      10-jan-2022
                                     </div>
                                     <div class="col-5 col-sm-2" style="color: red;">
                                       Closing<br> Date
@@ -245,7 +245,7 @@
                       </div>
                       <div class="section" align="end">
 
-                        <button id="" class="button01">
+                        <button id="" class="button01" (click)="getIndex(i)">
                           <i class="fa fa-angle-right fa-3x"></i>
                         </button>
                       </div>
