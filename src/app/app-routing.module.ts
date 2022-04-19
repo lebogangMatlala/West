@@ -79,6 +79,10 @@ path: 'tender',
 component: AdminTenderComponent
 },
 
+{
+  path: 'tender-description/:index',
+  component: AdminTenderDescriptionComponent
+},
 
     {
       path: 'tender-description',

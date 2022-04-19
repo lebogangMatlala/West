@@ -125,6 +125,8 @@ import {MatDividerModule} from '@angular/material/divider';
 
 
 provideFirebaseApp(() => initializeApp(environment.firebase)),
+
+
 provideAuth(() => getAuth()),
 provideStorage(() => getStorage()),
 provideDatabase(() => getDatabase()),

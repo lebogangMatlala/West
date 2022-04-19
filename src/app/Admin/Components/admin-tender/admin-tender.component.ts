@@ -48,7 +48,6 @@ onEdit(){
  
 }
 
-
 onDisplay(){
   console.log('onDisplay() called!!!!!!')
   this.router.navigate(["/tender-description", this.index]);

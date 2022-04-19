@@ -11,8 +11,10 @@ import {
   BreakpointState,
 } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { finalize, map } from 'rxjs/operators';
 import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+
 
 @Component({
   selector: 'app-article-add',
@@ -25,27 +27,44 @@ export class ArticleAddComponent implements OnInit {
   editMode = false;
   details!: FormGroup;
   path!: String;
-  public file: any={}
 
-  chooseFile(event: any){
-    this.file=event.target.files[0];
-  }
 
-  addPicture(){
-    const StorageRef = ref(this.storage,  this.file.name, );
-    const uploadTask = uploadBytesResumable(StorageRef, this.file);
-    uploadTask.on('state_changed',
-    (snapshot)=>{
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('Upload is ' + progress + '% done');
-    },
-    ()=>{
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log('File available at', downloadURL);
-      });
-    }
-    )
-  }
+  //uploading Image
+imgSrc: string = '/assets/img/logo.png';
+
+
+selectedImage: any = null;
+isSubmitted: Boolean= false;
+
+
+  formTemplate = new FormGroup({
+    imageUrl: new FormControl('')
+  })
+
+
+  
+  // public file: any={}
+
+  // chooseFile(event: any){
+  //   this.file=event.target.files[0];
+  // }
+
+  // addPicture(){
+  //   const StorageRef = ref(this.storage,  this.file.name, );
+  //   const uploadTask = uploadBytesResumable(StorageRef, this.file);
+  //   uploadTask.on('state_changed',
+  //   (snapshot)=>{
+  //     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //     console.log('Upload is ' + progress + '% done');
+  //   },
+  //   ()=>{
+  //     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+  //       console.log('File available at', downloadURL);
+  //     });
+      
+  //   }
+  //   )
+  // }
 
 
 
@@ -53,7 +72,7 @@ export class ArticleAddComponent implements OnInit {
     private articleService: ArticleService,
     private router: Router,
     private route: ActivatedRoute,
-    private storage: Storage,
+    private storage: AngularFireStorage,
     private backEndService: BackEndService) { }
 
 
@@ -100,7 +119,20 @@ export class ArticleAddComponent implements OnInit {
 
   } 
 
-  onSubmit() {
+  showPreview(event: any){
+    if(event.target.files && event.target.files[0]){
+      const reader = new FileReader();
+      reader.onload = (e: any) => this.imgSrc = e.target.result;
+        reader.readAsDataURL(event.target.files[0]);
+        this.selectedImage = event.target.files[0];
+      }
+    else{
+      this.imgSrc = '';
+      this.selectedImage= null;
+    }
+  }
+
+  onSubmit(formValue: any) {
     
     const title = this.form.value.title;
     const description = this.form.value.description;
@@ -131,36 +163,31 @@ if(this.editMode){
   console.log("SaveArticle() called!!!! ");
   this.backEndService.SaveArticle();
 }
-   
 //Uploading a picture Article
-
-
-
-
-
-
-        this.router.navigate(['/article-list']);
-
-    
-              
+if(this.formTemplate.valid){
+  var filePath = `images/${this.selectedImage.name}_${new Date().getTime()}`;
+  const fileRef = this.storage.ref(filePath);
+  this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
+    finalize(()=>{
+      fileRef.getDownloadURL().subscribe((url)=>{
+        formValue['imageUrl']=url;
+      })
+    })
+  ).subscribe();
+}
+this.router.navigate(['/article-list']); 
+               
   }
-
-  
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
   public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map((result: BreakpointState) => result.matches));
-
-
-
-
-
   closeSideNav() {
     if (this.drawer._mode == 'over') {
       this.drawer.close();
     }
+    
   }
-
   
 }

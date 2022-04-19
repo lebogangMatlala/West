@@ -79,20 +79,17 @@
                     <h1><b>What's New</b></h1>
                           <h3 *ngIf="editMode === false"><b>Add Article</b></h3>
                           <h3 *ngIf="editMode === true"><b>Edit Article</b></h3>
-                              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                              
                                 
-                                <div class="form-group col-lg-12">
+                        <div class="form-group col-lg-12">
+                          <form [formGroup]="form" (ngSubmit)="onSubmit(formTemplate.value)">
                         <div class="form-group">
                         <label>Title</label>
                          <input class="form-control" type="text" formControlName="title"/>
                     </div>
                       
                   
-                    <!-- Testing -->
-                    <!-- <div class="form-group">
-                      <label class="form-control" type="text" formControlName="title"></label>
                    
-               </div> -->
 
                     <div class="form-group">
                         <label>Artircle:</label>
@@ -119,32 +116,29 @@
                 </div>
                     
                    
-
+                    <!-- <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)"> -->
                     <div class="form-group">
                     <label for="formFile" class="form-label">Image Upload</label>
-                    <input class="form-control"  (change)="chooseFile($event)" type="file"  formControlName="documentPath" accept="*png.jpg"/>
+                    <input class="form-control"  #fileUploader  type="file"  formControlName="imageUrl" accept="image/*" id="file"/>
                     
                     </div >
 
                
-              </div>
+              
                     <br>
                     
-                    <button id="btnsubscribe"class="btn form-control"  (click)="addPicture()"  type="submit" >PUBLISH</button>
+                    <button id="btnsubscribe"class="btn form-control"  type="submit" >PUBLISH</button>
                     <div>
                       <br>
                        </div> 
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <form class="d-flex">
-                        
-                         
-                        
-                       
+                      
                       </form>
                     </div>
-                  </div>
-                
+                  
+                <input type="file" id="file">
               
              
               <div class="container">
