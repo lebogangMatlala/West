@@ -1,4 +1,4 @@
-.sidenav-container {
+/* .sidenav-container {
     height: 100vh;
   }
   .sidenav {
@@ -10,10 +10,10 @@
   
   }
   .mat-toolbar {
-    height: 50px;
+    height: px;
     font-size:16px;
-  }
-  mat-sidenav{
+  } */
+  /* mat-sidenav{
     width: 15%;
     height: 100%;
     display: flex;
@@ -22,33 +22,33 @@
     text-align: center;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     /* border-bottom-right-radius: 180px 750px; */
-    background-image: radial-gradient(
+    /* background-image: radial-gradient(
       farthest-corner at 5px -20%,
       #333333 78%,
       #ffffff 20%
     );
-  }
+  } */
 
-  .btn-3{
+  /* .btn-3{
     background-color: #bc9a2f;
     color: white;
     border: none;
     border-radius: 25px;
     width: 150px;
     height: 30px;
-  }
+  } */
 
   /* Addition */
-  .section03{
+  /* .section03{
     margin-top: 10%;
     margin-right: 80%;
     margin-bottom: 0px;
     color: #f1f1f1;
-  }
+  } */
 
-  .line01{
+  /* .line01{
     margin-top: 1rem;
     margin-bottom: 1rem;
     height: 2px;
@@ -57,14 +57,14 @@
     margin-left: 30%;
     margin-right: 40%;
     width: 5em;
-  }
+  } */
 
-  .text03{
+  /* .text03{
     text-align: justify;
     margin-right: -20px;
   }
-  
-  @media screen and (max-width:600px) {
+   */
+  /* @media screen and (max-width:600px) {
     mat-sidenav{
       width: 15%;
       height: 100%;
@@ -84,7 +84,7 @@
     .logo{
       padding-top: 100%;
       width: 60px;
-    }
+    } */
     /* mat-sidenav{
       background-image: radial-gradient(
       farthest-corner at 5px -20%,
@@ -93,7 +93,7 @@
     );
     } */
 
-    mat-sidenav{
+    /* mat-sidenav{
       width: 15%;
       height: 100%;
       display: flex;
@@ -103,12 +103,12 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-    }
+    } */
 
 
 
 
-  }
+  
   @media screen and (min-device-width: 375px)
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3){
@@ -303,7 +303,6 @@
   }
   .section04{
     margin-top: 0.5%;
-  
   }
   .section03{
     margin-top: 35em;
@@ -489,13 +488,13 @@
   select option:focus{
     background-color: #bc9a2f !important
   }
-  .btn-3{
+  /* .btn-3{
     background-color: #bc9a2f;
     color: white;
     border: none;
     border-radius: 25px;
     width: 150px;
     height: 30px;
-  }
+  } */
 
 
