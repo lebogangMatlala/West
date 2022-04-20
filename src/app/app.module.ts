@@ -62,6 +62,7 @@ import {MatDividerModule} from '@angular/material/divider';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +112,7 @@ import {MatDividerModule} from '@angular/material/divider';
     AngularFireStorageModule,
     MatSidenavModule,
     MatGridListModule,
+
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireModule.initializeApp(environment.firebaseTenders),
@@ -132,7 +134,6 @@ provideStorage(() => getStorage()),
 provideDatabase(() => getDatabase()),
 provideFirestore(() => getFirestore()),
  AngularFireStorageModule,
-
 
  HotToastModule.forRoot(),
 
