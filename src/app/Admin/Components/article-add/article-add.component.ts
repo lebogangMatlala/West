@@ -96,8 +96,7 @@ export class ArticleAddComponent implements OnInit {
 
           }
     });
-
-  
+   
       
       this.form = new FormGroup({
         title: new FormControl(title,[Validators.required]),
@@ -109,6 +108,9 @@ export class ArticleAddComponent implements OnInit {
       }) 
 
   } 
+  uploadImage(event: any){
+  
+  }
 
   onSubmit() {
     
@@ -141,10 +143,13 @@ if(this.editMode){
   console.log("SaveArticle() called!!!! ");
   this.backEndService.SaveArticle();
 }
-   
+this.router.navigate(['/article-list']); 
+
+
 //Uploading a picture Article
 
-        this.router.navigate(['/article-list']);         
+
+               
   }
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';

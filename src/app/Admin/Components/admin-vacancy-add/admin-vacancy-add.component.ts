@@ -137,7 +137,7 @@ export class AdminVacancyAddComponent implements OnInit {
          //Navigate to /tender-list
    this.router.navigate(['/vacancy-list']);
       }
-        @ViewChild('drawer') drawer: any;
+  @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
    public isHandset$: Observable<boolean> = this.breakpointObserver
      .observe(Breakpoints.Handset)
