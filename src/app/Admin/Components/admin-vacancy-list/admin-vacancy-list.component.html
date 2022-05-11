@@ -65,7 +65,7 @@
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
-                
+                <a class="navbar-brand" href="#" style="font-size: 2.5em;">View Vacancies</a>
                 <a class="navbar-brand" href="#" style="font-size: 2.5em;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -89,10 +89,7 @@
           </div>
 
 
-          <div class="container">
-            <h1><b>Vacancies</b></h1>
-            <button class="btn-3" routerLink="/vacancy-add">ADD VACANCY</button>
-            </div>
+        
             <br>
           <div class="container">
 
@@ -116,8 +113,8 @@
 
                  
                 <section class="vacancy-section">
+                  
                 <app-admin-vacancy
-               
                 *ngFor="let vacancy of listOfVacancys; let i = index"
                 [vacancy]="vacancy"
                 [index]="i"

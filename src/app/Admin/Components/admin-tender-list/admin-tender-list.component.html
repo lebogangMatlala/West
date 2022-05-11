@@ -62,15 +62,23 @@
                   *ngIf="isHandset$ | async">
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
+            
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
-                <a class="navbar-brand" href="#" style="font-size: 2.5em;">ROADS</a>
+                
+                <a class="navbar-brand" href="#" style="font-size: 2.5em;">View Tenders</a>
+                <div class="user_name">
+                
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
+                  
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <form class="d-flex">
+                 
                     <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -79,7 +87,12 @@
                           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                       </svg>
                     </button>
+                  
+                    <br>
+                  
+                   
                   </form>
+                  
                 </div>
               </div>
             </nav>
@@ -106,8 +119,6 @@
 
 
             <div class="section04">
-            
-                
                   <section class="example-section">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -136,10 +147,12 @@
 
                 <app-admin-tender
                 *ngFor="let tender of listOfTenders; let i = index"
+                
                 [tender]="tender"
                 [index]="i"
+                
               ></app-admin-tender>
-
+                     
               </section>
                
 

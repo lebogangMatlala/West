@@ -29,7 +29,7 @@ export class ArticleAddComponent implements OnInit {
 
   //uploading Image
   formTemplate = new FormGroup({
-    imageUrl: new FormControl()
+  imageUrl: new FormControl()
   })
 
 
@@ -77,7 +77,7 @@ export class ArticleAddComponent implements OnInit {
     let date = '';
     let venue = '';
     let contact = '';
-    let documentPath ;
+    let imageUrl ;
 
     this.route.params.subscribe((params: Params)=>{
           if(params['index']){
@@ -91,7 +91,7 @@ export class ArticleAddComponent implements OnInit {
             // date = article.date;
             venue = article.venue
             contact = article.contact;
-            documentPath = article.documentPath
+            imageUrl = article.imageUrl
             this.editMode = true;
 
           }
@@ -104,7 +104,7 @@ export class ArticleAddComponent implements OnInit {
       date: new FormControl(date, Validators.required),
      venue: new FormControl(venue, Validators.required),
      contact: new FormControl(contact, Validators.required),
-      documentPath: new FormControl(documentPath, Validators.required)
+      documentPath: new FormControl(imageUrl, Validators.required)
       }) 
 
   } 
@@ -119,7 +119,7 @@ export class ArticleAddComponent implements OnInit {
     const date = this.form.value.date;
     const venue= this.form.value.venue;
     const contact = this.form.value.contact;
-    const documentPath = this.form.value.documentPath;
+    const imageUrl = this.form.value.imageUrl;
 
 
     //Object
@@ -129,7 +129,7 @@ export class ArticleAddComponent implements OnInit {
       date,
       venue,
       contact,
-      documentPath,
+      imageUrl,
   
     );
 //Calling a service

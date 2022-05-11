@@ -14,16 +14,59 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+
+
+
 @Component({
   selector: 'app-admin-tender-description',
   templateUrl: './admin-tender-description.component.html',
   styleUrls: ['./admin-tender-description.component.css']
 })
 export class AdminTenderDescriptionComponent implements OnInit {
+tender!: AdminTender;
+@Input() index: number= 0 ;
 
-  constructor() { }
+  constructor (private activatedRoute: ActivatedRoute, private tenderService: TenderService, 
+     private breakpointObserver: 
+    BreakpointObserver, private backEndService: BackEndService,
+     private router: Router) 
+     {
+    activatedRoute.params.subscribe((params)=>{
+      if(params.index)
+      this.tender = tenderService.getTender(params.index);
+    })
+    
+   }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+   
+  
   }
+
+  @ViewChild('drawer') drawer: any;
+  public selectedItem: string = '';
+  public isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(map((result: BreakpointState) => result.matches));
+  closeSideNav() {
+    if (this.drawer._mode == 'over') {
+      this.drawer.close();
+    }
+    
+  }
+
+TenderEdit(){
+  this.router.navigate(["/tender-add", this.index]);
+  
+ }
+
+ TenderDelete(){
+  console.log("onDelete() called!!!")
+  this.tenderService.deleteTender(this.index);
+  this.backEndService.saveData();
+         
+         //Navigate to /tender-list
+         this.router.navigate(['/tender-list']);
+}
 
 }

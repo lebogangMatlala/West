@@ -288,9 +288,40 @@ margin-right: 45px;
   border-radius: 10px;
   
 }
-
-
 .status{
   width: 250px;
-  
+}
+
+.form-select-lg
+{
+  border-radius: 10px !important;
+  width: 250px !important;
+  text-align: center;
+}
+
+.form-select-lg:hover{
+  background-color: #bc9a2f !important;
+}
+select option:focus{
+  background-color: #bc9a2f !important
+}
+select option:hover{
+  background-color: #bc9a2f !important
+}
+
+select option:active{
+  background-color: #bc9a2f !important
+}
+
+select option:link{
+  background-color: #bc9a2f !important
+}
+select option:visited{
+  background-color: #bc9a2f !important
+}
+select option:focus{
+  background-color: #bc9a2f !important
+}
+.wrapper{
+  display: inline-block;
 }

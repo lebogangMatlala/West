@@ -59,6 +59,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDividerModule} from '@angular/material/divider';
+import { ImagesComponent } from './Admin/Components/images/images.component';
+import { ImageComponent } from './Admin/Components/images/image/image.component';
+import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
+
+
+
 
 
 
@@ -92,7 +98,13 @@ import {MatDividerModule} from '@angular/material/divider';
     AdminVacancyAddComponent,
     AdminVacancyDescriptionComponent,
     AdminVacancyListComponent,
-    LoginComponent
+    LoginComponent,
+    ImagesComponent,
+    ImageComponent,
+    ImageListComponent,
+    
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -115,7 +127,7 @@ import {MatDividerModule} from '@angular/material/divider';
 
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireModule.initializeApp(environment.firebaseTenders),
+     AngularFireModule.initializeApp(environment.firebaseTenders),
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatTabsModule,
