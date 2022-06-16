@@ -30,47 +30,28 @@
           <div class="example-button-row">
             <div class="example-flex-container">
               <div class="example-button-container">
-                <!-- <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a delete icon" routerLink="/history">
-                
-                  <img src="../../assets/Vector-6.png" class="icons01" alt="...">
-                  <h5>History</h5>
-                </button> -->
+              
+              
+            
               </div>
-              <div class="example-button-container">
-                <!-- <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a bookmark icon" routerLink="/tender-vaccancies">
-                  <img src="../../assets/Vector-1.png" class="icons01" alt="...">
-                  <h5>Tenders</h5>
-                </button> -->
-              </div>
-              <div class="example-button-container">
-                <!-- <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a home icon" routerLink="/councilors">
-                  <img src="../../assets/Group-1.png" class="icons01" alt="...">
-                  <h5>Councilors</h5>
-                </button> -->
+             
               </div>
 
             </div>
-          </div>
-          <div class="section02">
-            <!-- <button type="button" routerLinkActive="active" class="btn02" routerLink="/">What's New</button>
-            <button type="button" routerLinkActive="active" class="btn02" routerLink="/">Service Delivary</button>
-            <button type="button" routerLinkActive="active" class="btn02" routerLink="/contact">Contact Us</button> -->
-          </div>
+          
+        
 
-          <div class="section03">
-            
-            <!-- <p class="text03">Profile</p>
-            <p class="text03">T&C</p>
-            <p class="text03">FAQs</p> -->
+            <div class="section03">
+              
+              <hr class="line01" />
+              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
+                ><b>LOG OUT</b></a
+              >
+           
 
           </div>
           <div class="section05">
             <img src="../../assets/Group001.png" class="logo" alt="...">
-          </div>
-
-          <div class="section03">
-            <hr class="line01">
-            <a class="text03" routerLink="/login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
           </div>
 
 
@@ -84,7 +65,7 @@
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
-                
+                <a class="navbar-brand" href="#" style="font-size: 2.5em;">View Vacancies</a>
                 <a class="navbar-brand" href="#" style="font-size: 2.5em;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -108,10 +89,7 @@
           </div>
 
 
-          <div class="container">
-            <h1><b>Vacancies</b></h1>
-            <button class="btn-3" routerLink="/vacancy-add">ADD VACANCY</button>
-            </div>
+        
             <br>
           <div class="container">
 
@@ -135,8 +113,8 @@
 
                  
                 <section class="vacancy-section">
+                  
                 <app-admin-vacancy
-               
                 *ngFor="let vacancy of listOfVacancys; let i = index"
                 [vacancy]="vacancy"
                 [index]="i"

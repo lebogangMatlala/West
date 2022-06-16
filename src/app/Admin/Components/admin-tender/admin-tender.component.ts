@@ -13,7 +13,7 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Component({
+@Component({ 
   selector: 'app-admin-tender',
   templateUrl: './admin-tender.component.html',
   styleUrls: ['./admin-tender.component.css']
@@ -21,6 +21,7 @@ import { map } from 'rxjs/operators';
 export class AdminTenderComponent implements OnInit {
   @Input() tender?: AdminTender;
   @Input() index: number= 0 ;
+
 
   constructor(private tenderService: TenderService, private router: Router, private backEndService: BackEndService,private breakpointObserver: BreakpointObserver ) { }
 
@@ -38,20 +39,11 @@ export class AdminTenderComponent implements OnInit {
 
 
 
-  onDelete(){
-    console.log("onDelete() called!!!")
-    this.tenderService.deleteTender(this.index);
-    this.backEndService.saveData();
-  }
-onEdit(){
- this.router.navigate(["/tender-add", this.index]);
- 
-}
 
 
 onDisplay(){
   console.log('onDisplay() called!!!!!!')
-  this.router.navigate(["/tender-description", this.index]);
+  this.router.navigate(["/tender/", this.index]);
 }
 
 }

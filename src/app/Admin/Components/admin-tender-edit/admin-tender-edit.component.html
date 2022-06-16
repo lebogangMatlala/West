@@ -60,12 +60,61 @@
                     <div class="container">
                     <div class="row">
                     <div class="col-md-8">
-                        <h1 *ngIf="editMode === false"><b>Add New Tender</b></h1>
-                        <h1 *ngIf="editMode ===true"><b>EDIT TENDER</b></h1>
+
+
+
+
+
+                        
+                      <h1 *ngIf="editMode === false">Add New Tender</h1>
+                        <h1 *ngIf="editMode ===true">EDIT TENDER</h1>
+
+
+
+
                        
                          <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
                        
-                              <br>
+                            
+                              
+                              <div class="row">
+                                <div class="form-group col-lg-6">
+                                  <div class="form-group">
+                                    <h1>MOE</h1>
+                                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
+                                      <option selected></option>
+                                      <option value="1">Roads</option>
+                                      <option value="2">Fire & Rescue</option>
+                                      <option value="3">Protection Services</option>
+                                      <option value="4">Waste Management</option>
+                                      <option value="5">Electricity</option>
+                                      <option value="6">Water & Sanitation</option>
+                                      <option value="7">Community Services</option>
+                                    </select>
+                                 </div>
+                                 </div>
+                                 
+                                <div class="form-group col-lg-6">
+                                  <div class="form-group">
+                                    <h1>Tender Type</h1>
+                                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
+                                      <option selected></option>
+                                      <option value="1">Roads</option>
+                                      <option value="2">Fire & Rescue</option>
+                                      <option value="3">Protection Services</option>
+                                      <option value="4">Waste Management</option>
+                                      <option value="5">Electricity</option>
+                                      <option value="6">Water & Sanitation</option>
+                                      <option value="7">Community Services</option>
+                      
+                      
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+            
+
+              <br>
                         <div class="form-group col-lg-12">
                         <div class="form-group" >
                         <label>Title</label>
@@ -117,24 +166,12 @@
               </select>
               </div>
                     <br>
-                    <!-- <button class="btn  btn-success" (click)="addFile()" >Edit</button>  -->
+                   
                     <button id="btnsubscribe" class="btn form-control" (click)="addFile()" type="submit" >PUBLISH</button>
                     <div>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <!-- <form class="d-flex">
-                      </form> -->
-                      <div class="container">
-                        <div class="section04">
-                          <mat-tab-group mat-align-tabs="start">
-                            <mat-tab label="Tenders">
-                              <section class="example-section">
-                                <mat-checkbox class="example-margin">Open Tenders</mat-checkbox>
-                                <mat-checkbox class="example-margin" >Awarded Tenders</mat-checkbox>
-                                <mat-checkbox class="example-margin" >Closed Tenders</mat-checkbox>
-                                <mat-checkbox class="example-margin" >RFQ's</mat-checkbox>
-                                <mat-checkbox class="example-margin" >RFP's</mat-checkbox>
+                  
             
-                              </section>
+                              
 
 
 

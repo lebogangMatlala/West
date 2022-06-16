@@ -63,13 +63,13 @@ export class AdminVacancyAddComponent implements OnInit {
 
   ngOnInit(): void {
     let title ='';
+    let industry= '';
     let reference= '';
     let description= '';
-    let industry= '';
     let documentPath= '';
-    let DateOpenend;
+    let DateOpenend= '';
     let DateClosed;
-  
+
     this.route.params.subscribe((params: Params) => {
       if (params['index']){
         console.log(params['index']);
@@ -78,11 +78,11 @@ export class AdminVacancyAddComponent implements OnInit {
 
         const vacancy =this.vacancyService.getVac(this.index);
         title= vacancy.title;
+        industry= vacancy.industry;
         reference= vacancy.reference;
-        description= vacancy.description;
-        industry = vacancy.industry;
+        description = vacancy.description;
         documentPath=vacancy.documentPath;
-        DateOpenend=vacancy.DateOpenend;
+        DateClosed=vacancy.DateOpenend;
         DateClosed=vacancy.DateClosed;
        
     
@@ -95,9 +95,9 @@ export class AdminVacancyAddComponent implements OnInit {
     
       this.form = new FormGroup({
       title: new FormControl(title, [Validators.required]),
+      industry: new FormControl(industry, [Validators.required]),
       reference: new FormControl(reference, [Validators.required]),
       description: new FormControl(description, [Validators.required]),
-      industry: new FormControl(industry, [Validators.required]),
        documentPath: new FormControl(documentPath, [Validators.required]),
        DateOpenend: new FormControl([]),
        DateClosed: new FormControl(null, []),
@@ -105,18 +105,18 @@ export class AdminVacancyAddComponent implements OnInit {
   }
   onSubmit() {
     const title = this.form.value.title;
+    const industry = this.form.value.industry;
     const reference = this.form.value.reference;
     const description = this.form.value.description;
-    const industry = this.form.value.industry;
     const documentPath = this.form.value.documentPath;
     const DateOpenend = this.form.value.DateOpenend;
     const DateClosed = this.form.value.DateClosed;
 
     const vacancy: AdminVacancy = new AdminVacancy(
       title,
+      industry,
       reference,
       description,
-      industry,
       documentPath,
       DateOpenend,
       DateClosed,
@@ -137,7 +137,7 @@ export class AdminVacancyAddComponent implements OnInit {
          //Navigate to /tender-list
    this.router.navigate(['/vacancy-list']);
       }
-        @ViewChild('drawer') drawer: any;
+  @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
    public isHandset$: Observable<boolean> = this.breakpointObserver
      .observe(Breakpoints.Handset)

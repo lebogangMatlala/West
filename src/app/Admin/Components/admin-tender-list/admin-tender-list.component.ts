@@ -27,8 +27,7 @@ export class AdminTenderListComponent implements OnInit {
 
 ngOnInit(): void {
      this.onFetch();
-
-    this.listOfTenders = this.tenderService.getTenders();
+ this.listOfTenders = this.tenderService.getTenders();
 this.tenderService.listChangedEvent.subscribe((listOfTenders: AdminTender[])=>{
   this.listOfTenders = this.tenderService.getTenders();
 
