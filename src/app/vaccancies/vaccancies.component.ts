@@ -15,18 +15,40 @@ import { SenderService } from '../shared/sender-services/sender.service';
 })
 export class VaccanciesComponent implements OnInit {
 
-  vacancyInfo?:[];
-  index:any;
+  vacancyInfo?: [];
+  vacancies?: Vacancy[];
+  index: any;
+  listofVacancies?: any;
+  vacanciesInfo?: Vacancy;
 
   constructor(private breakpointObserver: BreakpointObserver,
     public senderService: SenderService,
     private _router: Router,
-    public tenderService:TenderService) { }
+    public tenderService: TenderService) { }
 
   ngOnInit(): void {
-    this.index=this.senderService.getIndex();
+    this.index = this.senderService.getIndex();
     console.log(this.index);
     console.log(this.tenderService.getVacancy(this.index));
+    this.listofVacancies = this.vacancies;
+    console.log(this.listofVacancies);
+    this.retrieveVacancies()
+    this.vacanciesInfo=this.senderService.getVacancyInfo();
+    console.log(this.vacanciesInfo);
+  }
+
+  //retrieve vacancies
+  retrieveVacancies(): void {
+    this.tenderService.getAllVacancies().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.vacancies = data;
+      console.log("This is the vacancies data" + this.vacancies)
+    });
   }
 
   @ViewChild('drawer') drawer: any;
@@ -39,5 +61,7 @@ export class VaccanciesComponent implements OnInit {
       this.drawer.close();
     }
   }
+
+ 
 
 }

@@ -1,3 +1,5 @@
+import { ModelFormComponent } from './model-form/model-form.component';
+import { ArticlePageComponent } from './article-page/article-page.component';
 import { VaccanciesComponent } from './vaccancies/vaccancies.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
 import { ContactComponent } from './contact/contact.component';
@@ -15,7 +17,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AdminDashboardComponent } from './Admin/Components/admin-dashboard/admin-dashboard.component';
 import { ArticleComponent } from './Admin/Components/article/article.component';
 import { ArticleAddComponent } from './Admin/Components/article-add/article-add.component';
-import { ArticleDescriptionComponent } from './Admin/Components/article-description/article-description.component';
+
 import { ArticleListComponent } from './Admin/Components/article-list/article-list.component';
 import { AdminTenderComponent } from './Admin/Components/admin-tender/admin-tender.component';
 import { AdminTenderDescriptionComponent } from './Admin/Components/admin-tender-description/admin-tender-description.component';
@@ -30,6 +32,9 @@ import { AdminVacancyListComponent } from './Admin/Components/admin-vacancy-list
 // import { AuthGuard } from './shared/guard/auth.guard';
 import { TendersVaccanciesComponent } from './tenders-vaccancies/tenders-vaccancies.component';
  import { LoginComponent } from './Admin/Components/login/login.component';
+import { UserArticleDesComponent } from './user-article-des/user-article-des.component';
+import { ArticleDescriptionComponent } from './Admin/Components/article-description/article-description.component';
+import { UserTenderDesComponent } from './user-tender-des/user-tender-des.component';
 
 
 const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -45,7 +50,10 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'contact', component: ContactComponent},
 { path: 'tender-vaccancies', component: TendersVaccanciesComponent },
 { path: 'vaccancy-description', component: VaccanciesComponent },
-
+{ path: 'article-page', component: ArticlePageComponent },
+{ path: 'user_article_descrip', component: UserArticleDesComponent },
+{ path: 'user_tender_descrip', component: UserTenderDesComponent },
+{ path: 'user_modal', component: ModelFormComponent },
  {path:'admin-login',component: LoginComponent},
 {path: 'home',component: HomeComponent},
 

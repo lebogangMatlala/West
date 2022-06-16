@@ -83,7 +83,7 @@
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/menu"></i>
-                <a class="navbar-brand" href="#" style="font-size: 2.5em;">Vaccancy Title</a>
+                <a class="navbar-brand" href="#" style="font-size: 2.5em;">{{vacanciesInfo?.title}}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
@@ -102,15 +102,15 @@
             <div class="section04">
               <div class="row">
                 <div class="col-1 col-sm-10">
-                  <p class="text04">Ref No. : <span class="boulded">BID NO: SCM 25/2022</span> | Date Opened : <span class="boulded">25-02-2022</span>
+                  <p class="text04">Ref No. : <span class="boulded">{{vacanciesInfo?.reference}}</span> | Date Opened : <span class="boulded">{{vacanciesInfo?.DateOpenend}}</span>
                   </p>
-                  <p class="text05">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <button type="button" class="button02">APPLY FOR A JOB</button>
+                  <p class="text05">{{vacanciesInfo?.description}}</p>
+                  <button routerLink="/user_modal" type="button" class="button02">APPLY FOR A JOB</button>
                 </div>
               </div>
               <hr style="height:2px; width:100%; border-width:0; color:rgb(59, 58, 58); background-color:rgb(59, 58, 58)">
               <p class="text04">Status : OPEN</p>
-              <p class="text04">Closing Date : <span class="boulded">25-03-2022</span> </p>
+              <p class="text04">Closing Date : <span class="boulded">{{vacanciesInfo?.DateClosed}}</span> </p>
               <!-- <div *ngFor="let tender of tenderdata; let i = index" (click)="senderService. setTenderName(tender.name)" routerLink="/tender-vaccancies">
                 <h2 #name class="tender-name">
                   {{ tender.name }}

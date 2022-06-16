@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SenderService } from '../shared/sender-services/sender.service';
 import { Router } from '@angular/router';
-
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-menu-page',
@@ -22,6 +22,9 @@ export class MenuPageComponent implements OnInit {
   name?:string="";
 
   message = "hey i am data from menu"
+
+  term!: string;
+
   constructor(private breakpointObserver: BreakpointObserver,
     public senderService: SenderService,
     private _router: Router) { }
@@ -29,6 +32,7 @@ export class MenuPageComponent implements OnInit {
   ngOnInit(): void {
     this.tenderdata = this.senderService.tenders;
     this.senderService.setMessage(this.message);
+
   }
 
   @ViewChild('drawer') drawer: any;
@@ -45,7 +49,6 @@ export class MenuPageComponent implements OnInit {
   navigateToNextPage(_name: any)
   {
     this._router.navigate(['tender-vaccancies'])
-
     console.log(_name)
     this.senderService.setTenderName(_name)
   }
@@ -53,7 +56,6 @@ export class MenuPageComponent implements OnInit {
   getIndex(_index:any)
   {
     this._router.navigate(['tender-vaccancies'])
-
     console.log(_index)
     this.senderService.setIndex(_index)
   }

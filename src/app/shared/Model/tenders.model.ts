@@ -1,4 +1,6 @@
 export class Tenders {
+  key?:any;
+  tenderType?: string;
   title?: string;
   reference?: string;
   description?: string;
@@ -6,5 +8,6 @@ export class Tenders {
   documentPath?: string;
   DateOpenend?: Date;
   DateClosed?: Date;
+
 
 }
