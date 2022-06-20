@@ -166,12 +166,7 @@ mat-drawer-content{
 
 }
 
-/* .section03{
-  margin-top: 20%;
-  margin-right: 80%;
-  margin-bottom: 0px;
-  color: #f1f1f1;
-} */
+
 .section04{
   margin-top: -20em;
 }
@@ -182,9 +177,9 @@ mat-drawer-content{
   height: 2px;
   background-color: rgb(255, 255, 255);
   border: none;
-  margin-left: 30%;
-  margin-right: 40%;
-  width: 5em;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 10.3em;
 }
 svg{
   color: white;
@@ -229,7 +224,7 @@ svg{
 }
 .section03{
   margin-top: 35em;
-  margin-right: 70%;
+  margin-right: 15%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
@@ -416,6 +411,16 @@ select option:focus{
 .h4 {
   text-align: right
 }
+
+.material-icons-round{
+  color: #bc9a2f;
+  transform: rotate(180deg);
+  padding-left: 25px;
+  padding-bottom: 1.3em;
+}
+
+
+
 
 
 

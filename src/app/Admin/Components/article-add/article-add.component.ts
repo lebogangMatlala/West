@@ -13,6 +13,7 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/storage';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-article-add',
@@ -64,7 +65,9 @@ export class ArticleAddComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private storage: Storage,
-    private backEndService: BackEndService) { }
+    private backEndService: BackEndService,
+    private authService: AuthenticationService
+    ) { }
 
 
 
@@ -77,7 +80,7 @@ export class ArticleAddComponent implements OnInit {
     let date = '';
     let venue = '';
     let contact = '';
-    let imageUrl ;
+    let imageUrl='' ;
 
     this.route.params.subscribe((params: Params)=>{
           if(params['index']){
@@ -137,7 +140,8 @@ export class ArticleAddComponent implements OnInit {
 
 //condition to either add or edit
 if(this.editMode){
-  this.articleService.updateArticle(this.index, article)
+  this.articleService.updateArticle(this.index, article);
+  this.backEndService.SaveArticle();
 }else{
   this.articleService.addArticle(article);
   console.log("SaveArticle() called!!!! ");
@@ -146,10 +150,7 @@ if(this.editMode){
 this.router.navigate(['/article-list']); 
 
 
-//Uploading a picture Article
-
-
-               
+//Uploading a picture Article               
   }
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
@@ -161,6 +162,4 @@ this.router.navigate(['/article-list']);
       this.drawer.close();
     }
   }
-
-  
 }

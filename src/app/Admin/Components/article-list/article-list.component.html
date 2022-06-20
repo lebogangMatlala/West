@@ -31,8 +31,12 @@
 
           <div class="section03">
             <hr class="line01" />
-            <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
-              ><b>LOG OUT</b></a
+            <mat-icon class='material-icons-round' routerLink="/admin-login">logout</mat-icon>
+            
+            <a class="text03" routerLink="/admin-login" style="color: #bc9a2f">
+             
+              <b>LOG OUT</b></a
+
             >
           </div>
 
@@ -90,9 +94,15 @@
 
           <br>
           <div class="container">
+            
               
-                <button class="btn-3" routerLink="/article-add">ADD</button>
+                <button class="btn-3" mat-stroked-button routerLink="/article-add">
+                  ADD
+                  <mat-icon>note_add</mat-icon>
+
+                </button>
                 </div>
+                
             <div class="section04">
             </div>
             <div class="container">

@@ -16,31 +16,19 @@ export class ArticleComponent implements OnInit {
   constructor( private articleService: ArticleService, private router: Router, private backendService: BackEndService, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
-  //   console.log(this.article);
-  //   console.log(this.index);
 
-  //   this.route.params.subscribe((params: Params)=>{
-  //     if(params['index']){
-  //       console.log(params['index']);
-
-
-  //       this.index = params['index'];
-        
-  //       const article =this.articleService.getEdit(this.index);
-  //     }
-  //   });
  }
   onDelete(){
     console.log("onDelete()!!!!!!!!")
     this.articleService.deleteArticle(this.index);
   }
-  onEdit(){
+  ArticleEdit(){
     this.router.navigate(["/article-edit", this.index])
   }
 
   onDisplay(){
     console.log("onDisplay() called!!!!");
-    this.router.navigate(['/tender-description', this.index ])
+    this.router.navigate(['/article-description', this.index ])
   }
 
 

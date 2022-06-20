@@ -11,6 +11,7 @@ import { Article } from 'src/app/Admin/Models/admin-article-model';
 import { ArticleService } from "src/app/Admin/Services/article.services";
 import { BackEndService } from 'src/app/Admin/Services/back-end.services';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-article-list',
@@ -19,7 +20,14 @@ import { Router } from '@angular/router';
 })
 export class ArticleListComponent implements OnInit {
 listOfArticles: Article[]=[];
-  constructor(private breakpointObserver: BreakpointObserver, private articleService: ArticleService, private backEndService: BackEndService) { }
+
+
+user$ = this.authService.currentUser$;
+  constructor(private breakpointObserver: BreakpointObserver,
+     private articleService: ArticleService,
+     private backEndService: BackEndService,
+     private authService: AuthenticationService
+     ) { }
   onFetch(){
     console.log('onFetch() Called!!!!!!!');
     this.backEndService.fetchArticle();

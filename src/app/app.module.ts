@@ -59,9 +59,28 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
 import { ImagesComponent } from './Admin/Components/images/images.component';
 import { ImageComponent } from './Admin/Components/images/image/image.component';
 import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { AdminFeedbackComponent } from './Admin/Components/admin-feedback/admin-feedback.component';
+import { AdminSubmissionComponent } from './Admin/Components/admin-submission/admin-submission.component';
+import { AdminVacancyEditComponent } from './Admin/Components/admin-vacancy-edit/admin-vacancy-edit.component';
+
+import { AddVancancyComponent } from './Admin/Components/add-vancancy/add-vancancy.component';
+import { ListVancancyComponent } from './Admin/Components/list-vancancy/list-vancancy.component';
+import { ListingsComponent } from './Admin/Components/listings/listings.component';
+import { ListingComponent } from './Admin/Components/listing/listing.component';
+import { AddListingComponent } from './Admin/Components/add-listing/add-listing.component';
+import { FirebaseService } from './Admin/Services/firebase.service';
+import { UploadFormComponent } from './Admin/Components/upload-form/upload-form.component';
+import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
+
+
+
 
 
 
@@ -102,6 +121,19 @@ import { ImageListComponent } from './Admin/Components/images/image-list/image-l
     ImagesComponent,
     ImageComponent,
     ImageListComponent,
+    AdminFeedbackComponent,
+    AdminSubmissionComponent,
+    AdminVacancyEditComponent,
+    
+    AddVancancyComponent,
+    ListVancancyComponent,
+    ListingsComponent,
+    ListingComponent,
+    AddListingComponent,
+    UploadFormComponent,
+    BiddersComponent,
+    
+    
     
     
     
@@ -121,13 +153,16 @@ import { ImageListComponent } from './Admin/Components/images/image-list/image-l
     MatDatepickerModule,
     ReactiveFormsModule,
     FirestoreModule,
+    MatDialogModule,
     AngularFireStorageModule,
     MatSidenavModule,
     MatGridListModule,
+    MatSelectModule,
+    
 
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-     AngularFireModule.initializeApp(environment.firebaseTenders),
+     
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatTabsModule,
@@ -148,9 +183,11 @@ provideFirestore(() => getFirestore()),
  AngularFireStorageModule,
 
  HotToastModule.forRoot(),
+   NgbModule,
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

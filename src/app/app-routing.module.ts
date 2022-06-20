@@ -33,6 +33,19 @@ import { TendersVaccanciesComponent } from './tenders-vaccancies/tenders-vaccanc
 import { ImagesComponent } from './Admin/Components/images/images.component';
 import { ImageComponent } from './Admin/Components/images/image/image.component';
 import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
+import { AdminFeedbackComponent } from './Admin/Components/admin-feedback/admin-feedback.component';
+import { AdminSubmissionComponent } from './Admin/Components/admin-submission/admin-submission.component';
+import { AdminVacancyEditComponent } from './Admin/Components/admin-vacancy-edit/admin-vacancy-edit.component';
+
+import { AddVancancyComponent } from './Admin/Components/add-vancancy/add-vancancy.component';
+import { ListVancancyComponent } from './Admin/Components/list-vancancy/list-vancancy.component';
+import { ListingsComponent } from './Admin/Components/listings/listings.component';
+import { ListingComponent } from './Admin/Components/listing/listing.component';
+import { AddListingComponent } from './Admin/Components/add-listing/add-listing.component';
+import { UploadFormComponent } from './Admin/Components/upload-form/upload-form.component';
+import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
+
+
 
 
 
@@ -72,6 +85,13 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
   path: 'tender/:index',
   component: AdminTenderDescriptionComponent
 },
+
+{
+  path: 'bidder/:index',
+  component: BiddersComponent
+},
+
+
 {
   path: 'tender-list',
   component: AdminTenderListComponent
@@ -92,10 +112,7 @@ path: 'tender',
 component: AdminTenderComponent
 },
 
-// {
-//   path: 'tender-description/:index',
-//   component: AdminTenderDescriptionComponent
-// },
+
 
     {
       path: 'tender-description',
@@ -115,14 +132,12 @@ component: AdminTenderComponent
 },
 {
   path: 'vacancy-list',
-  component: AdminVacancyListComponent
+  component: ListVancancyComponent
 },
-
 {
-  path: 'vacancy-add',
-  component: AdminVacancyAddComponent
+  path: 'add-vacancy',
+  component: AdminVacancyEditComponent
 },
-
 {
   path: 'article-add',
   component: ArticleAddComponent
@@ -135,10 +150,62 @@ component: AdminTenderComponent
   path: 'article',
   component: ArticleComponent
 },
+
 {
   path: 'article-description/:index',
   component: ArticleDescriptionComponent
 },
+
+{
+  path: 'vacancy-description/:index',
+  component: AdminVacancyDescriptionComponent
+},
+{
+  path: 'Admin-Feedback',
+  component: AdminFeedbackComponent
+},
+
+{
+  path: 'Admin-submission',
+  component: AdminSubmissionComponent
+},
+{
+  path: 'Admin-Vacancy-list',
+  component: AdminVacancyListComponent
+},
+
+
+{
+  path: 'listings',
+  component: ListingsComponent
+},
+
+{
+  path: 'listing',
+  component: ListingComponent
+},
+{
+  path: 'Add-Listing',
+  component: AddListingComponent
+},
+
+
+{
+  path: 'Upload-Form',
+  component: UploadFormComponent
+},
+
+
+{
+  path: 'admin-vacancy-add',
+  component: AdminVacancyAddComponent
+},
+{
+  path: 'tender/:index',
+  component: BiddersComponent
+},
+
+
 ];
 
 

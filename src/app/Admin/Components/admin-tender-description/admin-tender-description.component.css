@@ -38,12 +38,12 @@
       height: 100%;
     }
     .section05{
-      margin-top: 20%;
+      margin-top: 25%;
     }
-    .logo{
-      padding-top: 60%;
-      width: 60px;
-    }
+   .logo{
+    padding-top: 60%;
+    width: 60px;
+  }
     mat-sidenav{
       background-image: radial-gradient(
       farthest-corner at 5px -20%,
@@ -118,7 +118,7 @@
     width: 120px;
   }
   .logo{
-    width: 80px;
+    width: 100px;
     margin-top: -30px;
     margin-left: 50%;
   }
@@ -187,11 +187,12 @@
   }
   
   .section03{
-    margin-top: 200%;
-    margin-right: 55%;
+    margin-top: 35em;
+    margin-right: 15%;
     margin-bottom: 0px;
     color: #f1f1f1;
   }
+  
   .section04{
     margin-top: -4em;
     margin-left: 30px;
@@ -209,17 +210,23 @@
     font-weight: bold;
   }
   .line01{
-    display: inline-block;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    height: 1px;
-    color: #ffffff;
+    height: 2px;
     background-color: rgb(255, 255, 255);
     border: none;
-    margin-left: 30%;
-    margin-right: 30%;
-    width: 100%;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 10.3em;
   }
+
+  .material-icons-round{
+    color: #bc9a2f;
+    transform: rotate(180deg);
+    padding-left: 25px;
+    padding-bottom: 1.3em;
+  }
+
   .text01{
     margin-top: 25px;
     margin-bottom: 2px;
@@ -244,6 +251,7 @@
   .navbar-brand{
     color: black;
     margin-top: 0px;
+    
   }
   .btn{
     width: 8%;
@@ -259,7 +267,8 @@
   }
   
   .section05{
-    margin-top: 15%;
+    margin-top: 7em;
+    margin-left: 2.5em;
   }
   svg{
     color: white;
@@ -290,7 +299,7 @@
 }
 .button01{
   border-radius: 10px;
-  width: 500px;
+ 
   height: 50px;
   margin-top:6%;
   margin-left: 20px;
@@ -302,14 +311,10 @@
 
 
 
-/* Edit button */
-.icon-edit{
 
-
-}
 .button03{
   border-radius: 10px;
-  width: 500px;
+
   height: 50px;
   margin-top:6%;
   margin-left: 20px;
@@ -324,5 +329,54 @@
   border-radius: 10px;
   height: 25px;
   margin-bottom: 35px;
-  
+}
+
+.inline{display:inline}
+
+.header button {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+
+.main {
+  width: 200px;
+  border: 1px dotted black;
+  display:flex;
+  justify-content:space-between
+
+}
+h1 {
+  margin: 0;
+  padding-right: 25px;
+  display: inline-block;
+}
+.btn-3{
+  background-color: #bc9a2f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  width: 90px;
+  height: 35px;
+}
+
+
+.open{
+  color: green;
+}
+
+.pending{
+  color: green;
+}
+
+.closed{
+  color: red;
 }

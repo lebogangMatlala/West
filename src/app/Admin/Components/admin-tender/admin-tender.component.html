@@ -28,15 +28,18 @@
                 <div class="col-5 col-sm-3">
                     {{tender?.DateClosed  | date: 'dd-MM-yy'}}
                 </div>
-
+                <div class="col-5 col-sm-2" style="color: #bc9a2f">
+                  Feed<br> Back
+                  <div class="vertical"></div>
+                </div>
               </div>
 
             </div>
 
           </div>
           <div class="section-text" align="end">
-            <div class="" style="color: green;">
-             open
+            <div class="">
+              {{tender?.status}}
             </div>
           </div>
 

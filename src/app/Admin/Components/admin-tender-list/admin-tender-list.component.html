@@ -42,14 +42,16 @@
         
 
             <div class="section03">
-              
               <hr class="line01" />
-              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
-                ><b>LOG OUT</b></a
-              >
+              <mat-icon class='material-icons-round' routerLink="/admin-login">logout</mat-icon>
+              
+              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f">
+               
+                <b>LOG OUT</b></a>
+            </div>
      
 
-          </div>
+          
           <div class="section05">
             <img src="../../assets/Group001.png" class="logo" alt="...">
           </div>
@@ -146,7 +148,7 @@
                   <section class="vacancy-section">
 
                 <app-admin-tender
-                *ngFor="let tender of listOfTenders; let i = index"
+                *ngFor="let tender of listOfTenders; let i = index;"
                 
                 [tender]="tender"
                 [index]="i"
@@ -155,7 +157,13 @@
                      
               </section>
                
-
+              <app-bidders
+              *ngFor="let bidder of listOfBidders; let i = index let f=first"
+              [ngClass]="{opened: f}"
+              [bidder]="bidder"
+              [index]="i"
+              
+            ></app-bidders>
               
             </div>
           </div>

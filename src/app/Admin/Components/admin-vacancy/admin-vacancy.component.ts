@@ -13,6 +13,10 @@ import { map } from 'rxjs/operators';
 import { AdminVacancy } from 'src/app/Admin/Models/admin-vacancy-model';
 import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
 
+import { FileUpload } from 'src/app/Admin/Models/vacancy-upload-model';
+import { FileUploadService } from 'src/app/Admin/Services/file-upload.service';
+
+
 @Component({
   selector: 'app-admin-vacancy',
   templateUrl: './admin-vacancy.component.html',
@@ -21,11 +25,20 @@ import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
 export class AdminVacancyComponent implements OnInit {
   @Input() vacancy?: AdminVacancy;
   @Input() index: number= 0 ;
-  constructor(private vacancyService: VacancyService, private router: Router, private backEndService: BackEndService,private breakpointObserver: BreakpointObserver) { }
+  @Input() fileUpload!: FileUpload;
+
+
+
+  
+
+  constructor(private vacancyService: VacancyService, private router: Router, private backEndService: BackEndService,private breakpointObserver: BreakpointObserver, private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
     console.log(this.vacancy);
     console.log(this.index);
+  }
+  deleteFileUpload(fileUpload: FileUpload): void{
+    this.uploadService.deleteFile(fileUpload);
   }
   @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
@@ -46,8 +59,8 @@ export class AdminVacancyComponent implements OnInit {
   
   
   onDisplay(){
-    console.log('onDisplay() called!!!!!!')
-    this.router.navigate(["/tender-description", this.index]);
+   
+    this.router.navigate(["/vacancy-description", this.index]);
   }
   
   

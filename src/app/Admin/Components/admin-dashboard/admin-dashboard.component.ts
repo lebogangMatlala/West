@@ -8,6 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -16,7 +17,11 @@ import { Router } from '@angular/router';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(private breakpointObserver: BreakpointObserver,  private router: Router) { }
+
+  user$ = this.authService.currentUser$;
+  constructor(private breakpointObserver: BreakpointObserver,  
+    private authService: AuthenticationService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }

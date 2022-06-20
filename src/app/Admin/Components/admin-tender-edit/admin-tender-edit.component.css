@@ -23,7 +23,7 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
   height: 50px;
   font-size:16px;
 }
-mat-sidenav{
+.mat-sidenav{
   width: 15%;
   height: 100%;
   display: flex;
@@ -188,6 +188,7 @@ mat-drawer-content{
 
 .navbar-brand{
   color: black;
+  margin: bottom 0px;
 }
 .btn{
   width: 35%;
@@ -292,6 +293,10 @@ margin-right: 45px;
   width: 250px;
 }
 
+.tender-type{
+  width: 235px;
+}
+
 .form-select-lg
 {
   border-radius: 10px !important;
@@ -324,4 +329,47 @@ select option:focus{
 }
 .wrapper{
   display: inline-block;
+}
+
+.status{
+  font-weight: bold;
+  border-radius: 10px;
+  height: 25px;
+  margin-bottom: 35px;
+  
+}
+.department{
+  font-weight: bold;
+  border-radius: 10px;
+  height: 25px;
+  width: 250px;
+ 
+}
+
+.tender-type{
+  font-weight: bold;
+  border-radius: 10px;
+  height: 25px;
+  margin: bottom 0px;
+}
+
+.moe{
+  font-weight: bold;
+  border-radius: 10px;
+  height: 25px;
+  width: 250px;
+  margin: bottom 0px;
+  
+}
+
+.tender-type{
+  font-weight: bold;
+  border-radius: 10px;
+  height: 25px;
+  
+}
+.user-name{
+
+ width: 880px;
+padding-left: 610px; 
 }

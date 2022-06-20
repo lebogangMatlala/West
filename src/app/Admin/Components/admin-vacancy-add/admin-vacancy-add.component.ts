@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BackEndService } from 'src/app/Admin/Services/back-end.services';
-// import { TenderService } from 'src/app/services/tender.services';
+
 import { AdminVacancy } from 'src/app/Admin/Models/admin-vacancy-model';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
@@ -17,6 +17,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
 import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/storage';
+import { FileUpload } from '../../Models/vacancy-upload-model';
+import { FileUploadService } from '../../Services/file-upload.service';
 
 @Component({
   selector: 'app-admin-vacancy-add',
@@ -24,6 +26,13 @@ import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/
   styleUrls: ['./admin-vacancy-add.component.css']
 })
 export class AdminVacancyAddComponent implements OnInit {
+
+//Testing
+selectedFiles?: FileList;
+currentFileUpload?: FileUpload;
+percentage = 0;
+
+
   form!: FormGroup;
   index: number = 0;
   editMode = false;
@@ -51,6 +60,8 @@ export class AdminVacancyAddComponent implements OnInit {
   }
 
   
+
+  
   constructor(
     private vacancyService: VacancyService,
     private router: Router,
@@ -58,6 +69,7 @@ export class AdminVacancyAddComponent implements OnInit {
     private backEndService: BackEndService,
     private breakpointObserver: BreakpointObserver,
     private storage: Storage,
+    private uploadService: FileUploadService
 
   ) { }
 
@@ -103,6 +115,7 @@ export class AdminVacancyAddComponent implements OnInit {
        DateClosed: new FormControl(null, []),
     });
   }
+
   onSubmit() {
     const title = this.form.value.title;
     const industry = this.form.value.industry;
@@ -135,8 +148,40 @@ export class AdminVacancyAddComponent implements OnInit {
    this.backEndService.SaveVacancy();
         }
          //Navigate to /tender-list
-   this.router.navigate(['/vacancy-list']);
+  //  this.router.navigate(['/vacancy-list']);
       }
+
+ //Testing
+
+//  selectFile(event: any): void{
+//   this.selectedFiles = event.target.files;
+// }
+// upload(): void{
+//   if (this.selectedFiles){
+// const file: File | null = this.selectedFiles.item(0);
+// this.selectedFiles = undefined;
+// if(file){
+//   this.currentFileUpload = new FileUpload(file);
+//   this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+//     percentage =>{
+//       this.percentage = Math.round(percentage? percentage: 0);
+//     },
+
+// error => console.log(error)
+    
+    
+//   )
+// }
+//   }
+// }
+
+
+
+
+
+
+
+
   @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
    public isHandset$: Observable<boolean> = this.breakpointObserver

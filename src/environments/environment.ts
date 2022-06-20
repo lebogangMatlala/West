@@ -4,7 +4,7 @@
 
 export const environment = {
 
-  production: false,
+  production: true,
   firebase: {
     projectId: 'beaufort-west',
     appId: '1:156712925641:web:bfd6ec860ed75b59e95018',
@@ -15,17 +15,18 @@ export const environment = {
     authDomain: 'beaufort-west.firebaseapp.com',
     messagingSenderId: '156712925641',
   },
+}
 
-  firebaseTenders : {
-    apiKey: "AIzaSyBpuuhZ6wIn7osH2mw0VkrB-jgrexcFQao",
-    authDomain: "beaufort-west.firebaseapp.com",
-    databaseURL: "https://beaufort-west-default-rtdb.firebaseio.com",
-    projectId: "beaufort-west",
-    storageBucket: "beaufort-west.appspot.com",
-    messagingSenderId: "156712925641",
-    appId: "1:156712925641:web:8c9dbf181798e53be95018"
-  }
-};
+//   firebaseTenders : {
+//     apiKey: "AIzaSyBpuuhZ6wIn7osH2mw0VkrB-jgrexcFQao",
+//     authDomain: "beaufort-west.firebaseapp.com",
+//     databaseURL: "https://beaufort-west-default-rtdb.firebaseio.com",
+//     projectId: "beaufort-west",
+//     storageBucket: "beaufort-west.appspot.com",
+//     messagingSenderId: "156712925641",
+//     appId: "1:156712925641:web:8c9dbf181798e53be95018"
+//   }
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file

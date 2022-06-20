@@ -15,6 +15,8 @@ import {
 } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Bidder } from '../../Models/admin-bidder-model';
+import { SubmissionService } from '../../Services/submission.service';
 
 @Component({
   selector: 'app-admin-tender-list',
@@ -23,13 +25,30 @@ import { map } from 'rxjs/operators';
 })
 export class AdminTenderListComponent implements OnInit {
   listOfTenders: AdminTender[] = [];
-  constructor(private tenderService: TenderService, private backEndService: BackEndService, private breakpointObserver: BreakpointObserver) {}
+
+  //bidders
+  listOfBidders: Bidder[] = [];
+
+
+  constructor(private tenderService: TenderService,
+     private backEndService: BackEndService, 
+    private breakpointObserver: BreakpointObserver,
+    private submissionService: SubmissionService
+    ) {}
 
 ngOnInit(): void {
      this.onFetch();
  this.listOfTenders = this.tenderService.getTenders();
 this.tenderService.listChangedEvent.subscribe((listOfTenders: AdminTender[])=>{
   this.listOfTenders = this.tenderService.getTenders();
+
+    
+    this.listOfBidders = this.submissionService.getBidders();
+   this.submissionService.listChangedEvent.subscribe((listOfBidders: Bidder[])=>{
+     this.listOfBidders = this.submissionService.getBidders();
+   
+    }
+    )
 
  
 }
@@ -48,6 +67,22 @@ this.tenderService.listChangedEvent.subscribe((listOfTenders: AdminTender[])=>{
     console.log("onfetch() called!!!!");
     this.backEndService.fetchdata();
   }
+
+
+  saveBidder(){
+    console.log("onSave() called!!!! ");
+    this.backEndService.saveBidder();
+
+  }
+
+  fetchBidder(){
+    console.log("onfetch() called!!!!");
+    this.backEndService.fetchBidder;
+  }
+
+
+
+
 
   @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';

@@ -15,6 +15,7 @@ import {
 } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthenticationService } from '../../Services/authentication.service';
 @Component({
   selector: 'app-admin-tender-edit',
   templateUrl: './admin-tender-edit.component.html',
@@ -27,6 +28,9 @@ export class AdminTenderEditComponent implements OnInit {
   public file: any={}
 
 
+  isSubmitted: boolean = false;
+
+  user$ = this.authService.currentUser$;
   constructor(
     private tenderService: TenderService,
     private router: Router,
@@ -34,6 +38,7 @@ export class AdminTenderEditComponent implements OnInit {
     private backEndService: BackEndService,
     private breakpointObserver: BreakpointObserver,
     private storage: Storage,
+    private authService: AuthenticationService
   ) {}
 
   chooseFile(event: any){
@@ -57,7 +62,9 @@ export class AdminTenderEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let moe='';
     let tenderType='';
+    let department='';
     let title ='';
     let reference= '';
     let description= '';
@@ -74,12 +81,14 @@ export class AdminTenderEditComponent implements OnInit {
         this.index = params['index'];
 
         const tender =this.tenderService.getTender(this.index);
+        moe = tender.moe,
         tenderType = tender.tenderType,
+        department = tender.department,
         title= tender.title;
         reference= tender.reference;
         description= tender.description;
         status = tender.status;
-         documentPath=tender.documentPath;
+         documentPath=tender.documenturl;
          DateClosed=tender.DateOpenend;
          DateClosed=tender.DateClosed;
         
@@ -91,18 +100,25 @@ export class AdminTenderEditComponent implements OnInit {
     });
     
       this.form = new FormGroup({
+        moe: new FormControl(moe, [Validators.required]),
         tenderType: new FormControl(tenderType, [Validators.required]),
+        department: new FormControl(department, [Validators.required]),
       title: new FormControl(title, [Validators.required]),
       reference: new FormControl(reference, [Validators.required]),
       description: new FormControl(description, [Validators.required]),
       status: new FormControl(status, [Validators.required]),
-       documentPath: new FormControl(documentPath, [Validators.required]),
+      documenturl: new FormControl(documentPath, [Validators.required]),
       DateOpenend: new FormControl([]),
       DateClosed: new FormControl(null, []),
     });
   }
   onSubmit() {
+
+    this.isSubmitted=true;
+
+    const moe = this.form.value.moe;
     const tenderType = this.form.value.tenderType;
+    const department = this.form.value.departmnet;
     const title = this.form.value.title;
     const reference = this.form.value.reference;
     const description = this.form.value.description;
@@ -112,7 +128,9 @@ export class AdminTenderEditComponent implements OnInit {
     const DateClosed = this.form.value.DateClosed;
 
     const tender: AdminTender = new AdminTender(
+      moe,
       tenderType,
+      department,
       title,
       reference,
       description,
@@ -139,6 +157,11 @@ export class AdminTenderEditComponent implements OnInit {
          //Navigate to /tender-list
    this.router.navigate(['/tender-list']);
       }
+
+
+     get formControls(){
+        return this.form['controls']
+      }
         @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
    public isHandset$: Observable<boolean> = this.breakpointObserver
@@ -147,7 +170,6 @@ export class AdminTenderEditComponent implements OnInit {
 
 
    
-
  closeSideNav() {
    if (this.drawer._mode=='over') {
      this.drawer.close();
