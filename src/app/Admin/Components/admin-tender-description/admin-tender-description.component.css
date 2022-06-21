@@ -1,0 +1,382 @@
+.sidenav-container {
+    height: 100vh;
+  }
+  .sidenav {
+    width: 220px;
+  }
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+  
+  }
+  .mat-toolbar {
+    height: 50px;
+    font-size:16px;
+  }
+  
+  mat-sidenav{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border-bottom-right-radius: 180px 750px; */
+    background-image: radial-gradient(
+      farthest-corner at 5px -20%,
+      #333333 78%,
+      #ffffff 20%
+    );
+  }
+  
+  @media screen and (max-width:600px) {
+    mat-sidenav{
+      width: 60%;
+      height: 100%;
+    }
+    .section05{
+      margin-top: 25%;
+    }
+   .logo{
+    padding-top: 60%;
+    width: 60px;
+  }
+    mat-sidenav{
+      background-image: radial-gradient(
+      farthest-corner at 5px -20%,
+      #333333 75%,
+      #ffffff 20%
+    );
+    }
+  }
+  @media screen and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3){
+    mat-sidenav{
+      width: 55%;
+      height: 100%;
+    }
+    .section05{
+      margin-top: 50%;
+    }
+    .logo{
+      padding-top: 82%;
+      width: 50px;
+    }
+    mat-sidenav{
+      background-image: radial-gradient(
+      farthest-corner at 5px -20%,
+      #333333 75%,
+      #ffffff 20%
+    );
+    }
+  }
+  
+  @media screen and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1){
+    mat-sidenav{
+      width: 35%;
+      height: 100%;
+    }
+    .section05{
+      margin-top: 80%;
+    }
+    .logo{
+      padding-top: 35em;
+      width: 50px;
+    }
+    mat-sidenav{
+      background-image: radial-gradient(
+      farthest-corner at 5px -20%,
+      #333333 75%,
+      #ffffff 20%
+    );
+    }
+  }
+  
+  .example-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #555;
+  
+  }
+  
+  mat-drawer-content{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-color: #f1f1f1;
+  }
+  .rounded{
+    padding-top: 20px;
+    width: 120px;
+  }
+  .logo{
+    width: 100px;
+    margin-top: -30px;
+    margin-left: 50%;
+  }
+  .btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:10px
+  }
+  .btn02{
+    border-radius: 25px;
+    width: 160px;
+    height: 30px;
+    margin-left: 3%;
+   background-color:#333333;
+    color: #bc9a2f;
+    border: 2px solid #bc9a2f;
+    margin-bottom: 10px;
+  }
+  
+  .button02{
+    border-radius: 25px;
+    width: 200px;
+    height: 30px;
+    margin-top:6%;
+    margin-left: 20px;
+    background-color:#bc9a2f;
+    color: #f1f1f1;
+    border: 2px solid #bc9a2f;
+    margin-bottom: 10px;
+  }
+  .button02:hover{
+    border: 2px solid #f1f1f1;
+  }
+  .btn02:hover{
+    background-color:#bc9a2f;
+    color: #f1f1f1;
+  }
+  
+  .tender-name:hover{
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .btn02:active{
+    background-color:#bc9a2f;
+    color: #f1f1f1;
+  }
+  .section02{
+    display: block;
+    justify-content: left;
+    margin-top: 2.3em;
+    margin-right: 4em;
+  
+  }
+  
+  .btn1{
+    width: 70px;
+    height: 65px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: #f1f1f1;
+  
+  }
+  
+  .section03{
+    margin-top: 35em;
+    margin-right: 15%;
+    margin-bottom: 0px;
+    color: #f1f1f1;
+  }
+  
+  .section04{
+    margin-top: -4em;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .text04{
+    font-size: 20px;
+  
+  }
+  .text05{
+    margin-top: 4%;
+    font-size: 16px;
+  }
+  .boulded{
+    font-weight: bold;
+  }
+  .line01{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 10.3em;
+  }
+
+  .material-icons-round{
+    color: #bc9a2f;
+    transform: rotate(180deg);
+    padding-left: 25px;
+    padding-bottom: 1.3em;
+  }
+
+  .text01{
+    margin-top: 25px;
+    margin-bottom: 2px;
+    line-height: 80%;
+  }
+  .line02{
+    margin: 0.5em 0;
+    width: 90%;
+    height: 1px;
+    border: none;
+  }
+  /* to activate buttons on the side navbar */
+  .active{
+    background-color: #bc9a2f;
+    color: #f1f1f1;
+  
+  }
+  .icons01{
+    filter:  brightness(0) invert(1);
+  }
+  
+  .navbar-brand{
+    color: black;
+    margin-top: 0px;
+    
+  }
+  .btn{
+    width: 8%;
+    height: 3rem;
+    background-color: black;
+  }
+  .form-control{
+    width: 35%;
+    height: 3rem;
+    justify-content: end;
+    margin-left: 50%;
+    border-radius: 10px;
+  }
+  
+  .section05{
+    margin-top: 7em;
+    margin-left: 2.5em;
+  }
+  svg{
+    color: white;
+    margin-top: -20px;
+  }
+  
+  .text03{
+    text-align: justify;
+    margin-left: 10px;
+    padding-left: 5px;
+  }
+  
+  /* to activate buttons on the side navbar */
+  .active{
+    background-color: #bc9a2f;
+    color: #f1f1f1;
+  
+  }
+  .icons01{
+    filter:  brightness(0) invert(1);
+  }
+
+
+  /* Edit button */
+.icon-edit{
+
+
+}
+.button01{
+  border-radius: 10px;
+ 
+  height: 50px;
+  margin-top:6%;
+  margin-left: 20px;
+  background-color:#bc9a2f;
+  color: #f1f1f1;
+  border: 2px solid #bc9a2f;
+  margin-bottom: 10px;
+}
+
+
+
+
+.button03{
+  border-radius: 10px;
+
+  height: 50px;
+  margin-top:6%;
+  margin-left: 20px;
+  background-color: red;
+  color: #f1f1f1;
+  border: 2px solid red;
+  margin-bottom: 10px;
+}
+
+.status{
+  font-weight: bold;
+  border-radius: 10px;
+  height: 25px;
+  margin-bottom: 35px;
+}
+
+.inline{display:inline}
+
+.header button {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+
+.main {
+  width: 200px;
+  border: 1px dotted black;
+  display:flex;
+  justify-content:space-between
+
+}
+h1 {
+  margin: 0;
+  padding-right: 25px;
+  display: inline-block;
+}
+.btn-3{
+  background-color: #bc9a2f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  width: 90px;
+  height: 35px;
+}
+
+
+.open{
+  color: green;
+}
+
+.pending{
+  color: green;
+}
+
+.closed{
+  color: red;
+}

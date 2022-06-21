@@ -35,6 +35,24 @@ import { TendersVaccanciesComponent } from './tenders-vaccancies/tenders-vaccanc
 import { UserArticleDesComponent } from './user-article-des/user-article-des.component';
 import { ArticleDescriptionComponent } from './Admin/Components/article-description/article-description.component';
 import { UserTenderDesComponent } from './user-tender-des/user-tender-des.component';
+import { ImagesComponent } from './Admin/Components/images/images.component';
+import { ImageComponent } from './Admin/Components/images/image/image.component';
+import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
+import { AdminFeedbackComponent } from './Admin/Components/admin-feedback/admin-feedback.component';
+import { AdminSubmissionComponent } from './Admin/Components/admin-submission/admin-submission.component';
+import { AdminVacancyEditComponent } from './Admin/Components/admin-vacancy-edit/admin-vacancy-edit.component';
+
+import { AddVancancyComponent } from './Admin/Components/add-vancancy/add-vancancy.component';
+import { ListVancancyComponent } from './Admin/Components/list-vancancy/list-vancancy.component';
+import { ListingsComponent } from './Admin/Components/listings/listings.component';
+import { ListingComponent } from './Admin/Components/listing/listing.component';
+import { AddListingComponent } from './Admin/Components/add-listing/add-listing.component';
+import { UploadFormComponent } from './Admin/Components/upload-form/upload-form.component';
+import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
+
+
+
+
 
 
 const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -56,8 +74,15 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'user_modal', component: ModelFormComponent },
  {path:'admin-login',component: LoginComponent},
 {path: 'home',component: HomeComponent},
-
 {path: 'tender-edit', component: AdminTenderEditComponent},
+
+//Image Testing
+
+{path:  'image', component: ImagesComponent, children: [
+  {path: 'upload', component: ImageComponent},
+  {path: 'list', component: ImageListComponent}
+]},
+
 
 {
   path: 'tender-add/:index',
@@ -65,18 +90,24 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 
 },
 {
-  path: 'tender-description/:index',
+  path: 'tender/:index',
   component: AdminTenderDescriptionComponent
 },
+
+{
+  path: 'bidder/:index',
+  component: BiddersComponent
+},
+
+
 {
   path: 'tender-list',
   component: AdminTenderListComponent
 },
-
-{
+ {
   path: 'article-add',
-  component: ArticleAddComponent
-},
+   component: ArticleAddComponent
+ },
 
 {
   path: 'vacancy',
@@ -88,6 +119,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 path: 'tender',
 component: AdminTenderComponent
 },
+
 
 
     {
@@ -108,17 +140,12 @@ component: AdminTenderComponent
 },
 {
   path: 'vacancy-list',
-  component: AdminVacancyListComponent
+  component: ListVancancyComponent
 },
-
 {
-  path: 'vacancy-add',
-  component: AdminVacancyAddComponent
+  path: 'add-vacancy',
+  component: AdminVacancyEditComponent
 },
-
-
-
-
 {
   path: 'article-add',
   component: ArticleAddComponent
@@ -131,12 +158,66 @@ component: AdminTenderComponent
   path: 'article',
   component: ArticleComponent
 },
+
 {
   path: 'article-description/:index',
   component: ArticleDescriptionComponent
 },
 
+{
+  path: 'vacancy-description/:index',
+  component: AdminVacancyDescriptionComponent
+},
+{
+  path: 'Admin-Feedback',
+  component: AdminFeedbackComponent
+},
+
+{
+  path: 'Admin-submission',
+  component: AdminSubmissionComponent
+},
+{
+  path: 'Admin-Vacancy-list',
+  component: AdminVacancyListComponent
+},
+
+
+{
+  path: 'listings',
+  component: ListingsComponent
+},
+
+{
+  path: 'listing',
+  component: ListingComponent
+},
+{
+  path: 'Add-Listing',
+  component: AddListingComponent
+},
+
+
+{
+  path: 'Upload-Form',
+  component: UploadFormComponent
+},
+
+
+{
+  path: 'admin-vacancy-add',
+  component: AdminVacancyAddComponent
+},
+{
+  path: 'tender/:index',
+  component: BiddersComponent
+},
+
+
 ];
+
+
+
 
 
 @NgModule({

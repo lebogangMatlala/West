@@ -31,8 +31,12 @@
 
           <div class="section03">
             <hr class="line01" />
-            <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
-              ><b>LOG OUT</b></a
+            <mat-icon class='material-icons-round' routerLink="/admin-login">logout</mat-icon>
+            
+            <a class="text03" routerLink="/admin-login" style="color: #bc9a2f">
+             
+              <b>LOG OUT</b></a
+
             >
           </div>
 
@@ -61,7 +65,7 @@
                   *ngIf="isHandset$ | async">
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/menu"></i>
+                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
                 <a class="navbar-brand" href="#" style="font-size: 2.5em;">What's New</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -90,31 +94,20 @@
 
           <br>
           <div class="container">
+            
               
-                <button class="btn-3" routerLink="/article-add">ADD</button>
+                <button class="btn-3" mat-stroked-button routerLink="/article-add">
+                  ADD
+                  <mat-icon>note_add</mat-icon>
+
+                </button>
                 </div>
-
-
                 
-               
-              
-            
-             
-
-
-
-
             <div class="section04">
-            
-                
-                  
-
             </div>
-
             <div class="container">
               <br>
             <section class="vacancy-section">
-              
               <app-article
                 *ngFor="let article of listOfArticles; let i = index"
                 [article]="article"

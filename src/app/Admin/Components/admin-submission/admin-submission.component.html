@@ -1,0 +1,40 @@
+<div id="overlay" (click)="submissionService.showDialog=false">
+    </div>
+
+<div id="container">
+<div id="header">
+    <b>ADD A SUBMISSION</b>
+    </div>
+    <div id="content">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
+        <div class="form-group">
+        <h5>Is the Bidder Awarded?</h5>
+        <select class="form-select form-select-lg" aria-label=".form-select-lg example" formControlName="awardedBidder">
+            <option value="Awarded">Awarded</option>
+            <option value="Not Awarded">Not Awarded</option>
+            <div class="text-danger" *ngIf="isSubmitted && formControls.awardedBidder.errors?.required">This field is required.</div>
+          </select>
+          </div>
+          
+            <br>
+            <div class="form-group">
+            <h5>Bidder Name:</h5>
+          <input class="form-control" formControlName="bidderName">
+          <div class="text-danger" *ngIf="isSubmitted && formControls.bidderName.errors?.required">This field is required.</div>
+          </div>
+            <br>
+          <div class="form-group" >
+            <h5>Bid Amount:</h5>
+          <input class="form-control" formControlName="bidderAmount">
+          <div class="text-danger" *ngIf="isSubmitted && formControls.bidderAmount.errors?.required">This field is required.</div>
+          </div>
+            <br>
+
+        
+        <div id="actions">
+            <button id="save" class="btn form-control"  type="submit">Save</button>
+            <button class="cancel" (click)="submissionService.showDialog=false">Cancel</button>
+
+    </div>
+
+

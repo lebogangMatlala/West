@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ViewChild} from '@angular/core';
 import {
   BreakpointObserver,
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 import { AdminVacancy } from '../../Models/admin-vacancy-model';
 import { BackEndService } from '../../Services/back-end.services';
 import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
+import { FileUploadService } from 'src/app/Admin/Services/file-upload.service';
+import { FileUpload } from '../../Models/vacancy-upload-model';
 
 @Component({
   selector: 'app-admin-vacancy-list',
@@ -18,10 +20,27 @@ import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
   styleUrls: ['./admin-vacancy-list.component.css']
 })
 export class AdminVacancyListComponent implements OnInit {
+  @Input() tender?: AdminVacancy;
+  @Input() index: number= 0 ;
   listOfVacancys: AdminVacancy[] = [];
-  constructor(private vacancyService:VacancyService, private backEndService: BackEndService, private breakpointObserver: BreakpointObserver) { }
+
+  
+
+  fileUploads?: any[];
+  constructor(private vacancyService:VacancyService, private backEndService: BackEndService, private breakpointObserver: BreakpointObserver, private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
+
+    this.uploadService.getFiles(6).snapshotChanges().pipe(
+      map(changes =>
+        
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    ).subscribe(fileUploads => {
+      this.fileUploads = fileUploads;
+    });
+  
+
     this.onFetch();
 
     this.listOfVacancys = this.vacancyService.getVacancy();

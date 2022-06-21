@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BackEndService } from 'src/app/Admin/Services/back-end.services';
-// import { TenderService } from 'src/app/services/tender.services';
+
 import { AdminVacancy } from 'src/app/Admin/Models/admin-vacancy-model';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
@@ -17,6 +17,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
 import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/storage';
+import { FileUpload } from '../../Models/vacancy-upload-model';
+import { FileUploadService } from '../../Services/file-upload.service';
 
 @Component({
   selector: 'app-admin-vacancy-add',
@@ -24,6 +26,13 @@ import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/
   styleUrls: ['./admin-vacancy-add.component.css']
 })
 export class AdminVacancyAddComponent implements OnInit {
+
+//Testing
+selectedFiles?: FileList;
+currentFileUpload?: FileUpload;
+percentage = 0;
+
+
   form!: FormGroup;
   index: number = 0;
   editMode = false;
@@ -51,6 +60,8 @@ export class AdminVacancyAddComponent implements OnInit {
   }
 
   
+
+  
   constructor(
     private vacancyService: VacancyService,
     private router: Router,
@@ -58,18 +69,19 @@ export class AdminVacancyAddComponent implements OnInit {
     private backEndService: BackEndService,
     private breakpointObserver: BreakpointObserver,
     private storage: Storage,
+    private uploadService: FileUploadService
 
   ) { }
 
   ngOnInit(): void {
     let title ='';
+    let industry= '';
     let reference= '';
     let description= '';
-    let industry= '';
     let documentPath= '';
-    let DateOpenend;
+    let DateOpenend= '';
     let DateClosed;
-  
+
     this.route.params.subscribe((params: Params) => {
       if (params['index']){
         console.log(params['index']);
@@ -78,11 +90,11 @@ export class AdminVacancyAddComponent implements OnInit {
 
         const vacancy =this.vacancyService.getVac(this.index);
         title= vacancy.title;
+        industry= vacancy.industry;
         reference= vacancy.reference;
-        description= vacancy.description;
-        industry = vacancy.industry;
+        description = vacancy.description;
         documentPath=vacancy.documentPath;
-        DateOpenend=vacancy.DateOpenend;
+        DateClosed=vacancy.DateOpenend;
         DateClosed=vacancy.DateClosed;
        
     
@@ -95,28 +107,29 @@ export class AdminVacancyAddComponent implements OnInit {
     
       this.form = new FormGroup({
       title: new FormControl(title, [Validators.required]),
+      industry: new FormControl(industry, [Validators.required]),
       reference: new FormControl(reference, [Validators.required]),
       description: new FormControl(description, [Validators.required]),
-      industry: new FormControl(industry, [Validators.required]),
        documentPath: new FormControl(documentPath, [Validators.required]),
        DateOpenend: new FormControl([]),
        DateClosed: new FormControl(null, []),
     });
   }
+
   onSubmit() {
     const title = this.form.value.title;
+    const industry = this.form.value.industry;
     const reference = this.form.value.reference;
     const description = this.form.value.description;
-    const industry = this.form.value.industry;
     const documentPath = this.form.value.documentPath;
     const DateOpenend = this.form.value.DateOpenend;
     const DateClosed = this.form.value.DateClosed;
 
     const vacancy: AdminVacancy = new AdminVacancy(
       title,
+      industry,
       reference,
       description,
-      industry,
       documentPath,
       DateOpenend,
       DateClosed,
@@ -135,9 +148,41 @@ export class AdminVacancyAddComponent implements OnInit {
    this.backEndService.SaveVacancy();
         }
          //Navigate to /tender-list
-   this.router.navigate(['/vacancy-list']);
+  //  this.router.navigate(['/vacancy-list']);
       }
-        @ViewChild('drawer') drawer: any;
+
+ //Testing
+
+//  selectFile(event: any): void{
+//   this.selectedFiles = event.target.files;
+// }
+// upload(): void{
+//   if (this.selectedFiles){
+// const file: File | null = this.selectedFiles.item(0);
+// this.selectedFiles = undefined;
+// if(file){
+//   this.currentFileUpload = new FileUpload(file);
+//   this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+//     percentage =>{
+//       this.percentage = Math.round(percentage? percentage: 0);
+//     },
+
+// error => console.log(error)
+    
+    
+//   )
+// }
+//   }
+// }
+
+
+
+
+
+
+
+
+  @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
    public isHandset$: Observable<boolean> = this.breakpointObserver
      .observe(Breakpoints.Handset)

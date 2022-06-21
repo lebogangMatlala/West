@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ref, Storage } from '@angular/fire/storage'
 import { uploadBytes } from 'firebase/storage';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -10,4 +10,12 @@ import { Observable } from 'rxjs';
 export class ImageUploadService {
 
   constructor(private storage: Storage) { }
+
+    uploadImage( image: File, path: string): Observable<string>{
+      const storageRef =ref(this.storage, path);
+      const uploadTask =from (uploadBytes(storageRef, image));
+      // return uploadTask
+
+    }
+
 }

@@ -23,7 +23,7 @@
             <mat-sidenav #drawer fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
               [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
               <div class="section01">
-                <img src="../../assets/Group-1.svg" class="rounded" alt="...">
+                <img src="../../assets/Beaufort_West_CoA.png" class="rounded" alt="...">
               </div>
               <div class="example-button-row">
                 <div class="example-flex-container">
@@ -39,10 +39,10 @@
 
                
                 <hr class="line01">
-                <a class="text03" routerLink="/login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
+                <a class="text03" routerLink="/admin-login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
               </div>
               <div class="section05">
-                <img src="../../assets/Group.svg" class="logo" alt="...">
+                <img src="../../assets/Group001.png" class="logo" alt="...">
               </div>
             </mat-sidenav>
     
@@ -60,21 +60,35 @@
                     <div class="container">
                     <div class="row">
                     <div class="col-md-8">
-                        <h1 *ngIf="editMode === false"><b>Add New Vacancy</b></h1>
-                        <h1 *ngIf="editMode ===true"><b>EDIT Vacancy</b></h1>
+
+
+
+
+
+                        
+                      <h1 *ngIf="editMode === false">Add New Vacancy</h1>
+                        <h1 *ngIf="editMode ===true">EDIT Vacancy</h1>
+
+
+
+
                        
                          <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
                        
+                       
+                         
+                       
                               <br>
-                        <div class="form-group">
-                        <label>Title</label>
-                         <input class="form-control" type="text" formControlName="title"/>
-                    </div>
+                              <div class="form-group col-lg-12">
+                                <div class="form-group" >
+                                <label>Title</label>
+                                 <input class="form-control" type="text" formControlName="title"/>
+                            </div>
                     
-                    <div class="form-group">
-                      <label>industry:</label>
-                      <input class="form-control" type="text" formControlName="industry"/>
-                  </div>
+                            <div class="form-group">
+                              <label>Industry:</label>
+                              <input class="form-control" type="text" formControlName="industry"/>
+                          </div>
 
                     <div class="form-group">
                         <label>Reference Number:</label>
@@ -89,31 +103,22 @@
                   
                         
 
-                        <div class="row">
-                          <div class="form-group col-lg-6">
-                            <div class="form-group">
-                              <label for="DateOpened">Opened Date:</label>
-                              <input class="form-control" id="picker"  type="date" formControlName=" DateOpenend">
-                              </div>
-                          </div>
-                          <div class="form-group col-lg-6">
-                            <div class="form-group">
-                              <label for="DateClosed">Closing Date:</label>
-                              <input class="form-control"  id="Datepicker"  type="date" formControlName="DateClosed">
-                              </div>
-                          </div>
-                      </div>
-
-                    
-                    
+                  <div class="row">
+                    <div class="form-group col-lg-6">
                       <div class="form-group">
-                        <label for="formFile" class="form-label">Upload Vacancy Doc</label>
-                        <input class="form-control" (change)="chooseFile($event)" type="file" id="formFile" formControlName="documentPath"/>
-                        </div > 
-                    
+                        <label for="DateOpened">Opened Date:</label>
+                        <input class="form-control" id="Datepicker"  type="date" formControlName="DateOpenend">
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                      <div class="form-group">
+                        <label for="DateClosed">Closing Date:</label>
+                        <input class="form-control"  id="Datepicker"  type="date" formControlName="DateClosed">
+                        </div>
+                    </div>
+                </div>
                 
                     <br>
-                    
                     <button id="btnsubscribe" class="btn form-control" (click)="addVancancyDoc()" type="submit" >PUBLISH</button>
                     <div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -13,6 +13,7 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/storage';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-article-add',
@@ -25,6 +26,15 @@ export class ArticleAddComponent implements OnInit {
   editMode = false;
   details!: FormGroup;
   path!: String;
+
+
+  //uploading Image
+  formTemplate = new FormGroup({
+  imageUrl: new FormControl()
+  })
+
+
+  
   public file: any={}
 
   chooseFile(event: any){
@@ -43,6 +53,7 @@ export class ArticleAddComponent implements OnInit {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         console.log('File available at', downloadURL);
       });
+      
     }
     )
   }
@@ -54,7 +65,9 @@ export class ArticleAddComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private storage: Storage,
-    private backEndService: BackEndService) { }
+    private backEndService: BackEndService,
+    private authService: AuthenticationService
+    ) { }
 
 
 
@@ -67,7 +80,7 @@ export class ArticleAddComponent implements OnInit {
     let date = '';
     let venue = '';
     let contact = '';
-    let documentPath ;
+    let imageUrl='' ;
 
     this.route.params.subscribe((params: Params)=>{
           if(params['index']){
@@ -81,13 +94,12 @@ export class ArticleAddComponent implements OnInit {
             // date = article.date;
             venue = article.venue
             contact = article.contact;
-            documentPath = article.documentPath
+            imageUrl = article.imageUrl
             this.editMode = true;
 
           }
     });
-
-  
+   
       
       this.form = new FormGroup({
         title: new FormControl(title,[Validators.required]),
@@ -95,10 +107,13 @@ export class ArticleAddComponent implements OnInit {
       date: new FormControl(date, Validators.required),
      venue: new FormControl(venue, Validators.required),
      contact: new FormControl(contact, Validators.required),
-      documentPath: new FormControl(documentPath, Validators.required)
+      documentPath: new FormControl(imageUrl, Validators.required)
       }) 
 
   } 
+  uploadImage(event: any){
+  
+  }
 
   onSubmit() {
     
@@ -107,7 +122,7 @@ export class ArticleAddComponent implements OnInit {
     const date = this.form.value.date;
     const venue= this.form.value.venue;
     const contact = this.form.value.contact;
-    const documentPath = this.form.value.documentPath;
+    const imageUrl = this.form.value.imageUrl;
 
 
     //Object
@@ -117,7 +132,7 @@ export class ArticleAddComponent implements OnInit {
       date,
       venue,
       contact,
-      documentPath,
+      imageUrl,
   
     );
 //Calling a service
@@ -125,42 +140,26 @@ export class ArticleAddComponent implements OnInit {
 
 //condition to either add or edit
 if(this.editMode){
-  this.articleService.updateArticle(this.index, article)
+  this.articleService.updateArticle(this.index, article);
+  this.backEndService.SaveArticle();
 }else{
   this.articleService.addArticle(article);
   console.log("SaveArticle() called!!!! ");
   this.backEndService.SaveArticle();
 }
-   
-//Uploading a picture Article
+this.router.navigate(['/article-list']); 
 
 
-
-
-
-
-        this.router.navigate(['/article-list']);
-
-    
-              
+//Uploading a picture Article               
   }
-
-  
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
   public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map((result: BreakpointState) => result.matches));
-
-
-
-
-
   closeSideNav() {
     if (this.drawer._mode == 'over') {
       this.drawer.close();
     }
   }
-
-  
 }
