@@ -47,7 +47,10 @@
               <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
                 ><b>LOG OUT</b></a
               >
-     
+            <!-- <hr class="line01">
+            <p class="text03"></p>
+            <p class="text03"></p>
+            <p class="text03"></p> -->
 
           </div>
           <div class="section05">
@@ -62,23 +65,15 @@
                   *ngIf="isHandset$ | async">
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-            
-                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
-                
-                <a class="navbar-brand" href="#" style="font-size: 2.5em;">View Tenders</a>
-                <div class="user_name">
-                
-                </div>
+                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/menu"></i>
+                <a class="navbar-brand" href="#" style="font-size: 2.5em;">ROADS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                   aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
-                  
                 </button>
-                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <form class="d-flex">
-                 
                     <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -87,12 +82,7 @@
                           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                       </svg>
                     </button>
-                  
-                    <br>
-                  
-                   
                   </form>
-                  
                 </div>
               </div>
             </nav>
@@ -119,6 +109,8 @@
 
 
             <div class="section04">
+            
+                
                   <section class="example-section">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -147,14 +139,78 @@
 
                 <app-admin-tender
                 *ngFor="let tender of listOfTenders; let i = index"
-                
                 [tender]="tender"
                 [index]="i"
-                
               ></app-admin-tender>
-                     
+
               </section>
-               
+                <!-- <mat-tab label="Vacancies">
+                 
+                    <select id="txtTitle" class="form-control selectpicker">
+                      <option selected disabled value="default">Please Select</option>
+                      <option value="Session">Session</option>
+                      <option value="Class">Class</option>
+                  </select> -->
+                  
+                  <!-- <div *ngFor="let tender of tenders;">
+                    <h1>{{tender.title}}</h1>
+                    <h1>{{tender.description}}</h1>
+                  </div> -->
+                  <!-- <section class="vacancy-section">
+
+                    <mat-card>
+                      <div class="col-sm-10">
+
+                        <div class="row">
+                          <div class="col-1 col-sm-10">
+                            <mat-card-title class="text-break">Vacancy one</mat-card-title>
+                            <mat-card-subtitle>Ref No. : BID NO:SM02</mat-card-subtitle>
+                            <mat-card-content>
+                              <div class="row">
+                                <div class="col-sm-6">
+
+                                  <div class="row">
+                                    <div class="col-5 col-sm-2" style="color: green;">
+                                      Date<br> Opened
+                                      <div class="vertical"></div>
+                                    </div>
+
+                                    <div class="col-5 col-sm-3">
+                                      10-jan-2022
+                                    </div>
+                                    <div class="col-5 col-sm-2" style="color: red;">
+                                      Closing<br> Date
+                                      <div class="vertical"></div>
+                                    </div>
+
+                                    <div class="col-5 col-sm-3">
+                                      10-jul-2022
+                                    </div>
+
+                                  </div>
+
+                                </div>
+
+                              </div>
+                              <div class="section-text" align="end">
+                                <div class="" style="color: green;">
+                                 open
+                                </div>
+                              </div>
+
+                            </mat-card-content>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section" align="end">
+
+                        <button id="" class="button01">
+                          <i class="fa fa-angle-right fa-3x"></i>
+                        </button>
+                      </div>
+                    </mat-card>
+                  </section> -->
+                <!-- </mat-tab> -->
 
               
             </div>

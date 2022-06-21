@@ -80,7 +80,7 @@ fetchArticle(){
 }
 
 SaveVacancy(){
-
+    //get list of articles from article service
       const listOfVacancys: AdminVacancy[]= this.vacancyService.getVacancy();
       this.http.put(
           'https://beaufort-west-default-rtdb.firebaseio.com/vacancys.json',

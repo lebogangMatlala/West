@@ -166,12 +166,12 @@ mat-drawer-content{
 
 }
 
-/* .section03{
+.section03{
   margin-top: 20%;
   margin-right: 80%;
   margin-bottom: 0px;
   color: #f1f1f1;
-} */
+}
 .section04{
   margin-top: -20em;
 }
@@ -411,10 +411,6 @@ select option:visited{
 }
 select option:focus{
   background-color: #bc9a2f !important
-}
-
-.h4 {
-  text-align: right
 }
 
 

@@ -5,7 +5,7 @@ export class Article{
         public date: Date,
         public venue: string,
         public contact: string,
-        public imageUrl: string,
+        public documentPath: string,
 
     ){}  
 }

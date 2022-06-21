@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewChild} from '@angular/core';
 import {
   BreakpointObserver,
@@ -18,8 +18,6 @@ import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
   styleUrls: ['./admin-vacancy-list.component.css']
 })
 export class AdminVacancyListComponent implements OnInit {
-  @Input() tender?: AdminVacancy;
-  @Input() index: number= 0 ;
   listOfVacancys: AdminVacancy[] = [];
   constructor(private vacancyService:VacancyService, private backEndService: BackEndService, private breakpointObserver: BreakpointObserver) { }
 

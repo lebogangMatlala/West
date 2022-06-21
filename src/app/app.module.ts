@@ -59,13 +59,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDividerModule} from '@angular/material/divider';
-import { ImagesComponent } from './Admin/Components/images/images.component';
-import { ImageComponent } from './Admin/Components/images/image/image.component';
-import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
-
-
-
-
 
 
 
@@ -98,13 +91,7 @@ import { ImageListComponent } from './Admin/Components/images/image-list/image-l
     AdminVacancyAddComponent,
     AdminVacancyDescriptionComponent,
     AdminVacancyListComponent,
-    LoginComponent,
-    ImagesComponent,
-    ImageComponent,
-    ImageListComponent,
-    
-    
-    
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -124,10 +111,9 @@ import { ImageListComponent } from './Admin/Components/images/image-list/image-l
     AngularFireStorageModule,
     MatSidenavModule,
     MatGridListModule,
-
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-     AngularFireModule.initializeApp(environment.firebaseTenders),
+    AngularFireModule.initializeApp(environment.firebaseTenders),
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatTabsModule,
@@ -139,13 +125,12 @@ import { ImageListComponent } from './Admin/Components/images/image-list/image-l
 
 
 provideFirebaseApp(() => initializeApp(environment.firebase)),
-
-
 provideAuth(() => getAuth()),
 provideStorage(() => getStorage()),
 provideDatabase(() => getDatabase()),
 provideFirestore(() => getFirestore()),
  AngularFireStorageModule,
+
 
  HotToastModule.forRoot(),
 

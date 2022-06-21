@@ -30,11 +30,6 @@ import { AdminVacancyListComponent } from './Admin/Components/admin-vacancy-list
 // import { AuthGuard } from './shared/guard/auth.guard';
 import { TendersVaccanciesComponent } from './tenders-vaccancies/tenders-vaccancies.component';
  import { LoginComponent } from './Admin/Components/login/login.component';
-import { ImagesComponent } from './Admin/Components/images/images.component';
-import { ImageComponent } from './Admin/Components/images/image/image.component';
-import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
-
-
 
 
 const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -53,15 +48,8 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 
  {path:'admin-login',component: LoginComponent},
 {path: 'home',component: HomeComponent},
+
 {path: 'tender-edit', component: AdminTenderEditComponent},
-
-//Image Testing
-
-{path:  'image', component: ImagesComponent, children: [
-  {path: 'upload', component: ImageComponent},
-  {path: 'list', component: ImageListComponent}
-]},
-
 
 {
   path: 'tender-add/:index',
@@ -69,17 +57,18 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 
 },
 {
-  path: 'tender/:index',
+  path: 'tender-description/:index',
   component: AdminTenderDescriptionComponent
 },
 {
   path: 'tender-list',
   component: AdminTenderListComponent
 },
- {
+
+{
   path: 'article-add',
-   component: ArticleAddComponent
- },
+  component: ArticleAddComponent
+},
 
 {
   path: 'vacancy',
@@ -92,10 +81,6 @@ path: 'tender',
 component: AdminTenderComponent
 },
 
-// {
-//   path: 'tender-description/:index',
-//   component: AdminTenderDescriptionComponent
-// },
 
     {
       path: 'tender-description',
@@ -123,6 +108,9 @@ component: AdminTenderComponent
   component: AdminVacancyAddComponent
 },
 
+
+
+
 {
   path: 'article-add',
   component: ArticleAddComponent
@@ -139,10 +127,8 @@ component: AdminTenderComponent
   path: 'article-description/:index',
   component: ArticleDescriptionComponent
 },
+
 ];
-
-
-
 
 
 @NgModule({

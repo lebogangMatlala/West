@@ -30,7 +30,7 @@ export class TenderService {
   }
 
   //Getting the Tender
-  getTender(index: number): AdminTender {
+  getTender(index: number) {
     return this.listOfTenders[index];
   }
 
