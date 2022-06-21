@@ -151,6 +151,18 @@ mat-drawer-content{
   color: #f1f1f1;
   border: 2px solid #bc9a2f;
   margin-bottom: 10px;
+  font-size: 16px;
+}
+.button03{
+  border-radius: 25px;
+  width: 200px;
+  height: 30px;
+  margin-top:6%;
+  background-color:darkgray;
+  color: #f1f1f1;
+  border: 2px solid darkgray;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 .button02:hover{
   border: 2px solid #f1f1f1;
@@ -247,13 +259,13 @@ mat-drawer-content{
   height: 3rem;
   background-color: black;
 }
-.form-control{
+/* .form-control{
   width: 35%;
   height: 3rem;
   justify-content: end;
   margin-left: 50%;
   border-radius: 10px;
-}
+} */
 
 .section05{
   margin-top: 15%;
@@ -277,3 +289,24 @@ svg{
 .icons01{
   filter:  brightness(0) invert(1);
 }
+
+.containerModal{
+  margin: 0px 25px;
+}
+/* input{
+  margin-top: -2em;
+
+} */
+.modal-title{
+  display: flex;
+  justify-content: center;
+  margin-left: 10em;
+  font-weight: 600;
+}
+.label
+{
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: -20%;
+}
+

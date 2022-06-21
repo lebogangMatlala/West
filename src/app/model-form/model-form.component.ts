@@ -23,8 +23,8 @@ export class Friend{
 export class ModelFormComponent implements OnInit {
 
 
- //closeResult?:string;
-  friends?: Friend[];
+//  //closeResult?:string;
+//   friends?: Friend[];
 
   closeResult = '';
 
