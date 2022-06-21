@@ -15,7 +15,6 @@ export const environment = {
     authDomain: 'beaufort-west.firebaseapp.com',
     messagingSenderId: '156712925641',
   },
-
   firebaseTenders : {
     apiKey: "AIzaSyBpuuhZ6wIn7osH2mw0VkrB-jgrexcFQao",
     authDomain: "beaufort-west.firebaseapp.com",

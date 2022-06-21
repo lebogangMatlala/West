@@ -25,15 +25,6 @@ export class ArticleAddComponent implements OnInit {
   editMode = false;
   details!: FormGroup;
   path!: String;
-
-
-  //uploading Image
-  formTemplate = new FormGroup({
-  imageUrl: new FormControl()
-  })
-
-
-  
   public file: any={}
 
   chooseFile(event: any){
@@ -52,7 +43,6 @@ export class ArticleAddComponent implements OnInit {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         console.log('File available at', downloadURL);
       });
-      
     }
     )
   }
@@ -77,7 +67,7 @@ export class ArticleAddComponent implements OnInit {
     let date = '';
     let venue = '';
     let contact = '';
-    let imageUrl ;
+    let documentPath ;
 
     this.route.params.subscribe((params: Params)=>{
           if(params['index']){
@@ -91,12 +81,13 @@ export class ArticleAddComponent implements OnInit {
             // date = article.date;
             venue = article.venue
             contact = article.contact;
-            imageUrl = article.imageUrl
+            documentPath = article.documentPath
             this.editMode = true;
 
           }
     });
-   
+
+  
       
       this.form = new FormGroup({
         title: new FormControl(title,[Validators.required]),
@@ -104,13 +95,10 @@ export class ArticleAddComponent implements OnInit {
       date: new FormControl(date, Validators.required),
      venue: new FormControl(venue, Validators.required),
      contact: new FormControl(contact, Validators.required),
-      documentPath: new FormControl(imageUrl, Validators.required)
+      documentPath: new FormControl(documentPath, Validators.required)
       }) 
 
   } 
-  uploadImage(event: any){
-  
-  }
 
   onSubmit() {
     
@@ -119,7 +107,7 @@ export class ArticleAddComponent implements OnInit {
     const date = this.form.value.date;
     const venue= this.form.value.venue;
     const contact = this.form.value.contact;
-    const imageUrl = this.form.value.imageUrl;
+    const documentPath = this.form.value.documentPath;
 
 
     //Object
@@ -129,7 +117,7 @@ export class ArticleAddComponent implements OnInit {
       date,
       venue,
       contact,
-      imageUrl,
+      documentPath,
   
     );
 //Calling a service
@@ -143,19 +131,31 @@ if(this.editMode){
   console.log("SaveArticle() called!!!! ");
   this.backEndService.SaveArticle();
 }
-this.router.navigate(['/article-list']); 
-
-
+   
 //Uploading a picture Article
 
 
-               
+
+
+
+
+        this.router.navigate(['/article-list']);
+
+    
+              
   }
+
+  
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
   public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map((result: BreakpointState) => result.matches));
+
+
+
+
+
   closeSideNav() {
     if (this.drawer._mode == 'over') {
       this.drawer.close();

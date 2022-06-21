@@ -57,7 +57,7 @@ export class AdminTenderEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let tenderType='';
+    
     let title ='';
     let reference= '';
     let description= '';
@@ -74,7 +74,6 @@ export class AdminTenderEditComponent implements OnInit {
         this.index = params['index'];
 
         const tender =this.tenderService.getTender(this.index);
-        tenderType = tender.tenderType,
         title= tender.title;
         reference= tender.reference;
         description= tender.description;
@@ -91,7 +90,6 @@ export class AdminTenderEditComponent implements OnInit {
     });
     
       this.form = new FormGroup({
-        tenderType: new FormControl(tenderType, [Validators.required]),
       title: new FormControl(title, [Validators.required]),
       reference: new FormControl(reference, [Validators.required]),
       description: new FormControl(description, [Validators.required]),
@@ -102,7 +100,6 @@ export class AdminTenderEditComponent implements OnInit {
     });
   }
   onSubmit() {
-    const tenderType = this.form.value.tenderType;
     const title = this.form.value.title;
     const reference = this.form.value.reference;
     const description = this.form.value.description;
@@ -112,7 +109,6 @@ export class AdminTenderEditComponent implements OnInit {
     const DateClosed = this.form.value.DateClosed;
 
     const tender: AdminTender = new AdminTender(
-      tenderType,
       title,
       reference,
       description,

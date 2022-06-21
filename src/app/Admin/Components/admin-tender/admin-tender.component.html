@@ -3,8 +3,9 @@
 
 <mat-card >
   <div class="col-sm-10">
+
     <div class="row">
-  
+      <div class="col-1 col-sm-10">
         <mat-card-title class="text-break">{{tender?.title}}</mat-card-title>
         <mat-card-subtitle>Ref No. : BID NO:SM02</mat-card-subtitle>
         <mat-card-content>
@@ -43,20 +44,92 @@
         </mat-card-content>
       </div>
     </div>
-
+  </div>
   <div class="section" align="end">
+
+    <button id="" class="button01">
+      <i class="fa fa-angle-right fa-3x"></i>
       
-    <button id="" class="button01" (click)="onDisplay()">
-      <i class="fa fa-angle-right fa-3x" ></i>
     </button>
   </div>
 </mat-card>
 
 
 
+  <!-- <section class="tender-section">
+    <mat-card>
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-1 col-sm-10">
+            <mat-card-title class="text-break">{{tender?.title}}
+              </mat-card-title>
+            <mat-card-subtitle>Ref No. : {{tender?.reference}}</mat-card-subtitle>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-sm-6">
+
+                  <div class="row">
+                    <div class="col-5 col-sm-2" style="color: green;">
+                      Date<br> Opened
+                      <div class="vertical"></div>
+                    </div>
+
+                    <div class="col-5 col-sm-3">
+                       <h3><b>{{tender?.DateOpenend | date: 'dd-MM-yy'}}</b></h3>
+                    </div>
+                    <div class="col-5 col-sm-2" style="color: red;">
+                      Closing<br> Date
+                      <div class="vertical"></div>
+                    </div>
+
+                    <div class="col-5 col-sm-3">
+                        <h3><b>{{tender?.DateClosed  | date: 'dd-MM-yy'}}</b></h3>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="section-text" align="end">
+                <div class="" style="color: green;">
+                    <h3><b>{{tender?.status}}</b></h3>
+                </div>
+              </div>
+
+            </mat-card-content>
+          </div>
+        </div>
+      </div> -->
 
 
 
+
+      <!-- <div class="section" align="end">
+
+        <button id="" class="button01" (click)="onDisplay()">
+          <i class="fa fa-angle-right fa-3x"></i>
+        </button>
+      </div>
+    </mat-card>
+    
+  </section>
+<br> -->
+
+<!-- <button class="btn btn-danger" (click)="onDelete()"><span
+class="glyphicon glyphicon-trash"></span>&nbsp; </button>|
+<button class="btn  btn-success" (click)="onEdit()" >Edit</button> 
+<h1><b>{{tender?.title}}</b></h1>
+<h2>Ref No:<b>{{tender?.reference}}</b> &nbsp;    Date Opened:<b>{{tender?.DateOpenend | date: 'dd-MM-yyyy'}}</b></h2>
+
+<p class="p-inline"> <a href='{{tender?.documentPath}}'>Download Doc</a>.</p>
+
+
+<button type="button" class="btn btn-light btn-circle btn-xl" ng-click="mailWithWindowOpen()"><b>Email Doc</b></button>
+
+<p>{{tender?.description}}</p>
+<h2>Status-<b>{{tender?.status}}</b></h2>
+<h2 class="red-text" color=red;>Date Closed:<b>{{tender?.DateClosed | date: 'dd-MM-yyyy'}}</b></h2> -->
 
 
 
