@@ -1,3 +1,4 @@
+import { TenderService } from 'src/app/Admin/Services/admin-tender.service';
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import {
@@ -27,11 +28,15 @@ export class MenuPageComponent implements OnInit {
 
   constructor(private breakpointObserver: BreakpointObserver,
     public senderService: SenderService,
+    public tenderService:TenderService,
     private _router: Router) { }
 
   ngOnInit(): void {
     this.tenderdata = this.senderService.tenders;
     this.senderService.setMessage(this.message);
+
+
+
 
   }
 
@@ -48,9 +53,13 @@ export class MenuPageComponent implements OnInit {
 
   navigateToNextPage(_name: any)
   {
+
     this._router.navigate(['tender-vaccancies'])
     console.log(_name)
+    
     this.senderService.setTenderName(_name)
+
+
   }
 
   getIndex(_index:any)

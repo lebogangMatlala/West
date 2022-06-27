@@ -32,6 +32,7 @@ export class TendersVaccanciesComponent implements OnInit {
 
   message?: String
   nameOfTender?: String
+
   listofTenders?: any
   listofVacancies?: any
 
@@ -44,6 +45,8 @@ export class TendersVaccanciesComponent implements OnInit {
   num?: any;
   numOfTenders?: any;
 
+  nameROJ: any;
+
 
 
   constructor(private senderService: SenderService,
@@ -54,10 +57,26 @@ export class TendersVaccanciesComponent implements OnInit {
 
     this.retrieveTenders();
     this.retrieveVacancies();
+
     // this.num = this.retrieveVacancies.length;
     // this.numOfTenders=this.retrieveTenders.length;
     console.log('hello vacancies ' + this.num + 'hello tenders ' + this.numOfTenders);
 
+  }
+
+  ngOnInit(): void {
+    this.message = this.senderService.getMessage();
+    this.nameOfTender = this.senderService.getTenderName();
+    this.tenderService.getFilterdTenders();
+    this.getStorageInfo();
+
+  }
+
+  getStorageInfo():void
+  {
+    let data:any = localStorage.getItem('nameROJ');
+    this.nameROJ=data;
+    console.log("Hello data "+this.nameROJ);
   }
 
   //retrieve tenders
@@ -76,12 +95,12 @@ export class TendersVaccanciesComponent implements OnInit {
     });
   }
 
-  getIndex(_index: any) {
-    this._router.navigate(['vaccancy-description'])
+  // getIndex(_index: any) {
+  //   this._router.navigate(['vaccancy-description'])
 
-    console.log(_index)
-    this.senderService.setIndex(_index)
-  }
+  //   console.log(_index)
+  //   this.senderService.setIndex(_index)
+  // }
 
 
   getTenderInfo(infor: any) {
@@ -117,12 +136,7 @@ export class TendersVaccanciesComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.message = this.senderService.getMessage();
-    this.nameOfTender = this.senderService.getTenderName();
-    this.tenderService.getFilterdTenders();
 
-  }
 
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';

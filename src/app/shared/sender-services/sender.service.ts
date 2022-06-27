@@ -1,3 +1,4 @@
+ 
 import { Tenders } from './../Model/tenders.model';
 import { NgZone } from '@angular/core';
 import { Injectable } from '@angular/core';
@@ -5,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { Vacancy } from '../Model/vacancy.model';
+import { Article } from '../Model/article.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +26,11 @@ export class SenderService {
   ];
 
   message?: String;
-  tenderName?: String;
+  tenderName?: any;
   indexNum?: String;
   tenderObj?: Tenders;
   vacancyObj?: Vacancy;
+  articleObj?: Article;
   constructor(private _router: Router) { }
 
   setMessage(data?: string) {
@@ -41,6 +44,7 @@ export class SenderService {
   setTenderName(data?: String) {
     this.tenderName = data;
     console.log(this.tenderName);
+    localStorage.setItem("nameROJ",this.tenderName);
   }
 
   setIndex(index?: String) {
@@ -50,12 +54,18 @@ export class SenderService {
 
   setTenderInfo(tender?: Tenders) {
     this.tenderObj = tender;
-    console.log(this.tenderObj);
+    console.log("this is the senderservice "+this.tenderObj);
+    localStorage.setItem("tenderOBJ",JSON.stringify(this.tenderObj));
   }
 
   setVacancyInfo(vacancy?: Vacancy) {
     this.vacancyObj = vacancy;
     console.log(this.vacancyObj);
+  }
+
+  setArticleInfo(article?: Article) {
+    this.articleObj = article;
+    console.log(this.articleObj);
   }
 
   getTenderInfo() {

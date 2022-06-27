@@ -1,3 +1,4 @@
+import { Article } from 'src/app/Admin/Models/admin-article-model';
 import { Vacancy } from './../Model/vacancy.model';
 import { Tenders } from './../Model/tenders.model';
 import { EventEmitter } from '@angular/core';
@@ -18,23 +19,28 @@ export class TenderService {
   private dbPath = '/tutorials';
   private dbPathTenders = '/tenders';
   private dbPathVacancys = '/vacancys';
+  private dbPathArticles = '/articles';
+
   vacancyRefe?: AngularFireObject<any>;
 
 
   tendersRef!: AngularFireList<Tenders>;
   vacancysRef!: AngularFireList<Vacancy>;
+  articlessRef!: AngularFireList<Article>;
 
   constructor(private db: AngularFireDatabase) {
 
 
     this.tendersRef = db.list(this.dbPathTenders);
     this.vacancysRef = db.list(this.dbPathVacancys);
+    this.articlessRef=db.list(this.dbPathArticles);
 
   }
 
   getFilterdTenders()
   {
-    this.db.list('/tenders', ref => ref.orderByChild('title').startAt('Data Mining').endAt('Data Mining'+'\uf8ffs')).snapshotChanges().subscribe((res: any[]) => {
+    //this.db.list('/tenders', ref => ref.orderByChild('title').startAt('Data Mining').endAt('Data Mining'+'\uf8ffs'))
+    this.db.list('/tenders', ref => ref.orderByChild('moe').startAt("Community").endAt("Community"+'\uf8ffs')).snapshotChanges().subscribe((res: any[]) => {
       let tempArray:any = [];
 
       res.forEach((ele: { payload: { val: () => any; }; }) => {
@@ -87,6 +93,10 @@ export class TenderService {
 
   getAllVacancies(): AngularFireList<Vacancy> {
     return this.vacancysRef;
+  }
+
+  getAllArticles(): AngularFireList<Article>{
+    return this.articlessRef;
   }
   getVacancies(key: string): Promise<void> {
     return this.vacancysRef.remove(key);

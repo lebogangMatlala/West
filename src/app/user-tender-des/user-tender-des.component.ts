@@ -18,6 +18,9 @@ export class UserTenderDesComponent implements OnInit {
   tenderInfo?: Tenders;
   public audioUrl?: SafeResourceUrl;
 
+  // tenderOBJ: any;
+
+
   constructor(private senderService: SenderService,
     private breakpointObserver: BreakpointObserver,
     private sanitizer: DomSanitizer) { }
@@ -27,7 +30,15 @@ export class UserTenderDesComponent implements OnInit {
   ngOnInit(): void {
     this.tenderInfo = this.senderService.getTenderInfo();
     console.log(this.tenderInfo?.title);
-  
+    this.getStorageInfo();
+
+
+  }
+  getStorageInfo():void
+  {
+    let data:any = localStorage.getItem('tenderOBJ');
+    this.tenderInfo=JSON.parse(data);
+    console.log("Hello data "+this.tenderInfo);
   }
 
   @ViewChild('drawer') drawer: any;
