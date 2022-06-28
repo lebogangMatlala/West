@@ -32,7 +32,7 @@ mat-sidenav{
   );
 }
 
-.mat-icon {
+mat-icon {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -114,7 +114,7 @@ and (-webkit-min-device-pixel-ratio: 1){
     #ffffff 20%
   );
   }
-   
+
 }
 
 .example-container {
@@ -263,11 +263,17 @@ svg{
   text-align: justify;
   margin-left: 15px;
 }
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navbar-brand{
     font-size: 2em;
-    margin-left: -6em;
+
+    margin-right:0;
+
   }
+  /* mat-icon{} */
+
+
 }
 @media only screen and (min-device-width: 576px) and (max-device-width: 767px) {
 

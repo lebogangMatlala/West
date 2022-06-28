@@ -43,7 +43,7 @@ export class MenuPageComponent implements OnInit {
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
   public isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
+    .observe([Breakpoints.Handset,Breakpoints.Small,Breakpoints.Medium])
     .pipe(map((result: BreakpointState) => result.matches));
   closeSideNav() {
     if (this.drawer._mode == 'over') {
@@ -56,7 +56,7 @@ export class MenuPageComponent implements OnInit {
 
     this._router.navigate(['tender-vaccancies'])
     console.log(_name)
-    
+
     this.senderService.setTenderName(_name)
 
 

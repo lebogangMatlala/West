@@ -1,3 +1,7 @@
+* {box-sizing: border-box;}
+
+html, body {padding:0;height:auto !important;}
+
 .sidenav-container {
   height: 100vh;
 }
@@ -7,6 +11,27 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
+
+}
+.example-section{
+  display:run-in;
+  flex-flow: row ;
+  align-items: flex-start;
+  box-sizing: content-box;
+  margin: 10px auto;
+}
+@media (max-width: 599.98px) and (orientation: portrait)
+{
+  body{
+    height: auto !important;
+  }
+}
+@media (max-width: 800px) {
+
+  .example-section {
+    flex-direction: row;
+     align-items:initial
+  }
 
 }
 .mat-toolbar {
@@ -43,13 +68,25 @@ mat-sidenav{
     padding-top: 60%;
     width: 60px;
   }
+
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
     #333333 75%,
     #ffffff 20%
-  );
+  )
+
   }
+
+  .example-section {
+    flex-direction: row;
+    padding:10% auto;
+  }
+}
+
+.form-check-inline {
+  display: inline-block;
+  margin: 0.5em auto;
 }
 @media screen and (min-device-width: 375px)
 and (max-device-width: 812px)
@@ -250,26 +287,38 @@ svg{
 .mat-tab-group {
   margin-bottom: 48px;
 }
-.example-section {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 60px;
-}
+
 .example-margin {
   margin: 0 40px;
 }
 
 mat-card{
-  height: 180px;
+  /* height: 70% !important;
+  position: relative; */
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
+  display: block;
+  overflow: auto;
+
+}
+
+.tender-section{
+  margin: 6% 4%;
+  border:none ; border-radius: 15px;
+  box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
+  background-color: #ffffff;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* height: 100% !important; */
+
 }
 .section{
   margin-top: -1.5%;
   margin-left: -20px;
+  padding-bottom: -3em;
 }
 .button01{
   width: 120px;
@@ -282,16 +331,7 @@ mat-card{
   border-bottom-right-radius: 10px;
 
 }
-.tender-section{
-  margin: 6% 4%;
-  border:none ; border-radius: 15px;
-  box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
-  background-color: #ffffff;
-  margin: auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
 
-}
 .vacancy-section{
   margin: 6% 4%;
   border:none ; border-radius: 15px;
@@ -306,12 +346,17 @@ mat-card{
   margin-bottom: 1.5em;
 }
 
-.section-text{
+/* .section-text{
   align-items: flex-end;
   margin-left: 75%;
-  margin-top: -2.3em;
-  padding-bottom: 4em;
 
+  padding-bottom: 4em;
+  margin-top: -2.3em;
+
+} */
+
+.col-6{
+  background-color: blue;
 }
 .vertical {
   border-left: 2px solid rgb(175, 174, 174);
