@@ -63,11 +63,11 @@
          <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/vacancy-list"></i>
          <a class="navbar-brand" href="#"  style="font-size: 1.5em;"><b>{{vacancy.title}}</b></a>
 
-         <button mat-mini-Raised type="button" class="button01">
+         <button mat-mini-Raised type="button" class="button01" (click)="onDisplay()">
            <mat-icon class="icon-edit">edit</mat-icon>
            </button>
 
-           <button mat-mini-Raised type="button" class="button03">
+           <button mat-mini-Raised type="button" class="button03"  (click)="VacancyDelete()">
              <mat-icon class="icon-delete">delete</mat-icon>
              </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -85,8 +85,8 @@
    <div class="container">
      <div class="section04">
        <div class="row">
-         <div class="col-1 col-sm-10">
-           <p class="text04">Ref No : <span class="boulded">{{vacancy.reference}}</span> | Date Opened : <span class="boulded">{{vacancy.DateOpenend}}</span>
+        
+           <p class="text04">Ref No : <span class="boulded">{{vacancy.reference}}</span> | Date Opened : <span class="boulded-dateOpened">{{vacancy.DateOpenend}}</span>
            </p>
            
            <p class="text05">{{vacancy?.description}}</p>
@@ -95,7 +95,7 @@
 <!--            
            <button class="button02"><a href="{{}}"  alt='Tender Document'>View Tender Doc.</a></button> -->
           
-         </div>
+        
        </div>
        <hr style="height:2px; width:100%; border-width:0; color:rgb(59, 58, 58); background-color:rgb(59, 58, 58)">
        

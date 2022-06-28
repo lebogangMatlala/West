@@ -12,6 +12,7 @@ import {
 } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AdminSenderService } from '../../Services/admin-sender.service';
 
 @Component({ 
   selector: 'app-admin-tender',
@@ -23,7 +24,11 @@ export class AdminTenderComponent implements OnInit {
   @Input() index: number= 0 ;
 
 
-  constructor(private tenderService: TenderService, private router: Router, private backEndService: BackEndService,private breakpointObserver: BreakpointObserver ) { }
+  constructor(private tenderService: TenderService,
+     private router: Router,
+      private backEndService: BackEndService,
+      private adminsenderService: AdminSenderService,
+      private breakpointObserver: BreakpointObserver ) { }
 
   ngOnInit(): void {
     console.log(this.tender);
@@ -32,18 +37,42 @@ export class AdminTenderComponent implements OnInit {
 
 
   @ViewChild('drawer') drawer: any;
-  public selectedItem : string = '';
-   public isHandset$: Observable<boolean> = this.breakpointObserver
-     .observe(Breakpoints.Handset)
-     .pipe(map((result: BreakpointState) => result.matches));
+  public selectedItem: string = '';
+  public isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(map((result: BreakpointState) => result.matches));
+
+  closeSideNav() {
+    if (this.drawer._mode == 'over') {
+      this.drawer.close();
+    }
+  }
+
+
+descDisplay(descrp: any){
+  console.log('onDisplay() called!!!!!!');
+  this.router.navigate(['tender-description']);
+  console.log(descrp);
+  this.adminsenderService.setTenderDesc(descrp);
 
 
 
-
-
-onDisplay(){
-  console.log('onDisplay() called!!!!!!')
-  this.router.navigate(["/tender/", this.index]);
 }
 
+  // @ViewChild('drawer') drawer: any;
+  // public selectedItem : string = '';
+  //  public isHandset$: Observable<boolean> = this.breakpointObserver
+  //    .observe(Breakpoints.Handset)
+  //    .pipe(map((result: BreakpointState) => result.matches))
+
+// onDisplay(descrp: any){
+//   console.log('onDisplay() called!!!!!!')
+//   this.router.navigate(['tender-description']);
+// console.log(descrp);
+// this.adminsenderService.setTenderDesc(descrp),
+
+
+
+// },
+// }
 }

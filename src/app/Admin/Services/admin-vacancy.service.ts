@@ -24,7 +24,7 @@ export class VacancyService {
     this.listOfVacancys.push(vacancy);
   }
 
-  //editing post
+  //editing Vacancy
   updateVacancy(index: number, vacancy: AdminVacancy) {
     this.listOfVacancys[index] = vacancy;
   }
@@ -33,6 +33,8 @@ export class VacancyService {
   getVac(index: number) {
     return this.listOfVacancys[index];
   }
+
+  
 
   //getting the the data from backend and displaying it
 SetVacancy(listOfVacancys: AdminVacancy[]){

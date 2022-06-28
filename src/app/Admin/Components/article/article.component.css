@@ -113,3 +113,24 @@ mat-card{
 
   margin-left: -20px;
 }
+
+.button03{
+  width: 120px;
+  padding-left: 50px;
+  margin-left: 2%;
+  color: #f1f1f1;
+  background-color: #bc9a2f;
+  border: 1px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.description{
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200%;
+  border-left:1em solid transparent;
+  border-right:1em solid transparent;
+  text-overflow: ellipsis;
+
+}

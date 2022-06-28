@@ -147,3 +147,25 @@ body {
     margin: 0px auto;
     display: block;
   }
+
+
+   /* # Phone */
+   @media screen and (max-width:640px) {
+    #btnsubscribe{
+      border-radius: 25px;
+      width: 200px;
+      margin-top: 20px;
+      margin-left: 17%;
+      float: center;
+      text-align: center !important;
+      background-color: #bc9a2f;
+      color: #f1f1f1;
+    }
+
+
+    @media only screen and (max-width: 767px) {
+      
+  }
+
+
+}

@@ -58,8 +58,8 @@
             
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
                 
-                <a *ngIf="editMode === false" class="navbar-brand" href="#" style="font-size: 2.5em;" >Add New Tender</a>
-                <a *ngIf="editMode === true" class="navbar-brand" href="#" style="font-size: 2.5em;" >Edit Tender</a>
+                <a *ngIf="editMode === false" class="navbar-brand" href="#" style="font-size: 2.5em;" >Add New Vacancy</a>
+                <a *ngIf="editMode === true" class="navbar-brand" href="#" style="font-size: 2.5em;" >Edit Vacancy</a>
                 <div class="user_name">
                 
                 
@@ -86,66 +86,79 @@
               <div class="container">
                           <div class="row">
                           <div class="col-md-8">
-      
+
+
+
+
                        
                          <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
-
-
-
-
-
                        
                        
                          
                        
-  <br>
-  <div class="form-group col-lg-12">
-    <div class="form-group" >
-    <label>Title</label>
-     <input class="form-control" type="text" formControlName="title"/>
-</div>
+                              <br>
+                              <div class="form-group col-lg-12">
+                                <div class="form-group" >
+                                <label>Title</label>
+                                 <input class="form-control" type="text" formControlName="title"/>
+                            </div>
+                    
+                            <div class="form-group">
+                              <label>Industry:</label>
+                              <input class="form-control" type="text" formControlName="industry"/>
+                          </div>
 
-<div class="form-group">
-  <label>Industry:</label>
-  <input class="form-control" type="text" formControlName="industry"/>
-</div>
+                    <div class="form-group">
+                        <label>Reference Number:</label>
+                        <input class="form-control" type="text" formControlName="reference"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Description:</label>
+                      <textarea class="form-control" type="text" formControlName="description"></textarea>
+                  </div>
+                    
 
-<div class="form-group">
-<label>Reference Number:</label>
-<input class="form-control" type="text" formControlName="reference"/>
-</div>
-<div class="form-group">
-<label>Description:</label>
-<textarea class="form-control" type="text" formControlName="description"></textarea>
-</div>
+                  
+                        
 
-
-
-
-
-<div class="row">
-<div class="form-group col-lg-6">
-<div class="form-group">
-<label for="DateOpened">Opened Date:</label>
-<input class="form-control" id="Datepicker"  type="date" formControlName="DateOpenend">
-</div>
-</div>
-<div class="form-group col-lg-6">
-<div class="form-group">
-<label for="DateClosed">Closing Date:</label>
-<input class="form-control"  id="Datepicker"  type="date" formControlName="DateClosed">
-</div>
-</div>
-</div>
-
-<label>
-  <input type="file" class="text-nowrap text-truncate"/>
-
-    <!-- <input type="file" class="text-nowrap text-truncate"(change)="selectFile($event)"/> -->
-  </label>
-  <!-- <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
-    Upload
-</button> -->
-<br>
-                    <button id="btnsubscribe" class="btn form-control"  type="submit" >PUBLISH   </button>
+                  <div class="row">
+                    <div class="form-group col-lg-6">
+                      <div class="form-group">
+                        <label for="DateOpened">Opened Date:</label>
+                        <input class="form-control" id="Datepicker"  type="date" formControlName="DateOpenend">
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                      <div class="form-group">
+                        <label for="DateClosed">Closing Date:</label>
+                        <input class="form-control"  id="Datepicker"  type="date" formControlName="DateClosed">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                  <div class="form-group col-lg-12">
+                    <div class="form-group">
+                      <label for="formFile" class="form-label">Image Upload</label>
+                      <input class="form-control"  type="file" id="formFile" formControlName="documentPath"/>
+                  </div>
+                    <button id="btnsubscribe" class="btn form-control"  type="submit" >PUBLISH</button>
                     <div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   
+
+              <div class="container">
+                <div class="row">
+                <div class="col-md-8">
+
+                
+                
+                </div>
+
+                    </div>
+                    </div>
+                    
+    
+              <div class="ylb-app-content">
+                <ng-content></ng-content>
+              </div>

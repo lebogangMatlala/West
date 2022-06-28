@@ -1,13 +1,11 @@
 input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
     border:1px solid red;
 }
-.material-icons{
+/* .material-icons{
     padding-left: 50px;
   padding-bottom: 30px;
     font-size: 100px;  
-} 
-
-
+}  */
 .sidenav-container {
   height: 100vh;
 }
@@ -155,8 +153,8 @@ mat-drawer-content{
 }
 
 .section03{
-  margin-top: 200%;
-  margin-right: 55%;
+  margin-top: 33em;
+  margin-right: 15%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
@@ -170,9 +168,9 @@ mat-drawer-content{
   height: 2px;
   background-color: rgb(255, 255, 255);
   border: none;
-  margin-left: 30%;
-  margin-right: 30%;
-  width: 80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 10.3em;
 }
 .text01{
   margin-top: 25px;
@@ -372,4 +370,17 @@ select option:focus{
 
  width: 880px;
 padding-left: 610px; 
+}
+.material-icons-round{
+  color: #bc9a2f;
+  transform: rotate(180deg);
+  padding-left: 25px;
+  padding-bottom: 1.1em;
+}
+
+.customIconSize {
+  font-size: 100px;
+  height: 100px ;
+  width: 100px ;
+  padding-left: 5rem;
 }

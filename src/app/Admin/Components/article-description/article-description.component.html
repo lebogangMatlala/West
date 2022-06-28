@@ -35,13 +35,12 @@
                   
                  
                  <div class="section03">
-       
-                   <!-- <p class="text03">T&C</p>
-                   <p class="text03">FAQs</p> -->
-                   <hr class="line01">
-                   <a class="text03" routerLink="/admin-login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
-                   
-                 </div>
+                  <hr class="line01" />
+                  <mat-icon class='material-icons-round' routerLink="/admin-login">logout</mat-icon>
+                  <a class="text03" routerLink="/admin-login" style="color: #bc9a2f">
+                    <b>LOG OUT</b></a>
+                    </div>
+                    
                  <div class="section05">
                    <img src="../../assets/Group001.png" class="logo" alt="...">
                  </div>
@@ -58,7 +57,7 @@
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
-                <a class="navbar-brand" href="#" style="font-size: 2.5em;">{{article?.title}}</a>
+                <a class="navbar-brand" href="#" style="font-size: 2.0em; white-space:pre-wrap;">{{article?.title}}</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -72,7 +71,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <div col-sm-12  style="margin-left: 8em;">
                    
-                    <!-- <a class="navbar-brand" href="#"  style="font-size: 1.5em;"><b>{{article?.title}}</b></a> -->
+                   
 
                     <h3></h3>
                     <h1 class="boulded"></h1>
@@ -90,8 +89,8 @@
                   <!-- </p> -->
                   <div col-sm-12  style="margin-left:2em;">
                     <div class="img">
-                      <img src="https://metrowired.co.za/wp-content/uploads/2022/03/avayass.png" class="img-responsive" style='float: left;' id="image">
-                      <p>{{article?.description}}</p>
+                      <img src="" class="img-responsive" style='float: left;' id="image">
+                      <p id="description">{{article?.description}}</p>
                       </div>
           </div>
                 </div>

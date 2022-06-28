@@ -19,6 +19,7 @@ import { VacancyService } from 'src/app/Admin/Services/admin-vacancy.service';
 import {Storage, ref, uploadBytesResumable, getDownloadURL} from '@angular/fire/storage';
 import { FileUpload } from '../../Models/vacancy-upload-model';
 import { FileUploadService } from '../../Services/file-upload.service';
+import { AuthenticationService } from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-admin-vacancy-add',
@@ -38,6 +39,8 @@ percentage = 0;
   editMode = false;
   public file: any={}
   
+
+  user$ = this.authService.currentUser$;
   //Uploading Files Storage
   chooseFile(event: any){
     this.file=event.target.files[0];
@@ -69,7 +72,8 @@ percentage = 0;
     private backEndService: BackEndService,
     private breakpointObserver: BreakpointObserver,
     private storage: Storage,
-    private uploadService: FileUploadService
+    private uploadService: FileUploadService,
+    private authService: AuthenticationService
 
   ) { }
 

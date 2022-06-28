@@ -33,7 +33,10 @@ export class ArticleDescriptionComponent implements OnInit {
      }
   
      ngOnInit(): void {
-     
+      this.article = this.articleService.getEdit(this.index);
+
+  
+    this.getStorage();
     
     }
   
@@ -49,7 +52,15 @@ export class ArticleDescriptionComponent implements OnInit {
       
     }
   
-
+    getStorage():void
+    {
+      let data:any = localStorage.getItem('AdminarticleOBJ');
+      //  let dataindex:any = localStorage.getItem('index');
+      this.article=JSON.parse(data);
+      //  this.index=JSON.parse(dataindex);
+      console.log("Hello data "+this.article);
+    }
+  
  
 
 }

@@ -156,13 +156,11 @@
               ></app-admin-tender>
                      
               </section>
-               
               <app-bidders
               *ngFor="let bidder of listOfBidders; let i = index let f=first"
               [ngClass]="{opened: f}"
               [bidder]="bidder"
               [index]="i"
-              
             ></app-bidders>
               
             </div>

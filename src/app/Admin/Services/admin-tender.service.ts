@@ -31,13 +31,19 @@ export class TenderService {
 
   //Getting the Tender
   getTender(index: number): AdminTender {
-    return this.listOfTenders[index];
+    return this.listOfTenders[index]; 
   }
+
+
+  
 
   //getting the the data from backend and displaying it
 SetTenders(listOfTenders: AdminTender[]){
   this.listOfTenders = listOfTenders;
   this.listChangedEvent.emit(listOfTenders);
+  
 }
+
+
 
 }

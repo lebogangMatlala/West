@@ -11,7 +11,7 @@
                             <div class="img">
                               <img src="http://file.name/" class="img-responsive" style='float: left;' id="image">
                               </div>
-                              <div class="description">
+                              <div class="description" maxlength="20">
                                 <p>{{article?.description}}</p>
                                      </div>
                                     
@@ -42,10 +42,15 @@
                                   
 
                               
-
+                                    
                                   <button class="btnEdit" mat-stroked-button (click)="ArticleEdit()" >
                                     EDIT
                                     <mat-icon>edit</mat-icon>
+                                        
+                                    <!-- <button mat-mini-Raised type="button" class="button03" (click)="onDelete()">
+                                      delete
+                                      <mat-icon class="icon-delete">delete</mat-icon>
+                                      </button> -->
                   
                                   </button>
 
@@ -62,7 +67,7 @@
                       </div>
                       <div class="section" align="end">
 
-                        <button id="" class="button01" (click)="onDisplay()">
+                        <button id="" class="button01" (click)="onDisplay(article)">
                           <i class="fa fa-angle-right fa-3x"></i>
                           
                         </button>

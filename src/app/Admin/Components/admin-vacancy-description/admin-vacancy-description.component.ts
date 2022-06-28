@@ -35,7 +35,16 @@ export class AdminVacancyDescriptionComponent implements OnInit {
       activatedRoute.params.subscribe((params)=>{
         if(params.index)
         this.vacancy = vacancyService.getVac(params.index);
-        this.document = uploadService.getFile(params.index);
+        
+
+
+
+
+
+
+
+
+        
       })
       
      }
@@ -60,5 +69,20 @@ export class AdminVacancyDescriptionComponent implements OnInit {
     if (this.drawer._mode == 'over') {
       this.drawer.close();
     }
+  }
+  onDisplay(){
+    console.log("onDisplay() called!!!!");
+    this.router.navigate(['/add-vacancy', this.index ])
+  }
+
+     VacancyDelete(){
+      console.log("onDelete() called!!!")
+      this.vacancyService.deleteVacancy(this.index);
+      this.backEndService.SaveVacancy();
+             
+    //Navigate to /vacancy-list
+     this.router.navigate(['/vacancy-list']);
+    }
     
-  }}
+    
+  }

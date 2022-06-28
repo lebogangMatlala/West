@@ -35,12 +35,15 @@
               </div>
 
             </div>
-            <div class="section03">
-              <hr class="line01" />
-              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
-                ><b>LOG OUT</b></a
-              >
-          </div>
+        
+          <div class="section03">
+            <hr class="line01" />
+            <mat-icon class='material-icons-round' routerLink="/admin-login">logout</mat-icon>
+            <a class="text03" routerLink="/admin-login" style="color: #bc9a2f">
+              <b>LOG OUT</b></a>
+              </div>
+
+        
 
 
           <div class="section05">
@@ -69,7 +72,7 @@
                   <div class="d-flex">
                     <div class="user-name">
 
-                      <mat-icon>account_circle</mat-icon>
+                      <mat-icon class="customIconSize">account_circle</mat-icon>
                     <h2  *ngIf="user$ | async as user"><b>{{user.email}}</b></h2>
 
               
@@ -186,7 +189,7 @@
               </div>
                     <br>
                    
-                    <button id="btnsubscribe" class="btn form-control" (click)="addFile()" type="submit" >PUBLISH</button>
+                    <button id="btnsubscribe" class="btn form-control" type="submit" >PUBLISH</button>
                     <div>             
               <div class="container">
                 <div class="row">

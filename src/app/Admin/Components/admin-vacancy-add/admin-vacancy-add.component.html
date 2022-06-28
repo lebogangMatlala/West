@@ -12,62 +12,80 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 </head>
 
 <body>
+  <section class="">
+    <div>
+      <mat-sidenav-container class="sidenav-container">
 
-    <section class="">
-        <div>
-          <mat-sidenav-container class="sidenav-container">
-    
-            <mat-sidenav #drawer fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-              [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-              <div class="section01">
-                <img src="../../assets/Beaufort_West_CoA.png" class="rounded" alt="...">
+        <mat-sidenav #drawer fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+          [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+          <div class="section01">
+            <img src="../../assets/Beaufort_West_CoA.png" class="rounded" alt="...">
+          </div>
+          <div class="example-button-row">
+            <div class="example-flex-container">
+              <div class="example-button-container">          
               </div>
-              <div class="example-button-row">
-                <div class="example-flex-container">
-                  <div class="example-button-container">
-                   
+             
+              </div>
+
+            </div>
+            <div class="section03">
+              <hr class="line01" />
+              <a class="text03" routerLink="/admin-login" style="color: #bc9a2f"
+                ><b>LOG OUT</b></a
+              >
+          </div>
+
+
+          <div class="section05">
+            <img src="../../assets/Group001.png" class="logo" alt="...">
+          </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <div class="container">
+            <nav class="navbar navbar-expand-lg" style="margin-top: 1%;">
+              <div class="container-fluid">
+                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                  *ngIf="isHandset$ | async">
+                  <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                </button>
+            
+                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/dashboard"></i>
+                
+                <a *ngIf="editMode === false" class="navbar-brand" href="#" style="font-size: 2.5em;" >Add New Tender</a>
+                <a *ngIf="editMode === true" class="navbar-brand" href="#" style="font-size: 2.5em;" >Edit Tender</a>
+                <div class="user_name">
+                
+                
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="d-flex">
+                    <div class="user-name">
+
+                      <mat-icon>account_circle</mat-icon>
+                    <h2  *ngIf="user$ | async as user"><b>{{user.email}}</b></h2>
+
+              
+                  
+                   </div>
                   </div>
                   
-                
-    
                 </div>
               </div>
-              <div class="section03">
-
-               
-                <hr class="line01">
-                <a class="text03" routerLink="/admin-login" style="color:#bc9a2f ;"><b>LOG OUT</b></a>
               </div>
-              <div class="section05">
-                <img src="../../assets/Group001.png" class="logo" alt="...">
-              </div>
-            </mat-sidenav>
-    
-    
-            <mat-sidenav-content>
+            </nav>
+          </div>
+          <div class="container">
               <div class="container">
-                <nav class="navbar navbar-expand-lg" style="margin-top: 4%;">
-                  <div class="container-fluid">
-                    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-                      *ngIf="isHandset$ | async">
-                      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-                    </button>
-                    
-                    <i class="bi bi-arrow-left"></i>
-                    <div class="container">
-                    <div class="row">
-                    <div class="col-md-8">
-
-
-
-
-
-                        
-                      <h1 *ngIf="editMode === false">Add New Vacancy</h1>
-                        <h1 *ngIf="editMode ===true">EDIT Vacancy</h1>
+                          <div class="row">
+                          <div class="col-md-8">
 
 
 

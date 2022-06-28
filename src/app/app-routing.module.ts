@@ -77,14 +77,18 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 
 
 {
-  path: 'tender-add/:index',
+  path: 'tender-edit/:index',
   component: AdminTenderEditComponent
 
 },
 {
-  path: 'tender/:index',
+  path: 'tender-description/:index',
   component: AdminTenderDescriptionComponent
 },
+
+
+
+
 
 {
   path: 'bidder/:index',
@@ -138,6 +142,17 @@ component: AdminTenderComponent
   path: 'add-vacancy',
   component: AdminVacancyEditComponent
 },
+
+{
+  path: 'add-vacancy/:index',
+  component: AdminVacancyEditComponent
+},
+
+
+
+
+
+
 {
   path: 'article-add',
   component: ArticleAddComponent
@@ -152,7 +167,7 @@ component: AdminTenderComponent
 },
 
 {
-  path: 'article-description/:index',
+  path: 'article-description',
   component: ArticleDescriptionComponent
 },
 

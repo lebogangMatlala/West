@@ -31,17 +31,23 @@
       #ffffff 20%
     );
   }
+  @media screen and (max-width:640px){
+  }
+  .logo{
+    padding-top: 15%;
+    width: 60px;
+  }
   
   @media screen and (max-width:600px) {
     mat-sidenav{
-      width: 60%;
+      width: 70%;
       height: 100%;
     }
     .section05{
-      margin-top: 20%;
+      margin-top: 40%;
     }
     .logo{
-      padding-top: 60%;
+      padding-top: 15%;
       width: 60px;
     }
     mat-sidenav{
@@ -187,8 +193,8 @@
   }
   
   .section03{
-    margin-top: 200%;
-    margin-right: 55%;
+    margin-top: 38em;
+    margin-right: 15%;
     margin-bottom: 0px;
     color: #f1f1f1;
   }
@@ -209,16 +215,14 @@
     font-weight: bold;
   }
   .line01{
-    display: inline-block;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    height: 1px;
-    color: #ffffff;
+    height: 2px;
     background-color: rgb(255, 255, 255);
     border: none;
-    margin-left: 30%;
-    margin-right: 30%;
-    width: 100%;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 10.3em;
   }
   .text01{
     margin-top: 25px;
@@ -244,6 +248,7 @@
   .navbar-brand{
     color: black;
     margin-top: 0px;
+    margin-bottom: 25px;
   }
   .btn{
     width: 8%;
@@ -265,11 +270,15 @@
     color: white;
     margin-top: -20px;
   }
-  
+  .material-icons-round{
+    color: #bc9a2f;
+    transform: rotate(180deg);
+    padding-left: 25px;
+    padding-bottom: 1.3em;
+  }
   .text03{
     text-align: justify;
-    margin-left: 10px;
-    padding-left: 5px;
+    margin-right: -20px;
   }
   
   /* to activate buttons on the side navbar */
@@ -282,12 +291,6 @@
     filter:  brightness(0) invert(1);
   }
 
-
-  /* Edit button */
-.icon-edit{
-
-
-}
 .button01{
   border-radius: 10px;
   width: 500px;
@@ -324,6 +327,20 @@
   border-radius: 10px;
   height: 25px;
   margin-bottom: 35px;
-
 }
 
+@media screen and (max-width:640px) {
+  html,body{
+    overflow-x: hidden;
+  
+}
+.navbar-brand{
+  font-size: 1.0em
+}
+#description{
+  margin:0; 
+  width: 100%;
+  float: left;
+  display: block;
+}
+}

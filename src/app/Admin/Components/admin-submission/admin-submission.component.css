@@ -7,8 +7,6 @@
     height: 100% ;
     z-index: 12 ;
  
-
-
 }
 
 #container{
@@ -69,8 +67,47 @@
     height: 30px;
   }
 
+  @media screen and (max-width:640px) {
+    html,body{
+      overflow-x: hidden;
+  }
+  #container{
+    z-index: 13;
+    background-color: white;
+    width: 90% ;
+    margin: auto;
+    position: fixed;
+    left: 0px; 
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    box-shadow: 5px 5px 4px rgba(19, 19, 19, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 480px ;    
+}
 
 
+#content{
+    flex-grow: 1;
+    padding-bottom: 0;
+    
+    padding: 15px;
+}
+
+
+
+#header{
+    font-size: 20px;
+    height: 30px;
+    float: center;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+  }
 
 
 

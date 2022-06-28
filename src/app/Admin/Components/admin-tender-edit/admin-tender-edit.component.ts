@@ -70,9 +70,8 @@ export class AdminTenderEditComponent implements OnInit {
     let description= '';
     let status= '';
      let documentPath= '';
-    let DateOpenend= '';
-    let DateClosed;
-
+     let DateOpenend= '';
+     let DateClosed;
   
     this.route.params.subscribe((params: Params) => {
       if (params['index']){
@@ -124,9 +123,11 @@ export class AdminTenderEditComponent implements OnInit {
     const description = this.form.value.description;
     const status = this.form.value.status;
      const documentPath = this.form.value.documentPath;
-    const DateOpenend = this.form.value.DateOpenend;
-    const DateClosed = this.form.value.DateClosed;
+     const DateOpenend = this.form.value.DateOpenend;
+     const DateClosed = this.form.value.DateClosed;
 
+
+     
     const tender: AdminTender = new AdminTender(
       moe,
       tenderType,
@@ -143,8 +144,6 @@ export class AdminTenderEditComponent implements OnInit {
         if(this.editMode){
           this.tenderService.updateTender(this.index, tender);
           this.backEndService.saveData();
-          
-   
         }else{
    //Calling tender services
     

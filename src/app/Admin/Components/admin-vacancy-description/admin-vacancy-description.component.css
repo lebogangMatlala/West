@@ -346,3 +346,47 @@ svg{
   margin-top: 25%;
 }
 
+
+@media screen and (max-width:640px) {
+  html,body{
+    overflow-x: hidden;
+}
+.button03{
+  border-radius: 10px;
+
+  height: 50px;
+  margin-top:12%;
+  margin-left: 20px;
+  background-color: red;
+  color: #f1f1f1;
+  border: 2px solid red;
+}
+.boulded-dateOpened{
+  display: inline-block;
+}
+
+
+.button01{
+  border-radius: 10px;
+ 
+  height: 50px;
+  margin-top:6%;
+  margin-left: 20px;
+  background-color:#bc9a2f;
+  color: #f1f1f1;
+  border: 2px solid #bc9a2f;
+
+}
+.text04{
+  /* font-size: 20px; */
+  display:inline;
+
+}
+
+.section04{
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 15px;
+  display: inline-block;
+}
+}

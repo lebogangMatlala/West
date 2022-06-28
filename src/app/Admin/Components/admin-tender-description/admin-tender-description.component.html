@@ -60,10 +60,12 @@
                   aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
+                
 
+                
                 <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/tender-list"></i>
                 <a class="navbar-brand" href="#"  style="font-size: 1.5em; white-space:pre-wrap;"><b>{{tender?.title}}</b></a>
-
+                  
                 <button mat-mini-Raised type="button" class="button01" (click)="TenderEdit()">
                   <mat-icon class="icon-edit">edit</mat-icon>
                   </button>
@@ -71,6 +73,8 @@
                   <button mat-mini-Raised type="button" class="button03" (click)="TenderDelete()">
                     <mat-icon class="icon-delete">delete</mat-icon>
                     </button>
+
+                    
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <div col-sm-12  style="margin-left: 8em;">
                     <h3>Department:</h3>
@@ -85,19 +89,17 @@
           </div>
           <div class="container">
             <div class="section04">
-              <div class="row">
-                <div class="col-1 col-sm-10">
+             
+              
                   <p class="text04">Ref No : <span class="boulded">{{tender.reference}}</span> | Date Opened : <span class="boulded">{{tender.DateOpenend}}</span>
                   </p>
                   
                   <p class="text05">{{tender?.description}}</p>
-                 
-                  
-                  
+
                   <button class="button02"><a href="{{tender.documenturl}}"  alt='Tender Document'>View Tender Doc.</a></button>
                  
-                </div>
-              </div>
+              
+              
               <hr style="height:2px; width:100%; border-width:0; color:rgb(59, 58, 58); background-color:rgb(59, 58, 58)">
               <h1 class="boulded">Status</h1>
               

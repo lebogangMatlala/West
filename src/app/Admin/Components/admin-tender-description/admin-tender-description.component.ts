@@ -62,8 +62,11 @@ bidder!: Bidder
     this.backEndService.fetchdata();
   }
    ngOnInit(): void {
-    this.onFetch();
-    this.tender =this.tenderService.getTender(this.index)
+    // this.onFetch();
+
+this.tender = this.tenderService.getTender(this.index);
+    this.getStorage();
+    // this.tender =this.tenderService.getTender(this.index)
   //   this.listOfBidders = this.submissionService.getBidders();
   //  this.submissionService.listChangedEvent.subscribe((listOfBidders: Bidder[])=>{
   //    this.listOfBidders = this.submissionService.getBidders();
@@ -89,10 +92,18 @@ toogleTag(){
 }
 
 
-
+  
+getStorage():void
+  {
+    let data:any = localStorage.getItem('AdmintenderOBJ');
+    let dataindex:any = localStorage.getItem('index');
+    this.tender=JSON.parse(data);
+    this.index=JSON.parse(dataindex);
+    console.log("Hello data "+this.tender);
+  }
 
 TenderEdit(){
-  this.router.navigate(["/tender-add", this.index]);
+  this.router.navigate(["/tender-edit", this.index]);
  }
 
  TenderDelete(){

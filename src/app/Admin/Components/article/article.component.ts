@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Article } from 'src/app/Admin/Models/admin-article-model';
 import { ArticleService } from "src/app/Admin/Services/article.services";
 import { BackEndService } from 'src/app/Admin/Services/back-end.services';
+import { AdminSenderService } from '../../Services/admin-sender.service';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -13,7 +14,12 @@ export class ArticleComponent implements OnInit {
  
   @Input() article?: Article;
   @Input() index: number = 0;
-  constructor( private articleService: ArticleService, private router: Router, private backendService: BackEndService, private route: ActivatedRoute ) { }
+  constructor( private articleService: ArticleService,
+     private router: Router, 
+     private backendService: BackEndService, 
+     private route: ActivatedRoute, 
+     private adminsenderService: AdminSenderService,
+     ) { }
 
   ngOnInit(): void {
 
@@ -26,10 +32,18 @@ export class ArticleComponent implements OnInit {
     this.router.navigate(["/article-edit", this.index])
   }
 
-  onDisplay(){
-    console.log("onDisplay() called!!!!");
-    this.router.navigate(['/article-description', this.index ])
+  // onDisplay(){
+  //   console.log("onDisplay() called!!!!");
+  //   this.router.navigate(['/article-description', this.index ])
+  // }
+  onDisplay(descrp: any){
+    console.log('onDisplay() called!!!!!!');
+    this.router.navigate(['article-description']);
+    console.log(descrp);
+    this.adminsenderService.setArticleDesc(descrp);
+  
+  
+  
   }
-
 
 }

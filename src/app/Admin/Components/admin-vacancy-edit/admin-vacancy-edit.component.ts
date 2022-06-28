@@ -107,15 +107,12 @@ export class AdminVacancyEditComponent implements OnInit {
       DateOpenend,
       DateClosed,
     );
-    //A condition to either add or edit a post
+    //A condition to either add or edit
         if(this.editMode){
           this.vacancyService.updateVacancy(this.index, vacancy);
-          this.backEndService.saveData();
-          
-   
+          this.backEndService.SaveVacancy;
         }else{
    //Calling tender services
-    
    this.vacancyService.addVacancy(vacancy);
    console.log("onSave() called!!!! ");
    this.backEndService.SaveVacancy();
@@ -123,30 +120,6 @@ export class AdminVacancyEditComponent implements OnInit {
         //  Navigate to tender-list
    this.router.navigate(['/vacancy-list']);
       }
-
-
-
-  // selectFile(event: any): void{
-  //   this.selectedFiles = event.target.files;
-  // }
-  // upload(): void{
-  //   if (this.selectedFiles){
-  // const file: File | null = this.selectedFiles.item(0);
-  // this.selectedFiles = undefined;
-  // if(file){
-  //   this.currentFileUpload = new FileUpload(file);
-  //   this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
-  //     percentage =>{
-  //       this.percentage = Math.round(percentage? percentage: 0);
-  //     },
-  
-  // error => console.log(error)
-      
-      
-  //   )
-  // }
-  //   }
-  // }
   
   @ViewChild('drawer') drawer: any;
   public selectedItem : string = '';
