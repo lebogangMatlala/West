@@ -132,6 +132,7 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+
     };
     return userRef.set(userData, {
       merge: true,
@@ -144,5 +145,5 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       this.router.navigate(['home']);
     });
   }
- 
+
 }

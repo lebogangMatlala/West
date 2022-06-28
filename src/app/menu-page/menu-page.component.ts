@@ -1,3 +1,4 @@
+import { TenderService } from 'src/app/Admin/Services/admin-tender.service';
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import {
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SenderService } from '../shared/sender-services/sender.service';
 import { Router } from '@angular/router';
-
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-menu-page',
@@ -22,19 +23,27 @@ export class MenuPageComponent implements OnInit {
   name?:string="";
 
   message = "hey i am data from menu"
+
+  term!: string;
+
   constructor(private breakpointObserver: BreakpointObserver,
     public senderService: SenderService,
+    public tenderService:TenderService,
     private _router: Router) { }
 
   ngOnInit(): void {
     this.tenderdata = this.senderService.tenders;
     this.senderService.setMessage(this.message);
+
+
+
+
   }
 
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
   public isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
+    .observe([Breakpoints.Handset,Breakpoints.Small,Breakpoints.Medium])
     .pipe(map((result: BreakpointState) => result.matches));
   closeSideNav() {
     if (this.drawer._mode == 'over') {
@@ -44,16 +53,18 @@ export class MenuPageComponent implements OnInit {
 
   navigateToNextPage(_name: any)
   {
-    this._router.navigate(['tender-vaccancies'])
 
+    this._router.navigate(['tender-vaccancies'])
     console.log(_name)
+
     this.senderService.setTenderName(_name)
+
+
   }
 
   getIndex(_index:any)
   {
     this._router.navigate(['tender-vaccancies'])
-
     console.log(_index)
     this.senderService.setIndex(_index)
   }

@@ -1,16 +1,17 @@
+
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
@@ -47,12 +48,18 @@ import { AdminVacancyAddComponent } from './Admin/Components/admin-vacancy-add/a
 import { AdminVacancyDescriptionComponent } from './Admin/Components/admin-vacancy-description/admin-vacancy-description.component';
 import { AdminVacancyListComponent } from './Admin/Components/admin-vacancy-list/admin-vacancy-list.component';
 import { LoginComponent } from './Admin/Components/login/login.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore, FirestoreModule } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore, FirestoreModule } from '@angular/fire/firestore';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ArticlePageComponent } from './article-page/article-page.component';
+import { UserArticleDesComponent } from './user-article-des/user-article-des.component';
+import { UserTenderDesComponent } from './user-tender-des/user-tender-des.component';
+import { ModelFormComponent } from './model-form/model-form.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -63,7 +70,6 @@ import {MatSelectModule} from '@angular/material/select';
 import { ImagesComponent } from './Admin/Components/images/images.component';
 import { ImageComponent } from './Admin/Components/images/image/image.component';
 import { ImageListComponent } from './Admin/Components/images/image-list/image-list.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import { AdminFeedbackComponent } from './Admin/Components/admin-feedback/admin-feedback.component';
@@ -88,6 +94,15 @@ import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
 
 
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+const materialModules = [
+  MatButtonModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDialogModule
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,7 +118,7 @@ import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
     VaccanciesComponent,
     ContactComponent,
     HistoryDetailsComponent,
-    
+
     AdminDashboardComponent,
     ArticleComponent,
     ArticleAddComponent,
@@ -118,13 +133,16 @@ import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
     AdminVacancyDescriptionComponent,
     AdminVacancyListComponent,
     LoginComponent,
-    ImagesComponent,
+    ArticlePageComponent,
+    UserArticleDesComponent,
+    UserTenderDesComponent,
+    ModelFormComponent,
     ImageComponent,
     ImageListComponent,
     AdminFeedbackComponent,
     AdminSubmissionComponent,
     AdminVacancyEditComponent,
-    
+
     AddVancancyComponent,
     ListVancancyComponent,
     ListingsComponent,
@@ -132,16 +150,18 @@ import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
     AddListingComponent,
     UploadFormComponent,
     BiddersComponent,
-    
-    
-    
-    
-    
+
+
+
+
+
   ],
   imports: [
+    ModalModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatSidenavModule,
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule, MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
@@ -158,36 +178,39 @@ import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
     MatSidenavModule,
     MatGridListModule,
     MatSelectModule,
-    
+
 
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-     
+
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatTabsModule,
     MatDividerModule,
     MatProgressBarModule,
     FormsModule,
-    MatCardModule,HttpClientModule,
+    MatIconModule,
+    MatCardModule, HttpClientModule,
 
 
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+    AngularFireStorageModule,
 
-provideFirebaseApp(() => initializeApp(environment.firebase)),
+    HotToastModule.forRoot(),
+    materialModules,
+    NgbModule
 
 
-provideAuth(() => getAuth()),
-provideStorage(() => getStorage()),
-provideDatabase(() => getDatabase()),
-provideFirestore(() => getFirestore()),
- AngularFireStorageModule,
-
- HotToastModule.forRoot(),
-   NgbModule,
-
+  ],
+  exports: [
+    materialModules
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }

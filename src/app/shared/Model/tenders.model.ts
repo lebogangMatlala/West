@@ -1,10 +1,14 @@
 export class Tenders {
+  key?:any;
+  moe?:string;
+  tenderType?: string;
   title?: string;
   reference?: string;
   description?: string;
   status?: string;
-  documentPath?: string;
+  documenturl?: string;
   DateOpenend?: Date;
   DateClosed?: Date;
+
 
 }

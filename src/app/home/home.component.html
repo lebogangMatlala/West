@@ -27,14 +27,14 @@
               <div class="col-sm-12">
                 <label for="exampleInputEmail1">Email address :</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                  placeholder="Enter email" #userEmail required >
+                  placeholder="Enter email" #userEmail required>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <label for="exampleInputEmail1">Password :</label>
                 <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"
-                  placeholder="Enter Password" #userPwd required >
+                  placeholder="Enter Password" #userPwd required>
               </div>
             </div>
             <div class="row">
@@ -46,38 +46,38 @@
             </div>
           </div>
         </form>
-
-      </div>
-      <div class="section03">
-        <div class="row">
-          <div class="col">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-12">
             <button id="btnsubscribe" class="btn form-control"
               (click)="authService.SignUp(userEmail.value, userPwd.value)">
               SIGN-UP
             </button>
-            <p style="color: #f1f1f1;margin-left:40% ;margin-top: 5px;display:inline;">Already have an account?</p>
-            <h4 style="display: inline;color: #08b8ee;margin-left: 6px;" (click)="navigateTosignin()">
-              LOGIN
-            </h4>
+            <div class="center">
+              <p class="accountText">Already have an account?</p>
+              <h4 class="loginText" (click)="navigateTosignin()">
+                LOGIN
+              </h4>
+            </div>
+
           </div>
         </div>
         <div class="col-12">
           <hr>
         </div>
-      </div>
-      <div class="section04">
-        <div class="row d-flex justify-content-center">
-          <div class="col-sm-7 text-end" style="align-items: center;">
+        <div class="col-sm-12">
+          <div class="col-sm-7">
             <p class="text01">
               This app is a service brought to Beaufest west by
             </p>
           </div>
-          <div class="col-sm-5 text-start" style="align-items: flex-start;">
+          <div class="col-sm-5">
             <img src="../../assets/Group.png" class="rounded" alt="...">
           </div>
-
+    
         </div>
       </div>
+
+
 
     </section>
   </div>

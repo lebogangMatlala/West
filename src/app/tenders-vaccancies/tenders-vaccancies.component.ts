@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Router } from '@angular/router';
 import { Vacancy } from './../shared/Model/vacancy.model';
 import { Tenders } from './../shared/Model/tenders.model';
@@ -9,7 +10,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -20,14 +21,20 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class TendersVaccanciesComponent implements OnInit {
 
-  tenders?: Tenders[];
+  public filteredData?: any;
+
+  tendersData?: string;
+
+  data!: string;
+  tenders?: Tenders[] = [];
   vacancies?: Vacancy[];
 
 
-  message?:String
-  nameOfTender?:String
-  listofTenders?:any
-  listofVacancies?:any
+  message?: String
+  nameOfTender?: String
+
+  listofTenders?: any
+  listofVacancies?: any
 
   awardedTen = false;
   closedTen = false;
@@ -35,71 +42,116 @@ export class TendersVaccanciesComponent implements OnInit {
   rfqTen = false;
   rfpTen = false;
 
+  num?: any;
+  numOfTenders?: any;
 
-  constructor(private senderService:SenderService,
+  nameROJ: any;
+
+
+
+  constructor(private senderService: SenderService,
     private breakpointObserver: BreakpointObserver,
-    private tenderService:TenderService,
-    private _router:Router) {
+    private tenderService: TenderService,
+    private _router: Router,
+    private db: AngularFireDatabase) {
 
-      this.retrieveTenders();
-      this.retrieveVacancies();
+    this.retrieveTenders();
+    this.retrieveVacancies();
 
-    }
+    // this.num = this.retrieveVacancies.length;
+    // this.numOfTenders=this.retrieveTenders.length;
+    console.log('hello vacancies ' + this.num + 'hello tenders ' + this.numOfTenders);
 
-    //retrieve tenders
-    retrieveTenders(): void {
-      this.tenderService.getAllTenders().snapshotChanges().pipe(
-        map(changes =>
-          changes.map(c =>
-            ({ key: c.payload.key, ...c.payload.val() })
-          )
-        )
-      ).subscribe(data => {
-        this.tenders = data;
-        console.log("This is the tenders data"+this.tenders)
-      });
-    }
-
-    getIndex(_index:any)
-  {
-    this._router.navigate(['vaccancy-description'])
-
-    console.log(_index)
-    this.senderService.setIndex(_index)
   }
-
-    //retrieve vacancies
-    retrieveVacancies():void{
-      this.tenderService.getAllVacancies().snapshotChanges().pipe(
-        map(changes =>
-          changes.map(c =>
-            ({ key: c.payload.key, ...c.payload.val() })
-          )
-        )
-      ).subscribe(data => {
-        this.vacancies = data;
-        console.log("This is the vacancies data"+this.vacancies)
-      });
-    }
-
 
   ngOnInit(): void {
-    this.message=this.senderService.getMessage();
-    this.nameOfTender=this.senderService.getTenderName();
-    console.log(this.tenders);
+    this.message = this.senderService.getMessage();
+    this.nameOfTender = this.senderService.getTenderName();
+    this.tenderService.getFilterdTenders();
+    this.getStorageInfo();
+
+
 
   }
 
-  @ViewChild('drawer') drawer: any;
-  public selectedItem : string = '';
-  public isHandset$: Observable<boolean> = this.breakpointObserver
-     .observe(Breakpoints.Handset)
-     .pipe(map((result: BreakpointState) => result.matches));
+  getStorageInfo():void
+  {
+    let data:any = localStorage.getItem('nameROJ');
+    this.nameROJ=data;
+    console.log("Hello data "+this.nameROJ);
+  }
 
- closeSideNav() {
-   if (this.drawer._mode=='over') {
-     this.drawer.close();
-   }
- }
+  //retrieve tenders
+  retrieveTenders(): void {
+    this.tenderService.getAllTenders().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.tenders = data;
+      this.numOfTenders = data.length;
+
+      console.log("This is the tenders data" + this.tenders + ' \n ' + this.numOfTenders)
+    });
+  }
+
+  // getIndex(_index: any) {
+  //   this._router.navigate(['vaccancy-description'])
+
+  //   console.log(_index)
+  //   this.senderService.setIndex(_index)
+  // }
+
+
+  getTenderInfo(infor: any) {
+    //user_tender_descrip
+    this._router.navigate(['user_tender_descrip'])
+    console.log(infor)
+    this.senderService.setTenderInfo(infor)
+  }
+
+  getVacancyInfo(information: any) {
+    //user_tender_descrip
+    this._router.navigate(['vaccancy-description'])
+    console.log(information)
+    this.senderService.setVacancyInfo(information)
+  }
+
+
+  //retrieve vacancies
+  retrieveVacancies(): void {
+    this.tenderService.getAllVacancies().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.vacancies = data;
+      this.num = data.length;
+
+
+      console.log("This is the vacancies data " + this.vacancies.length + ' \n ' + this.num)
+    });
+  }
+
+
+
+
+  @ViewChild('drawer') drawer: any;
+  public selectedItem: string = '';
+  public isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe([Breakpoints.Handset,Breakpoints.Small,Breakpoints.Medium])
+    .pipe(map((result: BreakpointState) => result.matches));
+
+  closeSideNav() {
+    if (this.drawer._mode == 'over') {
+      this.drawer.close();
+    }
+  }
+
+
 
 }

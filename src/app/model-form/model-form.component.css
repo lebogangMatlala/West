@@ -1,0 +1,14 @@
+.containerModal{
+  margin: 0px 25px;
+}
+.modal-title{
+  display: flex;
+  justify-content: center;
+  margin-left: 10em;
+  font-weight: 600;
+}
+label
+{
+  font-size: 15px;
+  font-weight: 500;
+}
