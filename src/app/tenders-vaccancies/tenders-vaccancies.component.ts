@@ -12,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ViewEncapsulation } from '@angular/core';
+import { stringify } from 'querystring';
+import { StringFormat } from 'firebase/storage';
 
 @Component({
   selector: 'app-tenders-vaccancies',
@@ -27,11 +29,12 @@ export class TendersVaccanciesComponent implements OnInit {
 
   data!: string;
   tenders?: Tenders[] = [];
+  tendersInfo?:any;
   vacancies?: Vacancy[];
 
 
   message?: String
-  nameOfTender?: String
+  nameOfTender?: string
 
   listofTenders?: any
   listofVacancies?: any
@@ -44,8 +47,11 @@ export class TendersVaccanciesComponent implements OnInit {
 
   num?: any;
   numOfTenders?: any;
+  numTenderInfo?:any;
 
   nameROJ: any;
+  listOfTenders: Tenders[] = [];
+  tenderNme: string | undefined;
 
 
 
@@ -58,6 +64,7 @@ export class TendersVaccanciesComponent implements OnInit {
     this.retrieveTenders();
     this.retrieveVacancies();
 
+
     // this.num = this.retrieveVacancies.length;
     // this.numOfTenders=this.retrieveTenders.length;
     console.log('hello vacancies ' + this.num + 'hello tenders ' + this.numOfTenders);
@@ -67,9 +74,10 @@ export class TendersVaccanciesComponent implements OnInit {
   ngOnInit(): void {
     this.message = this.senderService.getMessage();
     this.nameOfTender = this.senderService.getTenderName();
-    this.tenderService.getFilterdTenders();
+    //this.tendersInfo=this.tenderService.getFilterdTenders();
     this.getStorageInfo();
-
+    this.getFilterdTenders();
+  console.log("Filtered info "+this.nameOfTender+this.tendersInfo);
 
 
   }
@@ -81,6 +89,27 @@ export class TendersVaccanciesComponent implements OnInit {
     console.log("Hello data "+this.nameROJ);
   }
 
+
+  getFilterdTenders()
+  {
+    console.log("Final data on filtered data  "+this.nameROJ);
+    this.tenderNme=this.nameROJ;
+    console.log("Final data name filtered data "+this.tenderNme);
+
+    //this.db.list('/tenders', ref => ref.orderByChild('title').startAt('Data Mining').endAt('Data Mining'+'\uf8ffs'))
+    this.db.list('/tenders', ref => ref.orderByChild('moe').startAt(this.nameROJ).endAt(this.nameROJ+'\uf8ffs')).snapshotChanges().subscribe((res: any[]) => {
+      let tempArray:any = [];
+
+      res.forEach((ele: { payload: { val: () => any; }; }) => {
+        console.log(ele.payload.val());
+        tempArray.push(ele.payload.val())
+      });
+      this.listOfTenders = tempArray;
+      this.numTenderInfo=tempArray.length;
+      console.log("Final data"+this.listOfTenders+ " number in array "+this.numTenderInfo);
+    })
+
+  }
   //retrieve tenders
   retrieveTenders(): void {
     this.tenderService.getAllTenders().snapshotChanges().pipe(
