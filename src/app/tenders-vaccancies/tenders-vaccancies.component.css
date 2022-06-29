@@ -1,44 +1,78 @@
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
-html, body {padding:0;height:auto !important;}
+html,
+body {
+  padding: 0;
+  height: auto !important;
+}
 
 .sidenav-container {
   height: 100vh;
 }
+
 .sidenav {
   width: 220px;
 }
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
 
 }
-.example-section{
-  display:run-in;
-  flex-flow: row ;
+
+.example-section {
+  display: run-in;
+  flex-flow: row;
   align-items: flex-start;
   box-sizing: content-box;
   margin: 10px auto;
 }
-@media (max-width: 599.98px) and (orientation: portrait)
-{
-  body{
+
+@media (max-width: 599.98px) and (orientation: portrait) {
+  body {
     height: auto !important;
   }
+
 }
+
 @media (max-width: 800px) {
 
   .example-section {
     flex-direction: row;
-     align-items:initial
+    align-items: initial
+  }
+
+  .button01 {
+    margin-top: -20rem !important;
+    width: 120px;
+    height: 40px !important;
+    display: none;
+    overflow: auto;
   }
 
 }
+
+@media only screen and (min-device-width: 768px)
+{
+  .button01 {
+    margin-top: -0.5em;
+    margin-bottom: -200rem;
+    margin-right: -1.5rem  !important;
+    /* margin-bottom: -100rem; */
+    width: 120px;
+    height: 270px;
+
+  }
+}
+
 .mat-toolbar {
   height: 50px;
-  font-size:16px;
+  font-size: 16px;
 }
-mat-sidenav{
+
+mat-sidenav {
   width: 15%;
   height: 100%;
   display: flex;
@@ -49,38 +83,35 @@ mat-sidenav{
   background-repeat: no-repeat;
   background-size: cover;
   /* border-bottom-right-radius: 180px 750px; */
-  background-image: radial-gradient(
-    farthest-corner at 5px -20%,
-    #333333 75%,
-    #ffffff 20%
-  );
+  background-image: radial-gradient(farthest-corner at 5px -20%,
+      #333333 75%,
+      #ffffff 20%);
 }
 
 @media screen and (max-width:600px) {
-  mat-sidenav{
+  mat-sidenav {
     width: 60%;
     height: 100%;
   }
-  .section05{
+
+  .section05 {
     margin-top: 10%;
   }
-  .logo{
+
+  .logo {
     padding-top: 60%;
     width: 60px;
   }
 
-  mat-sidenav{
-    background-image: radial-gradient(
-    farthest-corner at 5px -20%,
-    #333333 75%,
-    #ffffff 20%
-  )
-
+  mat-sidenav {
+    background-image: radial-gradient(farthest-corner at 5px -20%,
+        #333333 75%,
+        #ffffff 20%)
   }
 
   .example-section {
     flex-direction: row;
-    padding:10% auto;
+    padding: 10% auto;
   }
 }
 
@@ -88,49 +119,48 @@ mat-sidenav{
   display: inline-block;
   margin: 0.5em auto;
 }
-@media screen and (min-device-width: 375px)
-and (max-device-width: 812px)
-and (-webkit-min-device-pixel-ratio: 3){
-  mat-sidenav{
+
+@media screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  mat-sidenav {
     width: 55%;
     height: 100%;
   }
-  .section05{
+
+  .section05 {
     margin-top: 50%;
   }
-  .logo{
+
+  .logo {
     padding-top: 82%;
     width: 50px;
   }
-  mat-sidenav{
-    background-image: radial-gradient(
-    farthest-corner at 5px -20%,
-    #333333 75%,
-    #ffffff 20%
-  );
+
+  mat-sidenav {
+    background-image: radial-gradient(farthest-corner at 5px -20%,
+        #333333 75%,
+        #ffffff 20%);
   }
 }
 
-@media screen and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 1){
-  mat-sidenav{
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  mat-sidenav {
     width: 35%;
     height: 100%;
   }
-  .section05{
+
+  .section05 {
     margin-top: 80%;
   }
-  .logo{
+
+  .logo {
     padding-top: 35em;
     width: 50px;
   }
-  mat-sidenav{
-    background-image: radial-gradient(
-    farthest-corner at 5px -20%,
-    #333333 75%,
-    #ffffff 20%
-  );
+
+  mat-sidenav {
+    background-image: radial-gradient(farthest-corner at 5px -20%,
+        #333333 75%,
+        #ffffff 20%);
   }
 }
 
@@ -142,22 +172,25 @@ and (-webkit-min-device-pixel-ratio: 1){
 
 }
 
-mat-drawer-content{
+mat-drawer-content {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   background-color: #f1f1f1;
 }
-.rounded{
+
+.rounded {
   padding-top: 20px;
   width: 120px;
 }
-.logo{
+
+.logo {
   width: 100px;
   margin-top: -30px;
   margin-left: 50%;
 }
+
 .btn {
   background-color: DodgerBlue;
   border: none;
@@ -165,28 +198,31 @@ mat-drawer-content{
   padding: 12px 16px;
   font-size: 16px;
   cursor: pointer;
-  border-radius:10px
+  border-radius: 10px
 }
-.btn02{
+
+.btn02 {
   border-radius: 25px;
   width: 160px;
   height: 30px;
   margin-left: 3%;
- background-color:#333333;
+  background-color: #333333;
   color: #bc9a2f;
   border: 2px solid #bc9a2f;
   margin-bottom: 10px;
 }
 
-.btn02:hover{
-  background-color:#bc9a2f;
+.btn02:hover {
+  background-color: #bc9a2f;
   color: #f1f1f1;
 }
-.btn02:active{
-  background-color:#bc9a2f;
+
+.btn02:active {
+  background-color: #bc9a2f;
   color: #f1f1f1;
 }
-.section02{
+
+.section02 {
   display: block;
   justify-content: left;
   margin-top: 2.3em;
@@ -194,7 +230,7 @@ mat-drawer-content{
 
 }
 
-.btn1{
+.btn1 {
   width: 70px;
   height: 65px;
   border-radius: 10px;
@@ -203,17 +239,18 @@ mat-drawer-content{
 
 }
 
-.section03{
+.section03 {
   margin-top: 20%;
   margin-right: 80%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
-.section04{
+
+.section04 {
   margin-top: -20em;
 }
 
-.line01{
+.line01 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   height: 2px;
@@ -223,63 +260,72 @@ mat-drawer-content{
   margin-right: 40%;
   width: 5em;
 }
-svg{
+
+svg {
   color: white;
   margin-top: -20px;
 }
-.text01{
+
+.text01 {
   margin-top: 25px;
   margin-bottom: 2px;
   line-height: 80%;
 }
-.line02{
+
+.line02 {
   margin: 0.5em 0;
   width: 90%;
   height: 1px;
   border: none;
 }
 
-.navbar-brand{
+.navbar-brand {
   color: black;
 }
-.btn{
+
+.btn {
   width: 7%;
   height: 3rem;
   background-color: black !important;
   border-radius: 10px !important;
 }
-.form-control{
+
+.form-control {
   width: 35%;
   height: 3rem;
   justify-content: end;
   margin-left: 50%;
-  border-radius: 10px  !important;
+  border-radius: 10px !important;
 }
-.form-check-input{
+
+.form-check-input {
   margin: 0 20px !important;
-  width: 20px  !important;
-  height: 20px  !important;
+  width: 20px !important;
+  height: 20px !important;
 }
-.section04{
+
+.section04 {
   margin-top: 0.5%;
 
 }
-.section03{
+
+.section03 {
   margin-top: 20%;
   margin-right: 80%;
   margin-bottom: 0px;
   color: #f1f1f1;
 }
 
-.section05{
+.section05 {
   margin-top: 18%;
 }
-svg{
+
+svg {
   color: white;
   margin-top: -20px;
 }
 
-.text03{
+.text03 {
   text-align: justify;
   margin-left: 30px;
 }
@@ -292,7 +338,7 @@ svg{
   margin: 0 40px;
 }
 
-mat-card{
+mat-card {
   /* height: 70% !important;
   position: relative; */
   margin-left: 2%;
@@ -304,9 +350,10 @@ mat-card{
 
 }
 
-.tender-section{
+.tender-section {
   margin: 6% 4%;
-  border:none ; border-radius: 15px;
+  border: none;
+  border-radius: 15px;
   box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
   background-color: #ffffff;
   margin: auto;
@@ -315,14 +362,18 @@ mat-card{
   /* height: 100% !important; */
 
 }
-.section{
+
+.section {
   margin-top: -1.5%;
   margin-left: -20px;
   padding-bottom: -3em;
 }
-.button01{
+
+.button01 {
   width: 120px;
   height: 180px;
+  margin-top: 0.2rem;
+  /* margin-bottom: -5.9rem; */
   margin-right: -1.5%;
   color: #f1f1f1;
   background-color: #bc9a2f;
@@ -332,9 +383,10 @@ mat-card{
 
 }
 
-.vacancy-section{
+.vacancy-section {
   margin: 6% 4%;
-  border:none ; border-radius: 15px;
+  border: none;
+  border-radius: 15px;
   box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
   background-color: #ffffff;
   margin: auto;
@@ -342,7 +394,8 @@ mat-card{
   padding-bottom: 5px;
 
 }
-.example-section01{
+
+.example-section01 {
   margin-bottom: 1.5em;
 }
 
@@ -355,23 +408,27 @@ mat-card{
 
 } */
 
-.col-6{
+.col-6 {
   background-color: blue;
 }
+
 .vertical {
   border-left: 2px solid rgb(175, 174, 174);
   height: 35px;
-  margin-left:4em;
+  margin-left: 4em;
   margin-top: -2.7em;
 }
+
 .mat-tab-label {
   font-size: 20px;
 
 }
+
 .mat-tab-label:active {
   font-size: 25px;
   font-weight: 600;
 }
+
 /* .form-select-lg:current {
   color: #FF00CC !important;
   border-radius: none;
@@ -379,8 +436,7 @@ mat-card{
 /* .form-select-lg:hover {
   color: #FF00CC !important;
 } */
-.form-select-lg
-{
+.form-select-lg {
   border-radius: 10px !important;
   width: 400px !important;
   text-align: center;
@@ -388,13 +444,14 @@ mat-card{
 
 
 /* to activate buttons on the side navbar */
-.active{
+.active {
   background-color: #bc9a2f;
   color: #f1f1f1;
 
 }
-.icons01{
-  filter:  brightness(0) invert(1);
+
+.icons01 {
+  filter: brightness(0) invert(1);
 }
 
 .mat-tab-label {
@@ -414,13 +471,17 @@ mat-card{
   color: #bc9a2f;
   font-weight: 700;
 }
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #bc9a2f;
 }
+
 .form-check-input:checked {
   background-color: #bc9a2f !important;
   border-color: #bc9a2f !important;
 }
+
 option {
   background-color: #ffffff;
   border-radius: 5px;
@@ -433,32 +494,30 @@ option:focus {
   font-size: 15px;
 }
 
-.form-select-lg:hover{
+.form-select-lg:hover {
   background-color: #bc9a2f !important;
 }
-select option:focus{
-  background-color: #bc9a2f !important
-}
-select option:hover{
-  background-color: #bc9a2f !important
-}
 
-select option:active{
+select option:focus {
   background-color: #bc9a2f !important
 }
 
-select option:link{
-  background-color: #bc9a2f !important
-}
-select option:visited{
-  background-color: #bc9a2f !important
-}
-select option:focus{
+select option:hover {
   background-color: #bc9a2f !important
 }
 
+select option:active {
+  background-color: #bc9a2f !important
+}
 
+select option:link {
+  background-color: #bc9a2f !important
+}
 
+select option:visited {
+  background-color: #bc9a2f !important
+}
 
-
-
+select option:focus {
+  background-color: #bc9a2f !important
+}

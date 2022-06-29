@@ -150,12 +150,12 @@
                   </section>
 
                   <section class="tender-section">
-                    <mat-card *ngFor="let tender of tenders | filter:data;">
+                    <mat-card *ngFor="let tender of listOfTenders | filter:data;" (click)="getTenderInfo(tender)">
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-9">
                         <div class="row">
                           <div class="col col-sm-12">
-                            <mat-card-title>{{tender.title}} hjhjjhj hjhjhjhjhjh hjhjhjhjh jjhjhjh hjhj nnbnb mnmnmn</mat-card-title>
+                            <mat-card-title>{{tender.title}} </mat-card-title>
                             <mat-card-subtitle>Ref No. : {{tender.reference}}</mat-card-subtitle>
                             <mat-card-content>
                               <div class="row">
@@ -169,7 +169,7 @@
 
                                     <div class="col-5 col-sm-3">
                                       27-Apr-2021
-                                      {{tender.DateOpenend | date: "dd MMM yyyy"}}
+                                      <!-- {{tender.DateOpenend | date: "dd MMM yyyy"}} -->
                                     </div>
                                     <div class="col-5 col-sm-2" style="color: red;">
                                       Closing<br> Date
@@ -178,7 +178,7 @@
 
                                     <div class="col-5 col-sm-3">
                                       27-Jan-2022
-                                      {{tender.DateClosed | date: "dd MMM yyyy"}}
+                                      <!-- {{tender.DateClosed | date: "dd MMM yyyy"}} -->
                                     </div>
                                     <div class="col-5 col-sm-2">
                                       <div class="section-text" align="end">
@@ -204,7 +204,7 @@
                         </button>
                       </div>
                     </mat-card>
-                    <div *ngIf="numOfTenders === 0">
+                    <div *ngIf="numOfTenders === 0 || numTenderInfo === 0">
                       <h1>No results on the database</h1></div>
                   </section>
                 </mat-tab>
@@ -233,7 +233,7 @@
                   </div> -->
                   <section class="vacancy-section">
 
-                    <mat-card *ngFor="let vacancy of vacancies;let i = index">
+                    <mat-card *ngFor="let vacancy of vacancies;let i = index" >
                       <div class="col-sm-10">
 
                         <div class="row">
