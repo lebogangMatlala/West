@@ -1,171 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* border-radius: 650px; */
-    border-bottom-right-radius: 150px 750px;
-    background-image: radial-gradient(
-      farthest-corner at 60px -100%,
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border-radius: 650px; */
+  border-bottom-right-radius: 150px 750px;
+  background-image: radial-gradient(farthest-corner at 60px -100%,
       #333333 85%,
-      #333333 20%
-    );
-  }
-  .text-center {
-    display: flex;
+      #333333 20%);
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+
+}
+
+.form-check-label {
+  font-weight: 300;
+}
+
+.form-center {
+  margin-top: 4.5em;
+
+}
+
+.text01 {
+  margin-top: 2.6em;
+  text-align: center;
+  color: #f1f1f1;
+  box-sizing: border-box;
+  margin-left: 20em;
+}
+
+.rounded {
+  width: 150px;
+  margin-top: 0.5em;
+  margin-left: -1.5em;
+}
+
+.section04 {
+  margin-top: 3.8%;
+  text-align: center;
+  color: #f1f1f1;
+}
+
+.btn {
+  border-radius: 30px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  color: black;
+  text-align: center;
+  font-weight: 400;
+
+}
+
+#btnsubscribe {
+  border-radius: 25px;
+  width: 30%;
+  margin-top: 20%;
+  box-sizing: border-box;
+  align-self: center;
+  margin: 0 auto;
+  display: flex;
+
+  /* margin-left: 37%; */
+  background-color: #bc9a2f;
+  color: #f1f1f1;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 0.2rem;
+  border: 0;
+  width: 45%;
+  border-top: 2.5px solid rgb(126, 122, 122);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28%;
+  margin-right: 28%;
+}
+
+.form-group {
+  color: #f1f1f1;
+
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  /* margin-left: 35%; */
+
+}
+
+.form-control {
+
+  font-weight: 300;
+  border-radius: 10px;
+}
+
+
+.form-check-input:checked {
+  background-color: #bc9a2f;
+  border-color: #bc9a2f;
+}
+
+.text02 {
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+
+}
+
+.center {
+  text-align: center;
+}
+
+.text02:hover {
+  color: #f1f1f1;
+  border: 2em;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text01 {
+    margin-left: 1em;
     justify-content: center;
-    padding-top: 2%;
-  
+    align-items: center;
+    margin-top: 1em;
   }
-  .form-check-label{
-    font-weight: 300;
+
+  .form-group {
+    width: 40%;
   }
-  .form-center{
-    margin-top: 4.5em;
-  
+
+  .rounded {
+    width: 80px;
+    margin-top: 0.2em;
+    justify-content: center;
+    align-items: center;
+
   }
-  .section04{
-    margin-top: 3.8%;
-    text-align: center;
-    color: #f1f1f1;
-  }
-  
-  .btn{
-    border-radius: 30px;
+
+  #btnsubscribe {
     width: 50%;
+  }
+}
+
+@media only screen and (min-device-width: 576px) and (max-device-width: 767px) {
+  .text01 {
+
+    margin-left: 0em;
+    margin-top: 1em;
+    text-align: center;
+    align-self: center;
+  }
+
+  .rounded {
+    width: 80px;
+    margin-top: 0.2em;
+    box-sizing: border-box;
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .rounded01 {
+    width: 150px;
+    height: 150px;
+    padding-top: 5px;
+  }
+
+  #btnsubscribe {
+    width: 75%;
+  }
+
+  .section04 {
+    margin-left: 0.2em;
+  }
+
+  .text01 {
+    /* margin-left: 17em; */
+    text-align: center;
+    margin-left: 0em;
+
+  }
+
+  .rounded {
+    width: 80px;
+    margin-top: 1.5em;
+    box-sizing: border-box;
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  /* email field */
+  .form-group {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+  }
+
+  .btn {
+    border-radius: 25px;
+    width: 70%;
     display: flex;
     justify-content: center;
     color: black;
     text-align: center;
     font-weight: 400;
-  
-  }
-  #btnsubscribe{
-    border-radius: 25px;
-    width: 300px;
-    margin-top: 60px;
-    margin-left: 37%;
-    background-color: #bc9a2f;
-    color: #f1f1f1;
-  }
-  hr{
-    margin-top: 3rem;
-    margin-bottom: 0.2rem;
-    border: 0;
-    width: 45%;
-    border-top: 2.5px solid rgb(126, 122, 122);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 28%;
-    margin-right: 28%;
-  }
-  .form-group{
-    color: #f1f1f1;
-  
-     width:30%;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    /* margin-left: 35%; */
-  
-  }
-  
-  .form-group h1{
-    text-align: center;
-  }
-  .form-control{
-  
-    font-weight: 300;
-    border-radius: 10px;
-  }
-  
-  .rounded{
-    width: 150px;
-    margin-top: -3.1em;
-    margin-left: -1.5em;
-  
-  }
-  .form-check-input:checked {
-    background-color: #bc9a2f;
-    border-color: #bc9a2f;
-  }
-  @media screen and (max-width: 600px) {
-  
-    .rounded01{
-      width: 150px;
-      height: 150px;
-      padding-top: 5px;
-    }
-  
-    .section04{
-      margin-left: 0.2em;
-    }
-    .text01{
-      /* margin-left: 17em; */
-      text-align: left;
-    }
-    .rounded{
-      margin-top: 1.5em;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-       margin-left: 2.5em;
-    }
-    /* email field */
-    .form-group{
-      width:70%;
-      margin: 0 auto;
-      margin-top: 20px;
-      margin-bottom: 30px;
-  
-    }
-  
-    .btn{
-      border-radius: 25px;
-      width: 70%;
-      display: flex;
-      justify-content: center;
-      color: black;
-      text-align: center;
-      font-weight: 400;
-  
-    }
-  
-  
-  }
-  
-  h4:hover{
-   text-decoration: underline;
-  }
-  .forgotPassword:hover{
-    text-decoration: underline;
-    color: #bc9a2f;
-  }
-  
-  .h1{
-    text-align: center;
-    margin: 0px auto;
-    display: block;
+
   }
 
 
-   /* # Phone */
-   @media screen and (max-width:640px) {
-    #btnsubscribe{
-      border-radius: 25px;
-      width: 200px;
-      margin-top: 20px;
-      margin-left: 17%;
-      float: center;
-      text-align: center !important;
-      background-color: #bc9a2f;
-      color: #f1f1f1;
-    }
+}
 
+h4:hover {
+  text-decoration: underline;
+}
 
-    @media only screen and (max-width: 767px) {
-      
-  }
-
-
+.forgotPassword:hover {
+  text-decoration: underline;
+  color: #bc9a2f;
 }
