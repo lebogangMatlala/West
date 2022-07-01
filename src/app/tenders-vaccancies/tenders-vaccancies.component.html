@@ -85,7 +85,7 @@
                   *ngIf="isHandset$ | async">
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/menu"></i>
+                <i class="fa fa-angle-left fa-3x" id="backButton" style="margin-right: 40px;" routerLink="/menu"></i>
                 <a class="navbar-brand" href="#" style="font-size: 2.5em;">
                   {{nameROJ}}
                 </a>
@@ -155,7 +155,7 @@
                       <div class="col-sm-9">
                         <div class="row">
                           <div class="col col-sm-12">
-                            <mat-card-title>{{tender.title}} </mat-card-title>
+                            <mat-card-title>{{tender.title}}</mat-card-title>
                             <mat-card-subtitle>Ref No. : {{tender.reference}}</mat-card-subtitle>
                             <mat-card-content>
                               <div class="row">
@@ -209,68 +209,62 @@
                   </section>
                 </mat-tab>
                 <mat-tab label="Vacancies">
-                  <section class="example-section01">
-                    <h4>
-                      Types of Vacancies
-                      <br>
-                    </h4>
-                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
-                      <option selected>All Vacancies</option>
-                      <option value="1">Advertised</option>
-                      <option value="2">Not Advertised</option>
-                    </select>
-                    <select id="txtTitle" class="form-control selectpicker">
-                      <option selected disabled value="default">
-                        Please Select
-                      </option>
-                      <option value="Session">Session</option>
-                      <option value="Class">Class</option>
-                    </select>
-                  </section>
+
+                      <section class="example-section01">
+                        <h4>
+                          Types of Vacancies
+                          <br>
+                        </h4>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>All Vacancies</option>
+                          <option value="1">Advertised</option>
+                          <option value="2">Not Advertised</option>
+                        </select>
+                    </section>
+
                   <!-- <div *ngFor="let tender of tenders;">
                     <h1>{{tender.title}}</h1>
-                    <h1>{{tender.description}}</h1>
+                    <h1>{{tender.Idescription}}</h1>
                   </div> -->
                   <section class="vacancy-section">
 
-                    <mat-card *ngFor="let vacancy of vacancies;let i = index" >
-                      <div class="col-sm-10">
+                    <mat-card (click)="getVacancyInfo(vacancy)" *ngFor="let vacancy of vacancies;let i = index" >
+
+                      <div class="col-sm-9">
 
                         <div class="row">
-                          <div class="col-1 col-sm-10">
+                          <div class="col col-sm-12">
                             <mat-card-title class="text-break">{{vacancy.title}}</mat-card-title>
                             <mat-card-subtitle>Ref No. : BID NO:SM02</mat-card-subtitle>
                             <mat-card-content>
                               <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-10">
 
                                   <div class="row">
                                     <div class="col-5 col-sm-2" style="color: green;">
-                                      Date
-                                      <br>
-                                      Opened
+                                      Date<br>Opened
                                       <div class="vertical"></div>
                                     </div>
 
                                     <div class="col-5 col-sm-3">10-jan-2022</div>
                                     <div class="col-5 col-sm-2" style="color: red;">
-                                      Closing
-                                      <br>
-                                      Date
+                                      Closing<br>Date
                                       <div class="vertical"></div>
                                     </div>
 
                                     <div class="col-5 col-sm-3">10-jul-2022</div>
+                                    <div class="col-5 col-sm-2">
+                                      <div class="section-text" align="end">
+                                        <div class="" style="color: green;">
+                                          open
+                                        </div>
+                                      </div>
+                                    </div>
 
                                   </div>
 
                                 </div>
 
-                              </div>
-                              <div class="section-text" align="end">
-                                <div class style="color: green;">
-                                  open
-                                </div>
                               </div>
 
                             </mat-card-content>
