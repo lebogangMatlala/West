@@ -33,6 +33,19 @@ mat-sidenav{
 }
 
 @media screen and (max-width:600px) {
+  html,body{
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    
+  }
+
+  .navbar-brand{
+  
+  
+    overflow-wrap: break-word;
+    
+
+  }
   mat-sidenav{
     width: 60%;
     height: 100%;
@@ -55,6 +68,13 @@ mat-sidenav{
 @media screen and (min-device-width: 375px)
 and (max-device-width: 812px)
 and (-webkit-min-device-pixel-ratio: 3){
+
+html,body{
+  overflow-x: hidden;
+}
+
+
+
   mat-sidenav{
     width: 55%;
     height: 100%;
@@ -79,6 +99,13 @@ and (-webkit-min-device-pixel-ratio: 3){
 @media screen and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1){
+
+  html,body{
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+  }
+
+
   mat-sidenav{
     width: 35%;
     height: 100%;
@@ -242,7 +269,7 @@ mat-drawer-content{
 
 .navbar-brand{
   color: black;
-  margin-top: 0px;
+  font-size: 20px;
 }
 .btn{
   width: 8%;

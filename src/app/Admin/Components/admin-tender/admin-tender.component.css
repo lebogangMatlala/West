@@ -1,3 +1,5 @@
+
+
 .p-inline {
   display: inline;
   padding-right: 100px;
@@ -125,4 +127,35 @@ mat-card {
   margin-top: -1.5%;
 
   margin-left: -20px;
+}
+@media screen and (max-width:600px) {
+
+
+
+ 
+
+
+  .button01 {
+    margin-top: -20rem !important;
+    width: 120px;
+    height: 40px !important;
+    display: none;
+    overflow: auto;
+  }
+}
+@media (max-width: 800px) {
+
+  .example-section {
+    flex-direction: row;
+    align-items: initial
+  }
+
+  .button01 {
+    margin-top: -20rem !important;
+    width: 120px;
+    height: 40px !important;
+    display: none;
+    overflow: auto;
+  }
+
 }

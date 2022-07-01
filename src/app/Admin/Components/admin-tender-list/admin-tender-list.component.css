@@ -13,6 +13,16 @@
   height: 50px;
   font-size:16px;
 }
+
+
+.example-section {
+  display: run-in;
+  flex-flow: row;
+  align-items: flex-start;
+  box-sizing: content-box;
+  margin: 10px auto;
+}
+
 mat-sidenav{
   width: 15%;
   height: 100%;
@@ -32,6 +42,7 @@ mat-sidenav{
 }
 
 @media screen and (max-width:600px) {
+
   mat-sidenav{
     width: 60%;
     height: 100%;
@@ -43,6 +54,20 @@ mat-sidenav{
     padding-top: 60%;
     width: 60px;
   }
+
+  .example-section {
+    flex-direction: row;
+    padding: 10% auto;
+  }
+
+  .button01 {
+    margin-top: -20rem !important;
+    width: 120px;
+    height: 40px !important;
+    display: none;
+    overflow: auto;
+  }
+
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
@@ -73,6 +98,8 @@ and (-webkit-min-device-pixel-ratio: 3){
   );
   }
 }
+
+
 
 @media screen and (min-device-width: 768px)
 and (max-device-width: 1024px)
@@ -288,16 +315,7 @@ mat-card{
   padding-bottom: 5px;
 
 }
-.vacancy-section{
-  margin: 6% 4%;
-  border:none ; border-radius: 15px;
-  box-shadow: rgb(237, 237, 238) 3px 3px 6px 6px inset, rgb(255, 255, 255) -3px -3px 6px 6px inset;
-  background-color: #ffffff;
-  margin: auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
 
-}
 .example-section01{
   margin-bottom: 1.5em;
 }
