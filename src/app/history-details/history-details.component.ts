@@ -37,7 +37,7 @@ export class HistoryDetailsComponent implements OnInit {
   @ViewChild('drawer') drawer: any;
   public selectedItem: string = '';
   public isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
+    .observe([Breakpoints.Handset,Breakpoints.Small,Breakpoints.Medium])
     .pipe(map((result: BreakpointState) => result.matches));
   closeSideNav() {
     if (this.drawer._mode == 'over') {

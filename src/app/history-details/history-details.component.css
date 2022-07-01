@@ -30,6 +30,61 @@ mat-sidenav{
     #ffffff 20%
   );
 }
+.navbar-brand{
+  font-size: 2em;
+  margin-left: -1.5em;
+}
+
+/* phone css */
+@media (max-width: 800px) {
+
+  .example-section {
+    flex-direction: row;
+    align-items: initial
+  }
+
+  /* .button01 {
+    margin-bottom: 0% !important;
+    width: 100px;
+    height: 106px !important;
+
+  } */
+
+  #backButton{
+    display: none;
+    overflow: auto;
+  }
+  .navbar-brand{
+    font-size: 2em;
+    margin-left: -1.5em;
+  }
+
+}
+
+/* ipad css */
+@media only screen and (min-device-width: 768px)
+{
+  /* .button01 {
+    margin-top: -0.5em;
+    margin-bottom: -200rem;
+    margin-right: -1.5rem  !important;
+    margin-bottom: -100rem;
+    width: 120px;
+    height: 270px;
+
+  }
+  .form-select-lg {
+    width: 35% !important;
+  } */
+  #backButton{
+    display: none;
+    overflow: auto;
+  }
+  .navbar-brand{
+    font-size: 2em;
+    margin-left: -1.5em;
+  }
+}
 
 @media screen and (max-width:600px) {
   mat-sidenav{
@@ -251,11 +306,12 @@ svg{
   margin-bottom: 0.5em;
 }
 .example-section {
-  margin-top: 2em;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 60px;
+  display: run-in;
+  flex-flow: row;
+  align-items: flex-start;
+  box-sizing: content-box;
+  margin: 10px auto;
+  
 }
 .section{
   margin-top: -20.9%;

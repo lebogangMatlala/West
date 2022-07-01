@@ -29,20 +29,23 @@
           <div class="example-button-row">
             <div class="example-flex-container">
               <div class="example-button-container">
-                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a delete icon" routerLink="/history">
+                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a delete icon"
+                  routerLink="/history">
                   <!-- <mat-icon>delete</mat-icon> -->
                   <img src="../../assets/Vector-6.png" class="icons01" alt="...">
                   <h5>History</h5>
                 </button>
               </div>
               <div class="example-button-container">
-                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a bookmark icon" routerLink="/tender-vaccancies">
+                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a bookmark icon"
+                  routerLink="/tender-vaccancies">
                   <img src="../../assets/Vector-1.png" class="icons01" alt="...">
                   <h5>Tenders</h5>
                 </button>
               </div>
               <div class="example-button-container">
-                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a home icon" routerLink="/councilors">
+                <button class="btn1" routerLinkActive="active" aria-label="Example icon button with a home icon"
+                  routerLink="/councilors">
                   <img src="../../assets/Group-1.png" class="icons01" alt="...">
                   <h5>Councilors</h5>
                 </button>
@@ -75,7 +78,7 @@
                   *ngIf="isHandset$ | async">
                   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-                <i class="fa fa-angle-left fa-3x" style="margin-right: 30px;" routerLink="/menu"></i>
+                <i class="fa fa-angle-left fa-3x" id="backButton" style="margin-right: 30px;" routerLink="/menu"></i>
                 <a class="navbar-brand" href="#" style="font-size: 2.5em;">History</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -104,39 +107,46 @@
                   <mat-card class="example-card">
                     <mat-card-header style="background-color: black;color: aliceblue;">
                       <div class="container" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-                        <h1 style="align-items: center;text-align: center;font-size: 35px;margin-top: 25px;font-weight: 600;">2022 Tenders</h1>
+                        <h1
+                          style="align-items: center;text-align: center;font-size: 35px;margin-top: 25px;font-weight: 600;">
+                          2022 Tenders</h1>
                       </div>
                       <div class="col  d-flex justify-content-end align-items-end">
-                        <button  type="button" class="button01" routerLink="/history-details" style="margin-right: -1.1em;">
+                        <button type="button" class="button01" routerLink="/history-details"
+                          style="margin-right: -1.1em;">
                           <p>VIEW &nbsp; &nbsp; &nbsp; <i class="fa fa-angle-right fa-2x"></i></p>
                         </button>
                       </div>
                     </mat-card-header>
                     <mat-card-content style="margin: 10px 10px;">
                       <div class="row" style="align-items: center;text-align: center;">
-
-                          <div class="col" >
-                            <p style="font-size: 11px; display: inline-block;font-weight: 600;" >TOTAL NUMBER OF TENDERS &nbsp; &nbsp;</p>
-                            <div class="vertical"></div>
+                          <div class="col-md vertical">
+                            <p style="font-size: 11px; display: inline-block;font-weight: 600;">TOTAL NUMBER OF TENDERS
+                              &nbsp; &nbsp;</p>
+                            <!-- <div class="vertical"></div> -->
                             <h1 style="font-weight: 600;">7830</h1>
                           </div>
-                          <div class="col">
-                            <p style="font-size: 11px;display: inline-block;font-weight: 600;">TOTAL TENDERS AWARDED&nbsp; &nbsp;</p>
-                            <div class="vertical"></div>
+                          <div class="col-md vertical">
+                            <p style="font-size: 11px;display: inline-block;font-weight: 600;">TOTAL TENDERS
+                              AWARDED&nbsp; &nbsp;</p>
+                            <!-- <div class="vertical"></div> -->
                             <h1 style="font-weight: 600;">6924</h1>
                           </div>
-                          <div class="col">
-                            <p style="font-size: 11px;display: inline-block;color: red;font-weight: 600;">TOTAL TENDERS CANCELLED&nbsp; &nbsp;</p>
-                            <div class="vertical"></div>
+                          <div class="col-md vertical">
+                            <p style="font-size: 11px;display: inline-block;color: red;font-weight: 600;">TOTAL TENDERS
+                              CANCELLED&nbsp; &nbsp;</p>
+                            <!-- <div class="vertical"></div> -->
                             <h1 style="font-weight: 600;">75</h1>
                           </div>
-                          <div class="col">
-                            <p style="font-size: 11px;display: inline-block;color: green;font-weight: 600;">TOTAL TENDERS COMPLETED&nbsp; &nbsp;</p>
-                            <div class="vertical"></div>
+                          <div class="col-md vertical">
+                            <p style="font-size: 11px;display: inline-block;color: green;font-weight: 600;">TOTAL
+                              TENDERS COMPLETED&nbsp; &nbsp;</p>
+                            <!-- <div class="vertical"></div> -->
                             <h1 style="font-weight: 600;">4673</h1>
                           </div>
-                          <div class="col">
-                            <p style="font-size: 11px;display: inline-block;font-weight: 600;">TOTAL OPEN TENDERS&nbsp; &nbsp;</p>
+                          <div class="col-md vertical">
+                            <p style="font-size: 11px;display: inline-block;font-weight: 600;">TOTAL OPEN TENDERS&nbsp;
+                              &nbsp;</p>
                             <h1 style="font-weight: 600;">6467</h1>
                           </div>
 
@@ -145,7 +155,7 @@
 
                     </mat-card-content>
                   </mat-card>
-                  <mat-card class="example-card">
+                  <!-- <mat-card class="example-card">
                     <mat-card-header style="background-color: black;color: aliceblue;">
                       <div class="container" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
                         <h1 style="align-items: center;text-align: center;font-size: 35px;margin-top: 25px;font-weight: 600;">2021 Tenders</h1>
@@ -188,8 +198,8 @@
 
 
                     </mat-card-content>
-                  </mat-card>
-                  <mat-card class="example-card">
+                  </mat-card> -->
+                  <!-- <mat-card class="example-card">
                     <mat-card-header style="background-color: black;color: aliceblue;">
                       <div class="container" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
                         <h1 style="align-items: center;text-align: center;font-size: 35px;margin-top: 25px;font-weight: 600;">2019 Tenders</h1>
@@ -232,7 +242,7 @@
 
 
                     </mat-card-content>
-                  </mat-card>
+                  </mat-card> -->
                 </div>
               </div>
             </div>
