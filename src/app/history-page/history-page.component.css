@@ -31,6 +31,44 @@ mat-sidenav{
   );
 }
 
+mat-icon {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 23px;
+  width: 24px;
+  margin-left: -3em;
+}
+
+/* phone css */
+@media (max-width: 800px) {
+
+  .example-section {
+    flex-direction: row;
+    align-items: initial
+  }
+
+  .button01 {
+    margin-bottom: 0% !important;
+    width: 100px;
+    height: 106px !important;
+
+  }
+
+  #backButton{
+    display: none;
+    overflow: auto;
+  }
+  .navbar-brand{
+    font-size: 2em;
+    margin-left: -1.5em;
+  }
+
+}
 @media screen and (max-width:600px) {
   mat-sidenav{
     width: 60%;
@@ -254,11 +292,13 @@ svg{
   margin: 0 40px;
 }
 mat-card{
-  height: 180px;
+
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
+  display: block;
+  overflow: hidden;
 
 }
 .section{
@@ -313,11 +353,11 @@ mat-card{
 
 }
 .vertical {
-  border-left: 2px solid rgb(175, 174, 174);
+  border-right: 2px solid rgb(175, 174, 174);
   height: 65px;
-  margin-left:15em;
-  margin-top: -2.2em;
-  margin-bottom: -30px;
+  /* margin-left:15em; */
+  /* margin-top: -2.2em; */
+  /* margin-bottom: -30px; */
 }
 
 .form-select-lg

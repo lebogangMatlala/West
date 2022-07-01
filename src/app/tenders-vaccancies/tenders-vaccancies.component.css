@@ -34,9 +34,16 @@ body {
   body {
     height: auto !important;
   }
+  .form-select-lg {
+    width: 100%;
+  }
+  .backButton{
+    display: none;
+    overflow: auto;
+  }
 
 }
-
+/* phone css */
 @media (max-width: 800px) {
 
   .example-section {
@@ -51,9 +58,20 @@ body {
     display: none;
     overflow: auto;
   }
+  .form-select-lg {
+    width: 100% !important;
+  }
+  #backButton{
+    display: none;
+    overflow: auto;
+  }
+  .navbar-brand{
+    font-size: 2em;
+    margin-left: -1.5em;
+  }
 
 }
-
+/* ipad css */
 @media only screen and (min-device-width: 768px)
 {
   .button01 {
@@ -64,6 +82,13 @@ body {
     width: 120px;
     height: 270px;
 
+  }
+  .form-select-lg {
+    width: 35% !important;
+  }
+  #backButton{
+    display: none;
+    overflow: auto;
   }
 }
 
@@ -105,13 +130,24 @@ mat-sidenav {
 
   mat-sidenav {
     background-image: radial-gradient(farthest-corner at 5px -20%,
-        #333333 75%,
-        #ffffff 20%)
+      #333333 75%,
+      #ffffff 20%)
   }
 
   .example-section {
     flex-direction: row;
     padding: 10% auto;
+  }
+  .form-select-lg {
+    width: 100%;
+  }
+  #backButton{
+    display: none;
+    overflow: auto;
+  }
+  .navbar-brand{
+    font-size: 2em;
+    margin-left: -1.5em;
   }
 }
 
@@ -140,6 +176,10 @@ mat-sidenav {
         #333333 75%,
         #ffffff 20%);
   }
+   #backButton{
+    display: none;
+    overflow: auto;
+  }
 }
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -162,6 +202,7 @@ mat-sidenav {
         #333333 75%,
         #ffffff 20%);
   }
+
 }
 
 .example-container {
@@ -346,8 +387,24 @@ mat-card {
   margin-top: 2%;
   margin-bottom: 2%;
   display: block;
-  overflow: auto;
+  overflow: hidden;
 
+}
+mat-icon {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 23px;
+  width: 24px;
+  margin-left: -3em;
+}
+.navbar-brand{
+  font-size: 2em;
+  margin-left: -1.5em;
 }
 
 .tender-section {
@@ -365,8 +422,11 @@ mat-card {
 
 .section {
   margin-top: -1.5%;
-  margin-left: -20px;
+  margin-left: -10px;
   padding-bottom: -3em;
+}
+.backButton{
+  display: none;
 }
 
 .button01 {
@@ -438,8 +498,9 @@ mat-card {
 } */
 .form-select-lg {
   border-radius: 10px !important;
-  width: 400px !important;
+  /* width:  !important; */
   text-align: center;
+  width: 35%;
 }
 
 
