@@ -85,7 +85,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <form class="d-flex">
-                    <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2"   [(ngModel)]="searchText" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16">
@@ -100,7 +100,7 @@
           </div>
           <div class="container">
             <div class="section04">
-              <div *ngFor="let tender of tenderdata; let i = index" (click)="senderService.setTenderName(tender.name)" routerLink="/tender-vaccancies">
+              <div *ngFor="let tender of tenderdata | filter: searchText; let i = index" (click)="senderService.setTenderName(tender.name)" routerLink="/tender-vaccancies">
                 <h2 #name class="tender-name">
                   {{ tender.name }}
                  </h2>

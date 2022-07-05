@@ -31,19 +31,19 @@ export class AdminTenderDescriptionComponent implements OnInit {
 tender!: AdminTender;
 @Input() index: number= 0 ;
 showMe: boolean = false;
-
-
-
 //bidders
 listOfBidders: Bidder[] = [];
 bidder!: Bidder
 
 
 
-  constructor (private activatedRoute: ActivatedRoute, private tenderService: TenderService, 
-     private breakpointObserver: 
-    BreakpointObserver, private backEndService: BackEndService,
-     private router: Router, private dialog: MatDialog, public submissionService: SubmissionService  ) 
+  constructor (private activatedRoute: ActivatedRoute,
+     private tenderService: TenderService, 
+     private breakpointObserver: BreakpointObserver,
+      private backEndService: BackEndService,
+     private router: Router, 
+     private dialog: MatDialog, 
+     public submissionService: SubmissionService  ) 
      {
       this.activatedRoute.params.subscribe(params =>{
         if(params.index)
@@ -102,8 +102,9 @@ getStorage():void
     console.log("Hello data "+this.tender);
   }
 
-TenderEdit(){
-  this.router.navigate(["/tender-edit", this.index]);
+onEdit(){
+  console.log('onEdit() called!')
+  this.router.navigate(['/tender-edit', this.index]);
  }
 
  TenderDelete(){

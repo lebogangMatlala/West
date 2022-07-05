@@ -8,6 +8,7 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 }  */
 .sidenav-container {
   height: 100vh;
+
 }
 .sidenav {
   width: 220px;
@@ -41,7 +42,7 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 
 @media screen and (max-width:600px) {
   mat-sidenav{
-    width: 60%;
+    width: 100%;
     height: 100%;
   }
   .section05{
@@ -86,7 +87,7 @@ and (-webkit-min-device-pixel-ratio: 3){
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1){
   mat-sidenav{
-    width: 35%;
+    width: 50%;
     height: 100%;
   }
   .section05{

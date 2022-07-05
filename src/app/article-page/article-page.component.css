@@ -43,6 +43,15 @@ mat-sidenav{
     padding-top: 60%;
     width: 60px;
   }
+  img {
+    width: 100%;
+    }
+
+    .description, p{
+      margin: 0;
+      width: 100%;
+    }
+
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
@@ -51,6 +60,34 @@ mat-sidenav{
   );
   }
 }
+
+@media (max-width: 800px) {
+
+  .example-section {
+    flex-direction: row;
+    align-items: initial
+  }
+
+  .button01 {
+    margin-top: -20rem !important;
+    width: 120px;
+    height: 40px !important;
+    display: none;
+    overflow: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-device-width: 375px)
 and (max-device-width: 812px)
 and (-webkit-min-device-pixel-ratio: 3){
@@ -88,6 +125,22 @@ and (-webkit-min-device-pixel-ratio: 1){
     padding-top: 35em;
     width: 50px;
   }
+
+
+
+  
+    .button01 {
+      margin-top: -0.5em;
+      margin-bottom: -200rem;
+      margin-right: -1.5rem  !important;
+      /* margin-bottom: -100rem; */
+      width: 120px;
+      height: 270px;
+  
+    }
+
+
+
   mat-sidenav{
     background-image: radial-gradient(
     farthest-corner at 5px -20%,
@@ -260,12 +313,16 @@ svg{
   margin: 0 40px;
 }
 
-mat-card{
-  height: 225px;
+mat-card {
+  /* height: 70% !important;
+  position: relative; */
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
+  display: block;
+  overflow: hidden;
+
 }
 .section{
   margin-top: -1.5%;

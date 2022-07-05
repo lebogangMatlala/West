@@ -19,10 +19,9 @@ export class ListVancancyComponent implements OnInit {
   @Input() tender?: AdminVacancy;
   @Input() index: number= 0 ;
   listOfVacancys: AdminVacancy[] = [];
-
-  
-
   fileUploads?: any[];
+
+  searchText: any;
   constructor(private vacancyService:VacancyService, 
     private backEndService: BackEndService, 
     private breakpointObserver: BreakpointObserver, 

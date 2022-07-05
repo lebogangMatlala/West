@@ -96,7 +96,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <form class="d-flex">
-                    <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2 "  [(ngModel)]="searchText" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16" style="margin-top: -1.2em;">
@@ -150,7 +150,7 @@
                   </section>
 
                   <section class="tender-section">
-                    <mat-card *ngFor="let tender of listOfTenders | filter:data;" (click)="getTenderInfo(tender)">
+                    <mat-card *ngFor="let tender of listOfTenders | filter:data | filter: searchText;" (click)="getTenderInfo(tender)">
 
                       <div class="col-sm-9">
                         <div class="row">
@@ -169,7 +169,7 @@
 
                                     <div class="col-5 col-sm-3">
                                       27-Apr-2021
-                                      <!-- {{tender.DateOpenend | date: "dd MMM yyyy"}} -->
+                                    
                                     </div>
                                     <div class="col-5 col-sm-2" style="color: red;">
                                       Closing<br> Date
@@ -227,15 +227,14 @@
                     <h1>{{tender.Idescription}}</h1>
                   </div> -->
                   <section class="vacancy-section">
-
-                    <mat-card (click)="getVacancyInfo(vacancy)" *ngFor="let vacancy of vacancies;let i = index" >
+                    <mat-card (click)="getVacancyInfo(vacancy)" *ngFor="let vacancy of vacancies  | filter: searchText;let i = index" >
 
                       <div class="col-sm-9">
 
                         <div class="row">
                           <div class="col col-sm-12">
                             <mat-card-title class="text-break">{{vacancy.title}}</mat-card-title>
-                            <mat-card-subtitle>Ref No. : BID NO:SM02</mat-card-subtitle>
+                            <mat-card-subtitle>Ref No: BID NO:SM02</mat-card-subtitle>
                             <mat-card-content>
                               <div class="row">
                                 <div class="col-sm-10">

@@ -25,6 +25,8 @@ export class MenuPageComponent implements OnInit {
   message = "hey i am data from menu"
 
   term!: string;
+  
+  searchText: any;
 
   constructor(private breakpointObserver: BreakpointObserver,
     public senderService: SenderService,

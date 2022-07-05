@@ -40,9 +40,7 @@ mat-sidenav{
   }
 
   .navbar-brand{
-  
-  
-    overflow-wrap: break-word;
+    white-space: nowrap;
     
 
   }
@@ -269,7 +267,9 @@ mat-drawer-content{
 
 .navbar-brand{
   color: black;
-  font-size: 20px;
+  font-size: 1.5em;
+  white-space: nowrap;
+
 }
 .btn{
   width: 8%;

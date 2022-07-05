@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BackEndService } from 'src/app/Admin/Services/back-end.services';
@@ -17,6 +17,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Bidder } from '../../Models/admin-bidder-model';
 import { SubmissionService } from '../../Services/submission.service';
+import { AdminSenderService } from '../../Services/admin-sender.service';
 
 @Component({
   selector: 'app-admin-tender-list',
@@ -24,16 +25,27 @@ import { SubmissionService } from '../../Services/submission.service';
   styleUrls: ['./admin-tender-list.component.css']
 })
 export class AdminTenderListComponent implements OnInit {
-  listOfTenders: AdminTender[] = [];
 
+  public filteredData?: any;
+  tendersData?: string;
+  data!: string;
+
+
+
+  listOfTenders: AdminTender[] = [];
   //bidders
   listOfBidders: Bidder[] = [];
+  @Input() tender?: AdminTender;
+  @Input() index: number= 0 ;
 
 
+  searchText: any;
   constructor(private tenderService: TenderService,
      private backEndService: BackEndService, 
     private breakpointObserver: BreakpointObserver,
-    private submissionService: SubmissionService
+    private submissionService: SubmissionService,
+    private adminsenderService: AdminSenderService,
+    private router: Router,
     ) {}
 
 ngOnInit(): void {
@@ -79,7 +91,16 @@ this.tenderService.listChangedEvent.subscribe((listOfTenders: AdminTender[])=>{
     console.log("onfetch() called!!!!");
     this.backEndService.fetchBidder;
   }
-
+  descDisplay(descrp: any){
+    console.log('onDisplay() called!!!!!!');
+    this.router.navigate(['tender-description']);
+    console.log(descrp);
+    this.adminsenderService.setTenderDesc(descrp);
+  
+  
+  
+  }
+  
 
 
 

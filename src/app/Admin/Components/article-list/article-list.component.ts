@@ -20,7 +20,7 @@ import { AuthenticationService } from '../../Services/authentication.service';
 })
 export class ArticleListComponent implements OnInit {
 listOfArticles: Article[]=[];
-
+searchText: any;
 
 user$ = this.authService.currentUser$;
   constructor(private breakpointObserver: BreakpointObserver,

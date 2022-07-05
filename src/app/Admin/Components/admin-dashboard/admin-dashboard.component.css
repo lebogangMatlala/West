@@ -37,11 +37,11 @@ html,body{
   
   @media screen and (max-width:600px) {
     mat-sidenav{
-      width: 60%;
+      width: 70%;
       height: 100%;
     }
     .section05{
-      margin-top: 20%;
+      margin-top: 90%;
     }
     .logo{
       padding-top: 60%;
@@ -56,27 +56,27 @@ html,body{
     }
   }
   @media screen and (min-device-width: 375px)
-  and (max-device-width: 812px)
-  and (-webkit-min-device-pixel-ratio: 3){
-    mat-sidenav{
-      width: 55%;
-      height: 100%;
-    }
-    .section05{
-      margin-top: 50%;
-    }
-    .logo{
-      padding-top: 82%;
-      width: 50px;
-    }
-    mat-sidenav{
-      background-image: radial-gradient(
-      farthest-corner at 5px -20%,
-      #333333 75%,
-      #ffffff 20%
-    );
-    }
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3){
+  mat-sidenav{
+    width: 55%;
+    height: 100%;
   }
+  .section05{
+    margin-top: 30%;
+  }
+  .logo{
+    padding-top: 82%;
+    width: 50px;
+  }
+  mat-sidenav{
+    background-image: radial-gradient(
+    farthest-corner at 5px -20%,
+    #333333 75%,
+    #ffffff 20%
+  );
+  }
+}
   
   @media screen and (min-device-width: 768px)
   and (max-device-width: 1024px)

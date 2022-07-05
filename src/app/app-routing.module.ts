@@ -74,7 +74,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'user_modal', component: ModelFormComponent },
  {path:'admin-login',component: LoginComponent},
 {path: 'home',component: HomeComponent},
-{path: 'tender-edit', component: AdminTenderEditComponent},
+{path: 'tender-add', component: AdminTenderEditComponent},
 
 //Image Testing
 
@@ -155,12 +155,6 @@ component: AdminTenderComponent
   path: 'add-vacancy/:index',
   component: AdminVacancyEditComponent
 },
-
-
-
-
-
-
 {
   path: 'article-add',
   component: ArticleAddComponent

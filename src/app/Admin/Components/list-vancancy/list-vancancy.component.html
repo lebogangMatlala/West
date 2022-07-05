@@ -73,7 +73,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <form class="d-flex">
-                    <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2"   [(ngModel)]="searchText" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16" style="margin-top: -1.2em;">
@@ -121,7 +121,7 @@
                 <section class="vacancy-section">
                   
                 <app-admin-vacancy
-                *ngFor="let vacancy of listOfVacancys; let i = index"
+                *ngFor="let vacancy of listOfVacancys | filter: searchText; let i = index"
                 [vacancy]="vacancy"
                 [index]="i"
               ></app-admin-vacancy>

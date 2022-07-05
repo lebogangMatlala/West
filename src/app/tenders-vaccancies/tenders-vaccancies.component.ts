@@ -24,7 +24,7 @@ import { StringFormat } from 'firebase/storage';
 export class TendersVaccanciesComponent implements OnInit {
 
   public filteredData?: any;
-
+  searchText: any;
   tendersData?: string;
 
   data!: string;

@@ -94,6 +94,7 @@ import { BiddersComponent } from './Admin/Components/bidders/bidders.component';
 
 
 
+
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 const materialModules = [

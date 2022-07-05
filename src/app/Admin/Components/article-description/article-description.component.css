@@ -41,19 +41,19 @@
   @media screen and (max-width:600px) {
     mat-sidenav{
       width: 70%;
-      height: 100%;
+      height: 135%;
     }
     .section05{
-      margin-top: 40%;
+      margin-top: 2%;
     }
     .logo{
-      padding-top: 15%;
-      width: 60px;
+      padding-bottom: 60%;
+      width: 85px;
     }
     mat-sidenav{
       background-image: radial-gradient(
       farthest-corner at 5px -20%,
-      #333333 75%,
+      #333333 72%,
       #ffffff 20%
     );
     }
